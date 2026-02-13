@@ -1,0 +1,1800 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- ADRACA ADVANCED CONTACT STYLES --- */
+:root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --surface: #ffffff;
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.1);
+    --primary-grad: linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #8B5CF6 100%);
+    --cool-mesh: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.15), transparent 40%);
+}
+
+.dark {
+    --background: #0B0E14; /* Deep, near-black blue-grey (True Dark, not pure black) */
+    --foreground: #F1F5F9; /* Slate-100 (Soft White) */
+    --surface: #151B28;    /* Slightly lighter dark for cards/surfaces */
+    --glass-border: rgba(255, 255, 255, 0.08); /* More subtle border */
+    --glass-bg: rgba(11, 14, 20, 0.65); /* Darker glass tint */
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    /* Subtle cool mesh gradient for background depth */
+    --cool-mesh: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.08), transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.08), transparent 45%);
+}
+
+/* Custom Cursor */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #475569;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-color: var(--background);
+    background-image: var(--cool-mesh);
+    color: var(--foreground);
+    background-attachment: fixed; /* Ensures gradient stays in place */
+}
+
+.dark .cursor-dot {
+    background-color: #e2e8f0;
+}
+
+.dark .cursor-outline {
+    border-color: rgba(226, 232, 240, 0.5);
+}
+
+body:hover .cursor-outline {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(71, 85, 105, 0.05);
+}
+
+.dark body:hover .cursor-outline {
+    background-color: rgba(226, 232, 240, 0.05);
+}
+
+/* Glare & Tilt */
+.glass-card-contact {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s;
+    transform-style: preserve-3d;
+}
+
+.glare {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+/* Kinetic Type */
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%) rotateX(-90deg);
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.8s ease;
+}
+
+.char.visible {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+}
+
+/* Floating Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: #1e293b;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(148, 163, 184, 0.3);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.dark .input-field {
+    color: #f1f5f9;
+    border-bottom-color: rgba(148, 163, 184, 0.2);
+}
+
+.input-label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 1rem;
+    color: #64748B;
+    pointer-events: none;
+    transition: all 0.3s;
+    transform-origin: left top;
+}
+
+.dark .input-label {
+    color: #94a3b8;
+}
+
+.input-field:focus,
+.input-field:not(:placeholder-shown) {
+    border-bottom-color: #475569;
+}
+
+.input-field:focus~.input-label,
+.input-field:not(:placeholder-shown)~.input-label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: #475569;
+    font-weight: 600;
+}
+
+/* Liquid Button */
+.btn-liquid {
+    position: relative;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-weight: 600;
+    background: var(--primary-grad);
+    background-size: 200% auto;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.btn-liquid:hover {
+    background-position: right center;
+    transform: scale(1.05);
+}
+
+.btn-ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* --- USE CASE PAGE ANIMATIONS --- */
+
+/* 1. Bar Chart Growth */
+@keyframes growUp {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.bar-anim {
+    transform-origin: bottom;
+    transform: scaleY(0);
+    animation: growUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 2. Shimmer Text */
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(to right, #1e293b 0%, #475569 40%, #94a3b8 50%, #475569 60%, #1e293b 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+}
+
+/* 3. Infinite Marquee */
+@keyframes scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-mask {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+/* 4. 3D Perspective Container */
+.holo-container {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+.holo-card {
+    transform-style: preserve-3d;
+    transition: transform 0.1s cubic-bezier(0.1, 0.5, 0.5, 1);
+}
+
+/* 5. Video Expansion */
+.smart-video-container {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smart-video-container.expanded {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    z-index: 60;
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* --- WHITE PAPER MODULE --- */
+:root {
+    --noise-pattern: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Noise Overlay */
+.noise-layer {
+    position: fixed;
+    inset: 0;
+    background-image: var(--noise-pattern);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Decode Text Effect */
+.decode-text {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.decode-text.visible {
+    opacity: 1;
+}
+
+/* Liquid Navigation Blob */
+#nav-blob {
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 32px;
+    background: #64748B;
+    border-radius: 99px;
+    /* Slate-500 */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 15px rgba(100, 116, 139, 0.4);
+}
+
+/* Citation Tooltip Trigger */
+.citation-trigger {
+    position: relative;
+    cursor: pointer;
+    color: #2563EB;
+    /* Azure */
+    font-weight: 700;
+    font-size: 0.75em;
+    vertical-align: super;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.citation-trigger::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.3s;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.citation-trigger:hover::after {
+    transform: scale(1);
+}
+
+/* 3D Carousel */
+.carousel-container {
+    perspective: 1000px;
+    overflow: visible;
+}
+
+.carousel-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center center;
+}
+
+/* --- BLOG MODULE --- */
+
+/* Image Curtain Reveal */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    transform: translateZ(0);
+}
+
+.image-curtain {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    z-index: 10;
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.image-container.visible .image-curtain {
+    transform: scaleY(0);
+}
+
+.parallax-img {
+    transition: transform 0.1s linear;
+    will-change: transform;
+    scale: 1.1;
+}
+
+/* Infographic Bars */
+.stat-bar {
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stat-bar.animate {
+    transform: scaleY(1);
+}
+
+/* Text Reveal */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    animation-delay: 0.2s;
+}
+
+/* --- ABOUT PAGE PHYSICS --- */
+
+/* 1. Morphing Artifact */
+.artifact-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(60px);
+    opacity: 0.5;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.artifact {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    /* Blue/Cyan */
+    border-radius: 50%;
+    transition: all 1.5s ease-in-out;
+    animation: pulse-glow 8s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Scroll States (Controlled via React State) */
+.stage-0 .artifact {
+    border-radius: 50%;
+    transform: scale(1);
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+}
+
+/* Sphere */
+.stage-1 .artifact {
+    border-radius: 0%;
+    transform: rotate(45deg) scale(0.8);
+    background: linear-gradient(45deg, #94a3b8, #cbd5e1);
+}
+
+/* Diamond (Silver) */
+.stage-2 .artifact {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: scale(1.2);
+    background: linear-gradient(45deg, #2563eb, #4f46e5);
+}
+
+/* Blob (Deep Blue) */
+.stage-3 .artifact {
+    width: 800px;
+    height: 100px;
+    border-radius: 99px;
+    transform: rotate(-15deg);
+    background: linear-gradient(45deg, #0f172a, #334155);
+}
+
+/* Beam (Dark) */
+
+/* 2. History Deck (3D Stack) */
+.history-deck {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.history-card {
+    position: absolute;
+    width: 350px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: bottom center;
+    opacity: 0;
+}
+
+.history-card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1) translateZ(0);
+    z-index: 10;
+}
+
+.history-card.prev {
+    opacity: 0.6;
+    transform: translateY(-40px) scale(0.95) translateZ(-50px);
+    z-index: 5;
+}
+
+.history-card.next {
+    opacity: 0.3;
+    transform: translateY(40px) scale(0.9) translateZ(-100px);
+    z-index: 1;
+}
+
+/* 3. X-Ray Cards */
+.xray-card {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 24px;
+    cursor: crosshair;
+}
+
+.xray-layer {
+    position: absolute;
+    inset: 0;
+    background-color: #1e293b;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.xray-card:hover .xray-layer {
+    opacity: 1;
+    mask-image: radial-gradient(circle 120px at var(--x) var(--y), black 100%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle 120px at var(--x) var(--y), black 100%, transparent 100%);
+}
+
+/* 4. Text Reveal */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- INDUSTRY PAGE PHYSICS --- */
+
+/* 1. Photon Cursor */
+.photon-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    /* Blue Glow */
+    mix-blend-mode: overlay;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background 0.3s;
+    will-change: transform;
+}
+
+.photon-dot {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3b82f6;
+    box-shadow: 0 0 10px #3b82f6;
+    transform: translate(-50%, -50%);
+}
+
+/* 2. Liquid Shard Cards */
+.shard-card {
+    position: relative;
+    height: 400px;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.1s linear;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.shard-bg {
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle at var(--mx) var(--my), rgba(59, 130, 246, 0.15), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.shard-card:hover .shard-bg {
+    opacity: 1;
+}
+
+.shard-icon {
+    transform: translateZ(40px);
+    transition: transform 0.3s;
+}
+
+.shard-card:hover .shard-icon {
+    transform: translateZ(60px) scale(1.1);
+}
+
+/* 3. Warp Tunnel */
+.warp-container {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+    overflow: hidden;
+}
+
+.warp-card {
+    position: absolute;
+    width: 60%;
+    max-width: 700px;
+    background: rgba(15, 23, 42, 0.9);
+    /* Slate-900 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateZ(-1000px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.warp-card.active {
+    opacity: 1;
+    transform: translateZ(0);
+    z-index: 10;
+}
+
+.warp-card.prev {
+    opacity: 0;
+    transform: translateZ(200px) translateY(-50px);
+    filter: blur(10px);
+}
+
+.warp-card.next {
+    opacity: 0.3;
+    transform: translateZ(-500px) scale(0.8);
+    z-index: 1;
+}
+
+/* 4. Scroll Line */
+.scroll-fill {
+    width: 100%;
+    height: 0%;
+    background: #3b82f6;
+    border-radius: 99px;
+    transition: height 0.1s linear;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+/* --- VAULT PAGE PHYSICS --- */
+
+/* 1. Gooey Navigation Filter */
+.gooey-filter {
+    filter: url('#goo');
+}
+
+.gooey-blob {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    height: calc(100% - 0.5rem);
+    background: #3b82f6;
+    /* Blue-500 */
+    border-radius: 99px;
+    z-index: 0;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1.2), width 0.3s;
+}
+
+/* 2. Repository Card (Hardware Accelerated) */
+.repo-card {
+    transform: translateZ(0);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.repo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2);
+}
+
+/* 3. Demo Overlay (Cinema Mode) */
+.demo-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.demo-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.demo-stage {
+    width: 90vw;
+    height: 90vh;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.demo-overlay.active .demo-stage {
+    transform: scale(1);
+}
+
+/* 4. Terminal Logs */
+.log-line {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: logFade 0.3s forwards;
+    margin-bottom: 0.5rem;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+}
+
+@keyframes logFade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- PRINT / PDF STYLING --- */
+@media print {
+    @page {
+        margin: 20mm;
+        size: A4;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Hide UI Elements */
+    aside,
+    nav,
+    header button, /* Download button */
+    .fixed, /* Background effects */
+    .progress-bar-container,
+    a[href^="/"], /* Back links */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Reset Main Content */
+    main {
+        display: block !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    article {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        background: white !important;
+        color: black !important;
+    }
+
+    /* Typography Overrides */
+    h1 { font-size: 24pt !important; color: #0f172a !important; margin-bottom: 1rem !important; }
+    h2 { font-size: 18pt !important; color: #0f172a !important; margin-top: 2rem !important; page-break-after: avoid; }
+    h3 { font-size: 14pt !important; color: #334155 !important; page-break-after: avoid; }
+    p, li { font-size: 11pt !important; line-height: 1.5 !important; color: #334155 !important; }
+    
+    /* Code Blocks */
+    pre, code {
+        background: #f1f5f9 !important; /* Light Slate */
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1 !important;
+        border-left: 4px solid #0f172a !important; /* Dark accent */
+        box-shadow: none !important;
+        white-space: pre-wrap !important; /* Wrap code */
+    }
+
+    /* Tables */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 9pt !important;
+        page-break-inside: avoid;
+    }
+    th, td {
+        border: 1px solid #cbd5e1 !important;
+        padding: 8px !important;
+    }
+
+    /* Links */
+    a { text-decoration: none !important; color: #0f172a !important; }
+    a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #64748b; }
+
+    /* Branding */
+    .print-only-header {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #0f172a;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+    
+    /* Page Breaks */
+    .page-break { page-break-before: always; }
+}
+
+/* --- BLOG STREAM PHYSICS --- */
+
+/* 1. Ambient Mood Light */
+.mood-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 70% 30%, var(--active-color, #94a3b8), transparent 60%),
+        radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.8), transparent 50%);
+    opacity: 0.15;
+    transition: background 1s ease;
+}
+
+/* 2. Prism Shapes */
+.prism-artifact {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1), inset 0 0 40px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    position: relative;
+}
+
+.shape-default {
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.shape-circle {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.shape-pill {
+    border-radius: 999px;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.shape-diamond {
+    border-radius: 2rem;
+    transform: rotate(45deg) scale(0.7);
+}
+
+/* 3. Chromatic Aberration Text */
+.chromatic-text {
+    transition: text-shadow 0.1s;
+}
+
+/* 4. Frequency Line */
+.freq-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--active-color, #334155);
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --- WHITEPAPER VAULT PHYSICS --- */
+
+/* 1. Volumetric Glass Slab */
+.slab-container {
+    width: 380px;
+    height: 520px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+    /* Mouse tilt */
+}
+
+.slab-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s;
+}
+
+/* Front Face (Glass) */
+.slab-front {
+    z-index: 10;
+    transform: translateZ(60px);
+    background: linear-gradient(125deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.0));
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+}
+
+.slab-front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.4) 45%, transparent 55%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.slab-container:hover .slab-front::after {
+    transform: translateX(100%);
+}
+
+/* Middle Layer (Content) */
+.slab-content {
+    z-index: 5;
+    transform: translateZ(30px);
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Back Face */
+.slab-back {
+    z-index: 1;
+    transform: translateZ(0);
+    background: white;
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.2);
+}
+
+/* Side Walls */
+.slab-side {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-right {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    transform: rotateY(90deg) translateZ(-30px);
+    transform-origin: right;
+}
+
+.side-left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    transform: rotateY(-90deg) translateZ(-30px);
+    transform-origin: left;
+}
+
+/* 2. Warp Animation (Swapping Papers) */
+.warp-active .slab-container {
+    animation: warpJump 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+@keyframes warpJump {
+    0% {
+        transform: scale(1) translateZ(0);
+        filter: blur(0);
+    }
+
+    50% {
+        transform: scale(0.8) translateZ(-500px);
+        filter: blur(8px);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1) translateZ(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* 3. Chrome Button */
+.chrome-btn {
+    background-image: linear-gradient(45deg, #1e293b 0%, #475569 50%, #1e293b 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 4s linear infinite;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid #e2e8f0;
+    border-radius: 99px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+.chrome-btn:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* --- CAPABILITIES ENGINE PHYSICS --- */
+
+/* 1. Scanner Line */
+.scanner-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, #06b6d4, transparent);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+    z-index: 40;
+    pointer-events: none;
+    animation: scanPage 8s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes scanPage {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 110%;
+    }
+}
+
+/* 2. Kinetic Core Rings */
+.core-stage {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+}
+
+.core-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    transform-style: preserve-3d;
+}
+
+.core-ring-1 {
+    width: 400px;
+    height: 400px;
+    border-width: 20px;
+    border-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.core-ring-2 {
+    width: 320px;
+    height: 320px;
+    border-width: 1px;
+    border-color: #3b82f6;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: spin 10s linear infinite;
+}
+
+.core-ring-3 {
+    width: 240px;
+    height: 240px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    transform: translate(-50%, -50%) translateZ(40px);
+}
+
+.core-ring-4 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    border-radius: 20px;
+    transform: translate(-50%, -50%) rotate(45deg) translateZ(80px);
+    animation: pulse-core 3s ease-in-out infinite;
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.6);
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse-core {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) translateZ(80px) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) translateZ(80px) scale(1.1);
+    }
+}
+
+/* 3. Exploded Blueprint Cards */
+.blueprint-container {
+    perspective: 2000px;
+    height: 450px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bp-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Layers */
+.layer-ui {
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transform: translateZ(0);
+}
+
+.layer-wire {
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px dashed #3b82f6;
+    opacity: 0;
+    transform: translateZ(-50px) translateY(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer-code {
+    z-index: 10;
+    background: #0f172a;
+    color: #06b6d4;
+    font-family: monospace;
+    font-size: 0.7rem;
+    padding: 2rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateZ(-100px) translateY(0);
+}
+
+/* Hover State */
+.blueprint-container:hover .layer-ui {
+    transform: translateZ(60px) rotateX(10deg);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.blueprint-container:hover .layer-wire {
+    opacity: 1;
+    transform: translateZ(0px) translateY(40px) rotateX(10deg);
+}
+
+.blueprint-container:hover .layer-code {
+    opacity: 1;
+    transform: translateZ(-60px) translateY(80px) rotateX(10deg);
+}
+
+/* --- CAREERS PAGE PHYSICS --- */
+
+/* 1. The Glass Tesseract */
+.tesseract-stage {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate-cube 20s linear infinite;
+}
+
+.cube-inner {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform-style: preserve-3d;
+    animation: rotate-cube-rev 15s linear infinite;
+}
+
+.face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    /* Blue */
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: rgba(59, 130, 246, 0.4);
+    box-shadow: inset 0 0 30px rgba(59, 130, 246, 0.05);
+    backface-visibility: visible;
+}
+
+.face-inner {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(6, 182, 212, 0.1);
+    /* Cyan */
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #06b6d4;
+}
+
+/* Cube Geometry */
+.f-front {
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+.f-back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.f-right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.f-left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.f-top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.f-bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.fi-front {
+    transform: rotateY(0deg) translateZ(75px);
+}
+
+.fi-back {
+    transform: rotateY(180deg) translateZ(75px);
+}
+
+.fi-right {
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+.fi-left {
+    transform: rotateY(-90deg) translateZ(75px);
+}
+
+.fi-top {
+    transform: rotateX(90deg) translateZ(75px);
+}
+
+.fi-bottom {
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+@keyframes rotate-cube {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes rotate-cube-rev {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(-360deg) rotateY(-360deg);
+    }
+}
+
+/* 2. Tilt Cards */
+.tilt-card-wrap {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.tilt-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    height: 100%;
+}
+
+.tilt-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.tilt-card:hover::after {
+    left: 200%;
+    transition: 1s ease-in-out;
+}
+
+.tilt-content {
+    transform: translateZ(30px);
+}
+
+/* 3. Job Scanner Row */
+.job-row {
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid transparent;
+}
+
+.job-row:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.1);
+    padding-left: 2rem;
+}
+
+.job-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #3b82f6;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.job-row:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* --- LEGAL PAGE PHYSICS --- */
+
+/* 1. Truth Lens Cursor */
+.truth-lens {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: contrast(1.2) brightness(1.1) blur(0.5px);
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.3), 0 20px 50px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: hard-light;
+    transition: width 0.3s, height 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.truth-lens.active {
+    width: 200px;
+    height: 200px;
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+.lens-crosshair {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    animation: spin-slow 10s linear infinite;
+}
+
+/* 2. Legal Prism */
+.prism-stage {
+    perspective: 1000px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.prism {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate-prism 20s linear infinite;
+}
+
+.prism-face {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -150px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(59, 130, 246, 0.5);
+    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.pf-1 {
+    transform: rotateY(0deg) translateZ(115px);
+}
+
+.pf-2 {
+    transform: rotateY(120deg) translateZ(115px);
+}
+
+.pf-3 {
+    transform: rotateY(240deg) translateZ(115px);
+}
+
+.prism-core {
+    position: absolute;
+    width: 2px;
+    height: 200px;
+    background: #3b82f6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px #3b82f6;
+}
+
+@keyframes rotate-prism {
+    from {
+        transform: rotateX(10deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(10deg) rotateY(360deg);
+    }
+}
+
+/* 3. Aurora Glass Cards */
+.legal-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.legal-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.05), transparent 60%);
+    transform: rotate(0deg);
+    animation: aurora-spin 10s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.legal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px -15px rgba(59, 130, 246, 0.15);
+}
+
+@keyframes aurora-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 4. Redacted Text Reveal */
+.redacted-reveal {
+    position: relative;
+    color: transparent;
+    animation: revealText 0.1s 1.2s forwards;
+}
+
+.redacted-reveal::after {
+    content: '';
+    position: absolute;
+    inset: -2px -4px;
+    background: #1e293b;
+    border-radius: 2px;
+    animation: unredact 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+    transform-origin: left;
+}
+
+@keyframes unredact {
+    0% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes revealText {
+    to {
+        color: #0f172a;
+    }
+}
+
+/* --- HEALTH PAGE PHYSICS --- */
+
+/* 1. Bio-Metric Cursor */
+.bio-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursor-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #06b6d4;
+    border-radius: 50%;
+    animation: spin-slow 8s linear infinite;
+}
+
+.cursor-center {
+    width: 4px;
+    height: 4px;
+    background: #06b6d4;
+    border-radius: 50%;
+}
+
+.cursor-data {
+    position: absolute;
+    left: 50px;
+    top: -10px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #06b6d4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: monospace;
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    border-left: 2px solid #06b6d4;
+}
+
+body.hovering .cursor-ring {
+    border-color: #3b82f6;
+    border-style: solid;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s;
+}
+
+body.hovering .cursor-data {
+    opacity: 1;
+}
+
+/* 2. X-Ray Cards */
+.xray-card {
+    position: relative;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: none;
+}
+
+.xray-layer-hidden {
+    position: absolute;
+    inset: 0;
+    background: #0f172a;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.05s;
+    pointer-events: none;
+}
+
+.xray-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(6, 182, 212, 0.15);
+    border-color: #06b6d4;
+}
+
+/* 3. EKG Animation */
+.vital-line {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(244, 63, 94, 0.1) 50%, transparent 100%);
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.ekg-blip {
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    width: 200px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 50H80L90 20L110 80L120 50H200" stroke="%23f43f5e" stroke-width="2" stroke-opacity="0.5" fill="none"/></svg>') no-repeat center;
+    background-size: contain;
+    transform: translateY(-50%);
+    animation: ekg-move 6s linear infinite;
+}
+
+@keyframes ekg-move {
+    0% {
+        left: -200px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes spin-slow {
+    100% {
+        transform: rotate(360deg);
+    }
+}

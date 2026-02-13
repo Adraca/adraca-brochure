@@ -1,0 +1,3 @@
+## 2025-02-18 - [Systematic Animation Leaks]
+**Learning:** Detected widespread use of `requestAnimationFrame` and `addEventListener` in `useEffect` hooks without proper cleanup functions across multiple components (Galaxy3D, CareersPage, etc.). This causes cumulative CPU and memory leaks as the user navigates the SPA, degrading performance significantly over time.
+**Action:** Always implement a cleanup function in `useEffect` that calls `cancelAnimationFrame` and `removeEventListener`. Created a regression test pattern in `Galaxy3D.test.tsx` mocking `window` methods to verify cleanup, which should be applied to other animated components.

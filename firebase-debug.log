@@ -1,0 +1,48 @@
+[debug] [2026-02-13T11:35:50.175Z] ----------------------------------------------------------------------
+[debug] [2026-02-13T11:35:50.176Z] Command:       /home/abhishek/.local/share/fnm/node-versions/v22.22.0/installation/bin/node /usr/bin/firebase deploy
+[debug] [2026-02-13T11:35:50.176Z] CLI Version:   15.5.1
+[debug] [2026-02-13T11:35:50.176Z] Platform:      linux
+[debug] [2026-02-13T11:35:50.176Z] Node Version:  v22.22.0
+[debug] [2026-02-13T11:35:50.176Z] Time:          Fri Feb 13 2026 17:05:50 GMT+0530 (India Standard Time)
+[debug] [2026-02-13T11:35:50.176Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-13T11:35:50.178Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-02-13T11:35:51.142Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-13T11:35:51.142Z] > authorizing via signed-in user (abhishek.k@adraca.io)
+[debug] [2026-02-13T11:35:51.142Z] [iam] checking project adraca-ai-official for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-02-13T11:35:51.142Z] Checked if tokens are valid: false, expires at: 1770124569152
+[debug] [2026-02-13T11:35:51.142Z] Checked if tokens are valid: false, expires at: 1770124569152
+[debug] [2026-02-13T11:35:51.143Z] > refreshing access token with scopes: []
+[debug] [2026-02-13T11:35:51.143Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-02-13T11:35:51.143Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-02-13T11:35:51.380Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-02-13T11:35:51.380Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-02-13T11:35:51.380Z] [iam] error while checking permissions, command may fail: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-02-13T11:35:51.381Z] Checked if tokens are valid: false, expires at: 1770124569152
+[debug] [2026-02-13T11:35:51.381Z] Checked if tokens are valid: false, expires at: 1770124569152
+[debug] [2026-02-13T11:35:51.381Z] > refreshing access token with scopes: []
+[debug] [2026-02-13T11:35:51.381Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-02-13T11:35:51.381Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-02-13T11:35:51.499Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-02-13T11:35:51.499Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-02-13T11:35:51.500Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2026-02-13T11:35:51.854Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-02-13T11:35:51.854Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
