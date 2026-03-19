@@ -1,0 +1,41 @@
+
+> adraca-web@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.10 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.29.4:3000
+
+ ✓ Starting...
+ ✓ Ready in 1843ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3s
+ HEAD / 200 in 3419ms
+ GET / 200 in 156ms
+ GET / 200 in 280ms
+ ✓ Compiled /favicon.ico in 236ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 615ms
+ ✓ Compiled /products/validator in 458ms
+ GET /products/validator 200 in 505ms
+ ✓ Compiled /products/dpp in 352ms
+ GET /products/dpp 200 in 394ms
+ ✓ Compiled /products/synthetic in 380ms
+ GET /products/synthetic 200 in 420ms
+ ✓ Compiled /products/search in 374ms
+ GET /products/search 200 in 419ms
+ GET /products/dpp 200 in 47ms
+ GET /products/search 200 in 42ms
+ GET /products/validator 200 in 41ms
+ GET /products/dpp 200 in 46ms
+ GET /products/synthetic 200 in 44ms
+ GET /products/search 200 in 59ms
+ ✓ Compiled /intelligence in 365ms
+ GET /intelligence 200 in 415ms
+ ✓ Compiled /products in 365ms
+ GET /products 200 in 410ms
+ GET /products/synthetic 200 in 37ms
+ GET /products 200 in 39ms
+ GET /intelligence 200 in 41ms
+ GET / 200 in 74ms
+ GET / 200 in 36ms
+ GET / 200 in 37ms

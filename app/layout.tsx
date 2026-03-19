@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/Navbar";
 import Galaxy3D from "@/components/ui/Galaxy3D";
-import OracleBot from "@/components/ui/OracleBot";
-import ScrollToTop from "@/components/ui/ScrollToTop";
-import CookieConsent from "@/components/ui/CookieConsent";
 import Analytics from "@/components/Analytics";
+import ConditionalChrome from "@/components/ConditionalChrome";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -40,9 +37,6 @@ export const metadata: Metadata = {
 };
 
 import ClientLayout from "@/components/ClientLayout";
-import Footer from "@/components/ui/Footer";
-import CommandPalette from "@/components/ui/CommandPalette";
-import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import Providers from "@/components/Providers";
 
 export default function RootLayout({
@@ -56,18 +50,13 @@ export default function RootLayout({
         <Providers>
           {/* The New Motion Engine */}
           <Galaxy3D />
-          <CommandPalette />
-          <Navbar />
-          <OracleBot />
-          <CookieConsent />
-          <ScrollToTop />
-          <Breadcrumbs />
+
+          {/* All nav/chatbot/breadcrumbs/footer — hidden on /brochure */}
+          <ConditionalChrome />
 
           <ClientLayout>
             {children}
           </ClientLayout>
-
-          <Footer />
         </Providers>
       </body>
       <Analytics />

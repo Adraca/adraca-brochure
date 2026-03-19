@@ -145,61 +145,52 @@ export default function CapabilitiesPage() {
                 </div>
             </section>
 
-            {/* SECTION: CAPABILITIES (Exploded Blueprint Grid) */}
-            <section id="capabilities" className="py-32 bg-slate-50/50 dark:bg-slate-900/50 relative z-10">
+            {/* SECTION: CORE PRODUCT ECOSYSTEM */}
+            <section id="products" className="py-32 bg-slate-50/50 dark:bg-slate-900/50 relative z-10">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex justify-between items-end mb-24">
                         <div>
-                            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-4">{t('functional_modules')}</h2>
-                            <p className="text-slate-500 dark:text-slate-400 max-w-xl">{t('hover_capability')}</p>
-                        </div>
-                        <div className="hidden md:block text-right">
-                            <span className="text-blue-600 dark:text-blue-400 font-mono text-xs">{t('sys_config_loaded')}</span>
+                            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-4">Core Product Ecosystem</h2>
+                            <p className="text-slate-500 dark:text-slate-400 max-w-xl">Explore our industrial-grade sovereign software solutions.</p>
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-x-8 gap-y-12">
-
-                        {/* Card 1: Secure Enclaves */}
-                        <BlueprintCard
-                            title={t('tech_card_1_title')}
-                            desc={t('tech_card_1_desc')}
-                            version={t('tech_card_1_subtitle')}
-                            icon={<Lock size={32} />}
-                            wireIcon={<Lock size={48} />}
-                            code={`fn decrypt_in_enclave(blob: &EncryptedData) -> Result<Tensor> {\n    // Hardware-level isolation\n    let key = tpm.get_attestation_key()?;\n    blob.decrypt(key)\n}`}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {/* Core Product 1: Sovereign Validator */}
+                        <ProductHubCard
+                            title={t('product_validator_title')}
+                            desc={t('product_validator_desc')}
+                            tag={t('product_validator_tag')}
+                            icon={<ClipboardCheck size={32} />}
+                            href="/products/validator"
                         />
 
-                        {/* Card 2: OPA Governance */}
-                        <BlueprintCard
-                            title={t('tech_card_2_title')}
-                            desc={t('tech_card_2_desc')}
-                            version={t('tech_card_2_subtitle')}
-                            icon={<Shield size={32} />}
-                            wireIcon={<Shield size={48} />}
-                            code={`deny[msg] {\n  input.resource.type == "aws_s3_bucket"\n  not input.resource.tags.sovereignty == "eu-central-1"\n  msg = "DORA VIOLATION: Residency"\n}`}
+                        {/* Core Product 2: DPP Engine */}
+                        <ProductHubCard
+                            title={t('product_dpp_title')}
+                            desc={t('product_dpp_desc')}
+                            tag={t('product_dpp_tag')}
+                            icon={<FileCheck size={32} />}
+                            href="/products/dpp"
                         />
 
-                        {/* Card 3: Arch Linux Edge */}
-                        <BlueprintCard
-                            title={t('tech_card_3_title')}
-                            desc={t('tech_card_3_desc')}
-                            version={t('tech_card_3_subtitle')}
-                            icon={<Cpu size={32} />}
-                            wireIcon={<Cpu size={48} />}
-                            code={`# Kernel Optimization\nsysctl -w net.core.rmem_max=16777216\nsystemctl start adraca-neural-mesh`}
+                        {/* Core Product 3: Adraca Synthetic */}
+                        <ProductHubCard
+                            title={t('product_synthetic_title')}
+                            desc={t('product_synthetic_desc')}
+                            tag={t('product_synthetic_tag')}
+                            icon={<Activity size={32} />}
+                            href="/products/synthetic"
                         />
 
-                        {/* Card 4: Titanium Mesh */}
-                        <BlueprintCard
-                            title={t('tech_card_4_title')}
-                            desc={t('tech_card_4_desc')}
-                            version={t('tech_card_4_subtitle')}
-                            icon={<Globe size={32} />}
-                            wireIcon={<Globe size={48} />}
-                            code={`def federated_step(local_model):\n    grads = local_model.compute_gradients()\n    # Only gradients are transmitted\n    mesh.broadcast(grads, secure=True)`}
+                        {/* Core Product 4: Sovereign Search */}
+                        <ProductHubCard
+                            title={t('product_search_title')}
+                            desc={t('product_search_desc')}
+                            tag={t('product_search_tag')}
+                            icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>}
+                            href="/products/search"
                         />
-
                     </div>
                 </div>
             </section>
@@ -262,43 +253,41 @@ export default function CapabilitiesPage() {
     );
 }
 
+import Link from "next/link";
+import { ClipboardCheck, FileCheck, ArrowRight } from "lucide-react";
+
 // --- SUB-COMPONENTS ---
 
-interface BlueprintCardProps {
+interface ProductHubCardProps {
     title: string;
     desc: string;
-    version: string;
+    tag: string;
     icon: React.ReactNode;
-    wireIcon: React.ReactNode;
-    code: string;
+    href: string;
 }
 
-function BlueprintCard({ title, desc, version, icon, wireIcon, code }: BlueprintCardProps) {
+function ProductHubCard({ title, desc, tag, icon, href }: ProductHubCardProps) {
     return (
-        <div className="blueprint-container">
-            {/* Layer 1: Code */}
-            <div className="bp-layer layer-code">
-                <pre>{code}</pre>
+        <div className="group relative bg-white/40 dark:bg-slate-800/40 border border-white/60 dark:border-slate-700/60 rounded-3xl p-8 backdrop-blur-md hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 hover:-translate-y-2 shadow-xl">
+            <div className="mb-6 w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center transition-transform group-hover:scale-110">
+                {icon}
             </div>
-
-            {/* Layer 2: Wireframe */}
-            <div className="bp-layer layer-wire text-blue-400 opacity-50">
-                {wireIcon}
-            </div>
-
-            {/* Layer 3: UI */}
-            <div className="bp-layer layer-ui p-10 flex flex-col justify-between h-full bg-white/90 dark:bg-slate-800/95 backdrop-blur-sm">
-                <div>
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-6">
-                        {icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{title}</h3>
-                    <p className="text-slate-500 dark:text-slate-300 text-sm leading-relaxed">{desc}</p>
-                </div>
-                <div className="text-xs font-bold text-blue-400 uppercase tracking-widest">{version}</div>
-            </div>
+            <div className="text-[10px] font-bold text-blue-500 mb-2 uppercase tracking-[0.2em]">{tag}</div>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{title}</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 min-h-[4.5rem] line-clamp-3">
+                {desc}
+            </p>
+            <Link href={href}>
+                <button className="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 group-hover:bg-blue-600 dark:group-hover:bg-blue-400 transition-colors">
+                    Watch Demo & View Specs <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+            </Link>
         </div>
     );
 }
+
+// BlueprintCard can be kept for other sections or deleted if no longer used.
+// It was used for technical modules, keeping it for now if needed.
+// interface BlueprintCardProps { ... }
 
 

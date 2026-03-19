@@ -11,7 +11,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     }, [pathname]);
 
     // Pages that handle their own layout/padding (Full Control)
-    const isFullPage = pathname.startsWith('/whitepaper') || pathname === '/use-cases' || pathname === '/contact';
+    const isFullPage = pathname.startsWith('/whitepaper') || pathname === '/use-cases' || pathname === '/contact' || pathname.startsWith('/brochure');
 
     if (isFullPage) {
         return <main>{children}</main>;

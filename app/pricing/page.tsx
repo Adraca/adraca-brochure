@@ -174,9 +174,9 @@ export default function PricingPage() {
                                     </h3>
                                     <div className="flex items-baseline gap-1">
                                         <span className="text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-                                            {tier.price.replace(' / mo', '').replace(' / Monat', '')}
+                                            {tier.price && typeof tier.price === 'string' ? tier.price.replace(' / mo', '').replace(' / Monat', '') : tier.price}
                                         </span>
-                                        {(tier.price.includes('/ mo') || tier.price.includes('/ Monat')) && (
+                                        {tier.price && typeof tier.price === 'string' && (tier.price.includes('/ mo') || tier.price.includes('/ Monat')) && (
                                             <span className="text-sm font-medium text-slate-500">/mo</span>
                                         )}
                                     </div>

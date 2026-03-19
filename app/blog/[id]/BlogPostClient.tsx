@@ -226,9 +226,9 @@ export default function BlogPostClient() {
                         </div>
 
                         <header className="mb-12">
-                            <div className="flex items-center gap-3 mb-6"><span className="px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest">{post.category}</span><span className="text-xs font-mono text-slate-400 flex items-center gap-1"><Clock size={12} /> {post.readTime}</span></div>
-                            <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]"><ScrambleText text={post.title} /></h1>
-                            <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed font-light">{post.subtitle}</p>
+                            <div className="flex items-center gap-3 mb-6"><span className="px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest">{t(post.category)}</span><span className="text-xs font-mono text-slate-400 flex items-center gap-1"><Clock size={12} /> {t(post.readTime)}</span></div>
+                            <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]"><ScrambleText text={t(post.title)} /></h1>
+                            <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed font-light">{t(post.subtitle)}</p>
                         </header>
 
                         <div className="mb-16 aspect-video w-full"><PixelImage src={post.image} alt="Hero" /><div className="mt-2 flex justify-between text-xs font-mono text-slate-400"><span>IMG_8422.RAW</span><span>100% RENDER</span></div></div>
@@ -262,7 +262,7 @@ export default function BlogPostClient() {
                     <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
                         <div>
                             <p className="text-blue-600 dark:text-blue-400 font-mono text-xs font-bold mb-4 tracking-widest uppercase">{t('next_transmission')}</p>
-                            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{nextBlog.title}</h2>
+                            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{t(nextBlog.title)}</h2>
                             <div className="flex items-center gap-2 text-slate-400 group-hover:translate-x-2 transition-transform font-bold text-sm"><span>{t('read_article')}</span><ArrowRight size={16} /></div>
                         </div>
                         <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">

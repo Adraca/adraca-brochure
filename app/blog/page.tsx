@@ -116,10 +116,10 @@ export default function BlogRepository() {
                                 >
                                     <div className="flex justify-between items-center mb-4">
                                         <span className="bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-700 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 shadow-sm">
-                                            {article.tag}
+                                            {t(article.tag)}
                                         </span>
                                         <span className="font-serif italic text-slate-400 dark:text-slate-500 text-lg group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
-                                            {article.date} • {article.readTime}
+                                            {article.date} • {t(article.readTime)}
                                         </span>
                                     </div>
 
@@ -127,11 +127,11 @@ export default function BlogRepository() {
                                         className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4 transition-colors chromatic-text"
                                         style={{ color: activeColor === article.color ? undefined : undefined }}
                                     >
-                                        <span className="group-hover:text-[var(--active-color)] transition-colors">{article.title}</span>
+                                        <span className="group-hover:text-[var(--active-color)] transition-colors">{t(article.title)}</span>
                                     </h2>
 
                                     <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-lg mb-4">
-                                        {article.summary}
+                                        {t(article.summary)}
                                     </p>
 
                                     <div className="flex items-center gap-2 text-sm font-bold text-slate-400 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white transition-colors uppercase tracking-widest">

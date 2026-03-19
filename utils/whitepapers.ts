@@ -5,26 +5,27 @@ export const whitepapers = [
         "title": "Strategic Enterprise Data Engineering: The European 'Third Way'",
         "date": "Jan 15, 2026",
         "readTime": "12 min read",
-        "downloadSize": "584 KB",
+        "downloadSize": "2.4 MB",
         "summary": "A blueprint for the 'Third Way' architecture\u2014converging engineering precision with rigorous digital sovereignty for the post-Schrems II era.",
         "coverImage": "/images/whitepapers/covers/wp-001-cover.jpg",
-        "coverImageWidth": 1024,
-        "coverImageHeight": 1024,
-        "infographicImage": "/images/whitepapers/infographics/wp-001-architecture.png",
-        "infographicImageWidth": 1024,
-        "infographicImageHeight": 1024,
-        "author": {
-            "name": "Abhishek K.",
-            "role": "CTO, Adraca AI Pvt. Ltd.",
-            "thought": "Sovereignty is not a policy; it is an architecture. We build the walls that laws can only describe."
-        },
+        "infographicImage": "/images/whitepapers/infographics/wp-001-info.jpg",
         "content": [
+            {
+                "title": "Strategic Enterprise Data Engineering: The European Third Way",
+                "content": []
+            },
             {
                 "title": "1. Introduction: The Geopolitical Engineering Imperative",
                 "content": [
                     {
                         "type": "paragraph",
                         "text": "The digital infrastructure of the European Union (EU) exists in a state of profound tension. On one side lies the operational necessity of the American hyperscalers\u2014Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure\u2014whose technological maturity, scalability, and ecosystem depth are currently unrivaled. On the other side stands the uncompromising normative framework of European jurisprudence, anchored by the General Data Protection Regulation (GDPR) and reinforced by the Court of Justice of the European Union (CJEU). This tension is not merely a legal compliance issue; it is a fundamental engineering challenge that defines the current era of enterprise IT in Europe."
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-001-architecture.png",
+                        "alt": "Sovereign Architecture",
+                        "caption": "Fig 1.1: Sovereign Landing Zone Reference Architecture"
                     },
                     {
                         "type": "paragraph",
@@ -51,6 +52,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "The primary antagonist in the Schrems II narrative is the potential for US intelligence agencies to access data stored by US companies, regardless of the data's physical location. This capability is codified in the Clarifying Lawful Overseas Use of Data Act (CLOUD Act) of 2018."
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-001-info.jpg",
+                        "alt": "Data Engineering Discipline",
+                        "caption": "Fig 2.1: The Medallion Data Engineering Pipeline"
                     }
                 ]
             },
@@ -77,6 +84,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "FISA 702 allows the US Attorney General and Director of National Intelligence to authorize surveillance targeting non-US persons located outside the US to acquire foreign intelligence information. The definition of \"foreign intelligence\" is broad, and the targets are not necessarily suspected of crimes.7"
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-sovereign-ai.jpg",
+                        "alt": "European Third Way",
+                        "caption": "Fig 3.1: The European 'Third Way' Strategic Pillars"
                     },
                     {
                         "type": "paragraph",
@@ -599,69 +612,244 @@ export const whitepapers = [
                 "title": "Works cited",
                 "content": [
                     {
-                        "type": "list",
-                        "items": [
-                            "BUILDING DATA BRIDGES Why Data Ecosystems Can Be the Next Public Infrastructure - Capgemini, accessed January 27, 2026, https://www.capgemini.com/wp-content/uploads/2022/01/Building-Data-Bridges.pdf",
-                            "The Rise of European Data (2022). Francesco Vogelezang - The Datasphere Initiative, accessed January 27, 2026, https://www.thedatasphere.org/wp-content/uploads/2023/05/The-Rise-of-European-Data-2022.-Francesco-Vogelezang.pdf",
-                            "Digital Sovereignty - The EU in a Contest for Influence and Leadership, accessed January 27, 2026, https://eu.boell.org/en/2021/02/15/digital-sovereignty-eu-contest-influence-and-leadership",
-                            "CLOUD Act - What It Means for EU Data Sovereignty - Wire, accessed January 27, 2026, https://wire.com/en/blog/cloud-act-eu-data-sovereignty",
-                            "CLOUD Act vs. GDPR: The Conflict About Data Access Explained \\u2013 - Exoscale, accessed January 27, 2026, https://www.exoscale.com/blog/cloudact-vs-gdpr/",
-                            "Mitigating the risk of US surveillance for public sector services in the cloud, accessed January 27, 2026, https://policyreview.info/articles/analysis/mitigating-risk-us-surveillance-public-sector-services-cloud",
-                            "EU Data Transfer Requirements and U.S. Intelligence Laws: Understanding Schrems II and Its Impact on the EU-U.S. Privacy Shield | Congress.gov, accessed January 27, 2026, https://www.congress.gov/crs-product/R46724",
-                            "The Court of Justice of the European Union in Schrems II: The impact of GDPR on data flows and national security - Brookings Institution, accessed January 27, 2026, https://www.brookings.edu/articles/the-court-of-justice-of-the-european-union-in-schrems-ii-the-impact-of-gdpr-on-data-flows-and-national-security/",
-                            "Cross-Border Data Transfers Between the EU and the U.S.: A Transatlantic Dispute - Santa Clara Law Digital Commons, accessed January 27, 2026, https://digitalcommons.law.scu.edu/cgi/viewcontent.cgi?article=1242&context=scujil",
-                            "Article 44. - Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (United Kingdom General Data Protection Regulation) (Text with EEA relevance), accessed January 27, 2026, https://www.legislation.gov.uk/eur/2016/679/article/44",
-                            "third country problem under the GDPR: enhancing protection of data transfers with technology - Oxford Academic, accessed January 27, 2026, https://academic.oup.com/idpl/article/13/3/225/7226249",
-                            "EDPB Releases Final Recommendations on Supplementary Measures for International Transfers - Hunton Andrews Kurth LLP, accessed January 27, 2026, https://www.hunton.com/privacy-and-information-security-law/edpb-releases-final-recommendations-on-supplementary-measures-for-international-transfers",
-                            "How the Schrems II Decision Changed Privacy Law - TrustArc, accessed January 27, 2026, https://trustarc.com/resource/schrems-ii-decision-changed-privacy-law/",
-                            "The CJEU judgment in the Schrems II case - European Parliament, accessed January 27, 2026, https://www.europarl.europa.eu/RegData/etudes/ATAG/2020/652073/EPRS_ATA(2020)652073_EN.pdf",
-                            "Recommendations 01/2020 on measures that supplement transfer tools to ensure compliance with the EU level of protection of personal data, accessed January 27, 2026, https://www.edpb.europa.eu/sites/default/files/consultation/edpb_recommendations_202001_supplementarymeasurestransferstools_en.pdf",
-                            "Recommendations 01/2020 on measures that supplement transfer tools to ensure compliance with the EU level of protection of personal data Version 2.0, accessed January 27, 2026, https://www.edpb.europa.eu/system/files/2021-06/edpb_recommendations_202001vo.2.0_supplementarymeasurestransferstools_en.pdf",
-                            "Cloud Neutral Access Security Compliance Post Schrems II - Thales CPL, accessed January 27, 2026, https://cpl.thalesgroup.com/blog/identity-data-protection/access-security-compliance-post-schrems-ii",
-                            "Overview of Key Management in Azure | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/security/fundamentals/key-management",
-                            "Bring Your Own Key Encryption (BYOK) - Entro Security, accessed January 27, 2026, https://entro.security/glossary/bring-your-own-key-encryption-byok/",
-                            "Demystifying AWS KMS key operations, bring your own key (BYOK), custom key store, and ciphertext portability | AWS Security Blog, accessed January 27, 2026, https://aws.amazon.com/blogs/security/demystifying-kms-keys-operations-bring-your-own-key-byok-custom-key-store-and-ciphertext-portability/",
-                            "Cloud Key Management | Google Cloud, accessed January 27, 2026, https://cloud.google.com/security/products/security-key-management",
-                            "Protecting data with Google Cloud External Key Manager, accessed January 27, 2026, https://services.google.com/fh/files/misc/protecting_data_with_googlecloud_ekm.pdf",
-                            "Google Cloud External Key Manager Resources - Thales Documentation Portal, accessed January 27, 2026, https://docs-cybersec.thalesgroup.com/bundle/v2.21-cdsp-cm/page/admin/cckm_ag/ekm/index.html",
-                            "How Key Access Justifications lets you be the ultimate arbiter of access to their data on Google Cloud Platform (GCP), accessed January 27, 2026, https://cloud.google.com/blog/products/identity-security/control-access-to-gcp-data-with-key-access-justifications",
-                            "Justification reason codes | Key Access Justifications - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes",
-                            "Privileged access in Google Cloud | Security, accessed January 27, 2026, https://docs.cloud.google.com/docs/security/privileged-access-management",
-                            "AMD EPYC\\u2122 Processors Deliver Confidential Computing for Public and Private Cloud Environments, accessed January 27, 2026, https://www.amd.com/en/blogs/2022/amd-epyc-processors-deliver-confidential.html",
-                            "Confidential virtual machines versus VMs: Latency analysis | Red Hat Developer, accessed January 27, 2026, https://developers.redhat.com/articles/2025/07/28/confidential-virtual-machines-versus-vms-latency-analysis",
-                            "Confidential VMs Explained: An Empirical Analysis of AMD SEV-SNP and Intel TDX - Systems Research Group, accessed January 27, 2026, https://dse.in.tum.de/wp-content/uploads/2024/11/sigmetrics25summer-CVM-Explained.pdf",
-                            "What is confidential computing? Definition + use cases - Decentriq, accessed January 27, 2026, https://www.decentriq.com/article/what-is-confidential-computing",
-                            "Microsoft Cloud for Sovereignty - Part 6 - Confidential VM, accessed January 27, 2026, https://sovereign-cloud.nl/posts/mcfs-cvm-2024-06-29/",
-                            "Microsoft strengthens sovereign cloud capabilities with new services | Microsoft Azure Blog, accessed January 27, 2026, https://azure.microsoft.com/en-us/blog/microsoft-strengthens-sovereign-cloud-capabilities-with-new-services/",
-                            "AWS vs. Azure vs. GCP: An Executive Comparison and Decision Matrix - BairesDev, accessed January 27, 2026, https://www.bairesdev.com/blog/aws-vs-azure-vs-gcp/",
-                            "EU Data Boundary with Access Justifications | Assured Workloads | Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/assured-workloads/docs/control-packages/eu-data-boundary-access-justifications",
-                            "Data Boundary via Assured Workloads | Sovereign Cloud, accessed January 27, 2026, https://cloud.google.com/security/products/assured-workloads",
-                            "CCN-CERT BP31 Data Protection in The Cloud Digital Sovereignty | PDF - Scribd, accessed January 27, 2026, https://www.scribd.com/document/969145140/CCN-CERT-BP31-Data-Protection-in-the-Cloud-Digital-Sovereignty",
-                            "Microsoft announces new European digital commitments - Microsoft On the Issues, accessed January 27, 2026, https://blogs.microsoft.com/on-the-issues/2025/04/30/european-digital-commitments/",
-                            "Assured Workloads documentation - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/assured-workloads/docs",
-                            "Confidential computing for data analytics, AI, and federated learning | Cloud Architecture Center, accessed January 27, 2026, https://docs.cloud.google.com/architecture/security/confidential-computing-analytics-ai",
-                            "Cloud External Key Manager - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/kms/docs/ekm",
-                            "Scope of Data Boundary by Partners Solutions - Google Cloud, accessed January 27, 2026, https://cloud.google.com/terms/in-scope-sovereign-cloud",
-                            "Deploy Azure Landing Zones - Azure Architecture Center | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/architecture/landing-zones/landing-zone-deploy",
-                            "sovereign-landing-zone/docs/01-Overview.md at main - GitHub, accessed January 27, 2026, https://github.com/Azure/sovereign-landing-zone/blob/main/docs/01-Overview.md",
-                            "Microsoft Cloud for Sovereignty - Sovereign guardrails, accessed January 27, 2026, https://learn.microsoft.com/en-us/industry/release-plan/2025wave1/cloud-sovereignty/sovereign-guardrails-guidance",
-                            "How to generate and transfer HSM-protected keys for Azure Key Vault Managed HSM, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/hsm-protected-keys-byok",
-                            "Azure Key Vault vs Managed HSM: Key Differences | Hokstad Consulting, accessed January 27, 2026, https://hokstadconsulting.com/blog/azure-key-vault-vs-managed-hsm-key-differences",
-                            "Azure Confidential Computing Products | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/confidential-computing/overview-azure-products",
-                            "Azure Confidential VM options | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/confidential-computing/virtual-machine-options",
-                            "Microsoft cloud security benchmark v2 - Data Protection, accessed January 27, 2026, https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-v2-data-protection",
-                            "Generational Performance Leap for Azure Confidential Computing, accessed January 27, 2026, https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/generational-performance-leap-for-azure-confidential-computing/4468989",
-                            "Performance Impact of Enabling Confidential Computing on Oracle Cloud Infrastructure VMs, accessed January 27, 2026, https://blogs.oracle.com/cloud-infrastructure/perf-impact-of-confidential-computing-on-oci-vms",
-                            "Azure Confidential VMs - Cloud Security - Medium, accessed January 27, 2026, https://medium.com/cloud-security/azure-confidential-vms-fb820899885a",
-                            "Article 10, Data intermediation services, the Data Governance Act (DGA), accessed January 27, 2026, https://www.european-data-governance-act.com/Data_Governance_Act_Article_10.html",
-                            "Article 2, Definitions, the Data Governance Act (DGA), accessed January 27, 2026, https://www.european-data-governance-act.com/Data_Governance_Act_Article_2.html",
-                            "Data Governance Act explained | Shaping Europe's digital future - European Union, accessed January 27, 2026, https://digital-strategy.ec.europa.eu/en/policies/data-governance-act-explained",
-                            "GAIA-X: Technical Architecture - bundeswirtschaftsministerium.de, accessed January 27, 2026, https://www.bundeswirtschaftsministerium.de/Redaktion/EN/Publikationen/gaia-x-technical-architecture.pdf?__blob=publicationFile&v=1",
-                            "Overview - Gaia-X Architecture Document - 22.10 Release, accessed January 27, 2026, https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/overview/",
-                            "Specification Phase 1 - GXFS.eu, accessed January 27, 2026, https://www.gxfs.eu/specification-phase-1/",
-                            "Enabling Services - Gaia-X Architecture Document - 24.04 Release, accessed January 27, 2026, https://docs.gaia-x.eu/technical-committee/architecture-document/24.04/enabling_services/",
-                            "Gaia-x - Architecture Document - 22.04 Release, accessed January 27, 2026, https://gaia-x.eu/wp-content/uploads/2022/06/Gaia-x-Architecture-Document-22.04-Release.pdf"
-                        ]
+                        "type": "paragraph",
+                        "text": "BUILDING DATA BRIDGES Why Data Ecosystems Can Be the Next Public Infrastructure - Capgemini, accessed January 27, 2026, https://www.capgemini.com/wp-content/uploads/2022/01/Building-Data-Bridges.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "The Rise of European Data (2022). Francesco Vogelezang - The Datasphere Initiative, accessed January 27, 2026, https://www.thedatasphere.org/wp-content/uploads/2023/05/The-Rise-of-European-Data-2022.-Francesco-Vogelezang.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Digital Sovereignty - The EU in a Contest for Influence and Leadership, accessed January 27, 2026, https://eu.boell.org/en/2021/02/15/digital-sovereignty-eu-contest-influence-and-leadership"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "CLOUD Act - What It Means for EU Data Sovereignty - Wire, accessed January 27, 2026, https://wire.com/en/blog/cloud-act-eu-data-sovereignty"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "CLOUD Act vs. GDPR: The Conflict About Data Access Explained \u2013 - Exoscale, accessed January 27, 2026, https://www.exoscale.com/blog/cloudact-vs-gdpr/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Mitigating the risk of US surveillance for public sector services in the cloud, accessed January 27, 2026, https://policyreview.info/articles/analysis/mitigating-risk-us-surveillance-public-sector-services-cloud"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "EU Data Transfer Requirements and U.S. Intelligence Laws: Understanding Schrems II and Its Impact on the EU-U.S. Privacy Shield | Congress.gov, accessed January 27, 2026, https://www.congress.gov/crs-product/R46724"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "The Court of Justice of the European Union in Schrems II: The impact of GDPR on data flows and national security - Brookings Institution, accessed January 27, 2026, https://www.brookings.edu/articles/the-court-of-justice-of-the-european-union-in-schrems-ii-the-impact-of-gdpr-on-data-flows-and-national-security/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Cross-Border Data Transfers Between the EU and the U.S.: A Transatlantic Dispute - Santa Clara Law Digital Commons, accessed January 27, 2026, https://digitalcommons.law.scu.edu/cgi/viewcontent.cgi?article=1242&context=scujil"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Article 44. - Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (United Kingdom General Data Protection Regulation) (Text with EEA relevance), accessed January 27, 2026, https://www.legislation.gov.uk/eur/2016/679/article/44"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "third country problem under the GDPR: enhancing protection of data transfers with technology - Oxford Academic, accessed January 27, 2026, https://academic.oup.com/idpl/article/13/3/225/7226249"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "EDPB Releases Final Recommendations on Supplementary Measures for International Transfers - Hunton Andrews Kurth LLP, accessed January 27, 2026, https://www.hunton.com/privacy-and-information-security-law/edpb-releases-final-recommendations-on-supplementary-measures-for-international-transfers"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How the Schrems II Decision Changed Privacy Law - TrustArc, accessed January 27, 2026, https://trustarc.com/resource/schrems-ii-decision-changed-privacy-law/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "The CJEU judgment in the Schrems II case - European Parliament, accessed January 27, 2026, https://www.europarl.europa.eu/RegData/etudes/ATAG/2020/652073/EPRS_ATA(2020)652073_EN.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Recommendations 01/2020 on measures that supplement transfer tools to ensure compliance with the EU level of protection of personal data, accessed January 27, 2026, https://www.edpb.europa.eu/sites/default/files/consultation/edpb_recommendations_202001_supplementarymeasurestransferstools_en.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Recommendations 01/2020 on measures that supplement transfer tools to ensure compliance with the EU level of protection of personal data Version 2.0, accessed January 27, 2026, https://www.edpb.europa.eu/system/files/2021-06/edpb_recommendations_202001vo.2.0_supplementarymeasurestransferstools_en.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Cloud Neutral Access Security Compliance Post Schrems II - Thales CPL, accessed January 27, 2026, https://cpl.thalesgroup.com/blog/identity-data-protection/access-security-compliance-post-schrems-ii"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Overview of Key Management in Azure | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/security/fundamentals/key-management"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Bring Your Own Key Encryption (BYOK) - Entro Security, accessed January 27, 2026, https://entro.security/glossary/bring-your-own-key-encryption-byok/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Demystifying AWS KMS key operations, bring your own key (BYOK), custom key store, and ciphertext portability | AWS Security Blog, accessed January 27, 2026, https://aws.amazon.com/blogs/security/demystifying-kms-keys-operations-bring-your-own-key-byok-custom-key-store-and-ciphertext-portability/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Cloud Key Management | Google Cloud, accessed January 27, 2026, https://cloud.google.com/security/products/security-key-management"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Protecting data with Google Cloud External Key Manager, accessed January 27, 2026, https://services.google.com/fh/files/misc/protecting_data_with_googlecloud_ekm.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Google Cloud External Key Manager Resources - Thales Documentation Portal, accessed January 27, 2026, https://docs-cybersec.thalesgroup.com/bundle/v2.21-cdsp-cm/page/admin/cckm_ag/ekm/index.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How Key Access Justifications lets you be the ultimate arbiter of access to their data on Google Cloud Platform (GCP), accessed January 27, 2026, https://cloud.google.com/blog/products/identity-security/control-access-to-gcp-data-with-key-access-justifications"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Justification reason codes | Key Access Justifications - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Privileged access in Google Cloud | Security, accessed January 27, 2026, https://docs.cloud.google.com/docs/security/privileged-access-management"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "AMD EPYC\u2122 Processors Deliver Confidential Computing for Public and Private Cloud Environments, accessed January 27, 2026, https://www.amd.com/en/blogs/2022/amd-epyc-processors-deliver-confidential.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Confidential virtual machines versus VMs: Latency analysis | Red Hat Developer, accessed January 27, 2026, https://developers.redhat.com/articles/2025/07/28/confidential-virtual-machines-versus-vms-latency-analysis"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Confidential VMs Explained: An Empirical Analysis of AMD SEV-SNP and Intel TDX - Systems Research Group, accessed January 27, 2026, https://dse.in.tum.de/wp-content/uploads/2024/11/sigmetrics25summer-CVM-Explained.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "What is confidential computing? Definition + use cases - Decentriq, accessed January 27, 2026, https://www.decentriq.com/article/what-is-confidential-computing"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Microsoft Cloud for Sovereignty - Part 6 - Confidential VM, accessed January 27, 2026, https://sovereign-cloud.nl/posts/mcfs-cvm-2024-06-29/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Microsoft strengthens sovereign cloud capabilities with new services | Microsoft Azure Blog, accessed January 27, 2026, https://azure.microsoft.com/en-us/blog/microsoft-strengthens-sovereign-cloud-capabilities-with-new-services/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "AWS vs. Azure vs. GCP: An Executive Comparison and Decision Matrix - BairesDev, accessed January 27, 2026, https://www.bairesdev.com/blog/aws-vs-azure-vs-gcp/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "EU Data Boundary with Access Justifications | Assured Workloads | Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/assured-workloads/docs/control-packages/eu-data-boundary-access-justifications"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data Boundary via Assured Workloads | Sovereign Cloud, accessed January 27, 2026, https://cloud.google.com/security/products/assured-workloads"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "CCN-CERT BP31 Data Protection in The Cloud Digital Sovereignty | PDF - Scribd, accessed January 27, 2026, https://www.scribd.com/document/969145140/CCN-CERT-BP31-Data-Protection-in-the-Cloud-Digital-Sovereignty"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Microsoft announces new European digital commitments - Microsoft On the Issues, accessed January 27, 2026, https://blogs.microsoft.com/on-the-issues/2025/04/30/european-digital-commitments/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Assured Workloads documentation - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/assured-workloads/docs"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Confidential computing for data analytics, AI, and federated learning | Cloud Architecture Center, accessed January 27, 2026, https://docs.cloud.google.com/architecture/security/confidential-computing-analytics-ai"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Cloud External Key Manager - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/kms/docs/ekm"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Scope of Data Boundary by Partners Solutions - Google Cloud, accessed January 27, 2026, https://cloud.google.com/terms/in-scope-sovereign-cloud"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Deploy Azure Landing Zones - Azure Architecture Center | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/architecture/landing-zones/landing-zone-deploy"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "sovereign-landing-zone/docs/01-Overview.md at main - GitHub, accessed January 27, 2026, https://github.com/Azure/sovereign-landing-zone/blob/main/docs/01-Overview.md"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Microsoft Cloud for Sovereignty - Sovereign guardrails, accessed January 27, 2026, https://learn.microsoft.com/en-us/industry/release-plan/2025wave1/cloud-sovereignty/sovereign-guardrails-guidance"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How to generate and transfer HSM-protected keys for Azure Key Vault Managed HSM, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/hsm-protected-keys-byok"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Azure Key Vault vs Managed HSM: Key Differences | Hokstad Consulting, accessed January 27, 2026, https://hokstadconsulting.com/blog/azure-key-vault-vs-managed-hsm-key-differences"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Azure Confidential Computing Products | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/confidential-computing/overview-azure-products"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Azure Confidential VM options | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/confidential-computing/virtual-machine-options"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Microsoft cloud security benchmark v2 - Data Protection, accessed January 27, 2026, https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-v2-data-protection"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Generational Performance Leap for Azure Confidential Computing, accessed January 27, 2026, https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/generational-performance-leap-for-azure-confidential-computing/4468989"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Performance Impact of Enabling Confidential Computing on Oracle Cloud Infrastructure VMs, accessed January 27, 2026, https://blogs.oracle.com/cloud-infrastructure/perf-impact-of-confidential-computing-on-oci-vms"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Azure Confidential VMs - Cloud Security - Medium, accessed January 27, 2026, https://medium.com/cloud-security/azure-confidential-vms-fb820899885a"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Article 10, Data intermediation services, the Data Governance Act (DGA), accessed January 27, 2026, https://www.european-data-governance-act.com/Data_Governance_Act_Article_10.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Article 2, Definitions, the Data Governance Act (DGA), accessed January 27, 2026, https://www.european-data-governance-act.com/Data_Governance_Act_Article_2.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data Governance Act explained | Shaping Europe's digital future - European Union, accessed January 27, 2026, https://digital-strategy.ec.europa.eu/en/policies/data-governance-act-explained"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GAIA-X: Technical Architecture - bundeswirtschaftsministerium.de, accessed January 27, 2026, https://www.bundeswirtschaftsministerium.de/Redaktion/EN/Publikationen/gaia-x-technical-architecture.pdf?__blob=publicationFile&v=1"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Overview - Gaia-X Architecture Document - 22.10 Release, accessed January 27, 2026, https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/overview/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Specification Phase 1 - GXFS.eu, accessed January 27, 2026, https://www.gxfs.eu/specification-phase-1/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Enabling Services - Gaia-X Architecture Document - 24.04 Release, accessed January 27, 2026, https://docs.gaia-x.eu/technical-committee/architecture-document/24.04/enabling_services/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Gaia-x - Architecture Document - 22.04 Release, accessed January 27, 2026, https://gaia-x.eu/wp-content/uploads/2022/06/Gaia-x-Architecture-Document-22.04-Release.pdf"
                     }
                 ]
             }
@@ -673,20 +861,26 @@ export const whitepapers = [
         "title": "DORA Compliance as Code: Automating Resilience",
         "date": "Jan 20, 2026",
         "readTime": "15 min read",
-        "downloadSize": "642 KB",
+        "downloadSize": "3.1 MB",
         "summary": "Replacing manual disaster recovery plans with immutable Infrastructure-as-Code (IaC) pipelines to meet EU Digital Operational Resilience Act requirements.",
         "coverImage": "/images/whitepapers/covers/wp-002-cover.jpg",
-        "coverImageWidth": 1024,
-        "coverImageHeight": 1024,
         "infographicImage": "/images/whitepapers/infographics/wp-002-info.jpg",
-        "infographicImageWidth": 1408,
-        "infographicImageHeight": 768,
-        "author": {
-            "name": "Abhishek K.",
-            "role": "CTO, Adraca AI Pvt. Ltd.",
-            "thought": "Resilience cannot be audited into existence. It must be complied into code."
-        },
         "content": [
+            {
+                "title": "DORA Compliance as Code",
+                "content": []
+            },
+            {
+                "title": "The Engineering Paradigm Shift for Digital Operational Resilience",
+                "content": [
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-002-info.jpg",
+                        "alt": "DORA Compliance",
+                        "caption": "Fig 1.1: DORA Digital Operational Resilience Framework"
+                    }
+                ]
+            },
             {
                 "title": "Executive Summary",
                 "content": [
@@ -714,6 +908,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "The European Supervisory Authorities (ESAs)\u2014EBA, EIOPA, and ESMA\u2014have developed detailed Regulatory Technical Standards (RTS) that translate the high-level legislative text of DORA into specific technical obligations. For infrastructure architects and platform engineers, these RTS documents function effectively as a non-negotiable requirements specification for the cloud platform."
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-dora-fintech.jpg",
+                        "alt": "Fintech Resilience",
+                        "caption": "Fig 2.1: Compliance-as-Code for Financial Entities"
                     }
                 ]
             },
@@ -736,6 +936,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "Immutable Infrastructure as a Compliance Necessity: The requirement for \"updated\" and \"resilient\" systems effectively deprecates the \"pet\" server model of long-lived, manually patched instances. To comply with Article 9 at scale, engineering teams must adopt immutable infrastructure patterns (e.g., replacing rather than patching instances) to eliminate configuration drift. Security patches must be applied upstream in the image build process, ensuring that the deployed infrastructure always matches the compliant \"desired state\" defined in the code repository."
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-strategy-europe.jpg",
+                        "alt": "European Strategy",
+                        "caption": "Fig 3.1: Strategic Resilience Roadmap"
                     },
                     {
                         "type": "paragraph",
@@ -1324,6 +1530,10 @@ export const whitepapers = [
                 ]
             },
             {
+                "title": "Detailed Technical Appendix",
+                "content": []
+            },
+            {
                 "title": "Appendix A: Terraform Sentinel Code for Azure Backup Frequency",
                 "content": [
                     {
@@ -1361,46 +1571,152 @@ export const whitepapers = [
                 "title": "Works cited",
                 "content": [
                     {
-                        "type": "list",
-                        "items": [
-                            "DORA - Draft RTS - AFME, accessed January 27, 2026, https://www.afme.eu/publications/consultation-responses/dora-draft-rts-on-risk-management-framework/",
-                            "Digital Operational Resilience Act (DORA) - | European Securities and Markets Authority, accessed January 27, 2026, https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora",
-                            "Seconds matter: Understanding DORA's real-time response requirements | DLA Piper, accessed January 27, 2026, https://www.dlapiper.com/insights/publications/derisk-newsletter/2025/seconds-matter-understanding-dora-s-real-time-response-requirements",
-                            "Joint Technical Standards on major incident reporting | European Banking Authority, accessed January 27, 2026, https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/joint-technical-standards-major-incident-reporting",
-                            "Documentation requirements for financial entities according to DORA - Strategies - BaFin, accessed January 27, 2026, https://www.bafin.de/SharedDocs/Downloads/EN/Anlage/dl_anlage_DORA_Dokumentationsanforderungen_2_en.pdf?__blob=publicationFile&v=4",
-                            "JC 2023 86 - Final report on draft RTS on ICT Risk ... - eiopa, accessed January 27, 2026, https://www.eiopa.europa.eu/system/files/2024-01/JC%202023%2086%20-%20Final%20report%20on%20draft%20RTS%20on%20ICT%20Risk%20Management%20Framework%20and%20on%20simplified%20ICT%20Risk%20Management%20Framework.pdf",
-                            "dora-regulation-rts--2024-1532_en.pdf - European Commission, accessed January 27, 2026, https://ec.europa.eu/finance/docs/level-2-measures/dora-regulation-rts--2024-1532_en.pdf",
-                            "T-Systems Sovereign Cloud | Google Cloud, accessed January 27, 2026, https://cloud.google.com/t-systems-sovereign-cloud",
-                            "Sovereign Controls by Partners product page | Google Cloud, accessed January 27, 2026, https://cloud.google.com/security/products/sovereign-controls-by-partners",
-                            "Digital Operational Resilience Act (DORA), Article 12, accessed January 27, 2026, https://www.digital-operational-resilience-act.com/Article_12.html",
-                            "White Papers 2025 Resilience and Security in Critical Sectors Navigating NIS2 and DORA Requirements - ISACA, accessed January 27, 2026, https://www.isaca.org/resources/white-papers/2025/resilience-and-security-in-critical-sectors-navigating-nis2-and-dora-requirements",
-                            "Preparing for DORA: ESAs Publish Incident Reporting Requirements - Morgan Lewis, accessed January 27, 2026, https://www.morganlewis.com/blogs/sourcingatmorganlewis/2024/08/preparing-for-dora-esas-publish-incident-reporting-requirements",
-                            "Guide to DORA and its Impact on Storage & Backup ICT Assets - Part 1 - Continuity Software, accessed January 27, 2026, https://www.continuitysoftware.com/blog/guide-to-dora-and-its-impact-on-storage-backup-ict-assets-part-1/",
-                            "azurerm_backup_policy_vm | Resources | hashicorp/azurerm - Terraform Registry, accessed January 27, 2026, https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/backup_policy_vm.html",
-                            "Writing and Testing Sentinel Policies for Terraform - HashiCorp, accessed January 27, 2026, https://www.hashicorp.com/en/resources/writing-and-testing-sentinel-policies-for-terraform",
-                            "Using the Terraform Foundational Policies Library with Microsoft Azure - HashiCorp, accessed January 27, 2026, https://www.hashicorp.com/en/blog/using-the-terraform-foundational-policies-library-with-azure",
-                            "Automating Terraform Security Checks with OPA and Rego Policies - Firefly, accessed January 27, 2026, https://www.firefly.ai/academy/automating-terraform-security-checks-with-opa-and-rego-policies",
-                            "Securing Terraform with OPA - Oso, accessed January 27, 2026, https://www.osohq.com/learn/opa-policy-as-code-for-terraform",
-                            "Resourcely and IaC Scanners, accessed January 27, 2026, https://www.resourcely.io/and/iac-scanners",
-                            "What is Open Policy Agent (OPA) and how to implement it with Terraform - Terrateam, accessed January 27, 2026, https://terrateam.io/blog/open-policy-agent-terraform",
-                            "EU Data Transfer Requirements and U.S. Intelligence Laws: Understanding Schrems II and Its Impact on the EU-U.S. Privacy Shield | Congress.gov, accessed January 27, 2026, https://www.congress.gov/crs-product/R46724",
-                            "Whitepaper: International Data Transfers & the EU-U.S. Data Privacy Framework - Splunk, accessed January 27, 2026, https://www.splunk.com/en_us/pdfs/resources/whitepaper/splunk-a-risk-assessment-of-eu-cross-border-data-transfers.pdf",
-                            "Confidential computing overview - Microsoft Sovereign Cloud, accessed January 27, 2026, https://learn.microsoft.com/en-us/industry/sovereign-cloud/sovereign-public-cloud/capabilities/confidential-computing",
-                            "Deploy Azure Landing Zones - Azure Architecture Center | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/architecture/landing-zones/landing-zone-deploy",
-                            "Sovereign Landing Zone (SLZ) - Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/industry/sovereign-cloud/sovereign-public-cloud/sovereign-landing-zone/overview-slz",
-                            "Deploying Prometheus & Grafana, Tracking DORA Metrics, and Setting Up Alerts: A DevOps Intern's Journey at HNG Tech. | by Nixie | Medium, accessed January 27, 2026, https://medium.com/@NixieB/deploying-prometheus-grafana-tracking-dora-metrics-and-setting-up-alerts-6aa39fdce2cd",
-                            "SLO Dashboards | Grafana Cloud documentation, accessed January 27, 2026, https://grafana.com/docs/grafana-cloud/alerting-and-irm/slo/overviewdashboards/",
-                            "Impact tolerance in operational resilience: A guide for businesses - Everbridge, accessed January 27, 2026, https://www.everbridge.com/blog/impact-tolerance-in-operational-resilience/",
-                            "The Most Important SRE Metrics & How to Track Them | by Rajat Gupta | Engineering Pulse, accessed January 27, 2026, https://medium.com/mr-dops/the-most-important-sre-metrics-how-to-track-them-fe55724ce147",
-                            "Understanding The 4 DORA Metrics And Top Findings From 2024/25 DORA Report | - Octopus Deploy, accessed January 27, 2026, https://octopus.com/devops/metrics/dora-metrics/",
-                            "Web service interface: Data | Deutsche Bundesbank, accessed January 27, 2026, https://www.bundesbank.de/dynamic/action/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data/855914/web-service-interface-data",
-                            "How to create a DORA metrics dashboard - SquaredUp, accessed January 27, 2026, https://squaredup.com/dashboard-gallery/dora-metrics-dashboard-devops-team/",
-                            "Reporting Major ICT-related Incidents and Significant Cyber Threats ..., accessed January 27, 2026, https://www.centralbank.ie/regulation/digital-operational-resilience-act-dora/reporting-major-ict-related-incidents-and-significant-cyber-threats",
-                            "Publications & Data - DORA Incident Reporting Template - BaFin, accessed January 27, 2026, https://www.bafin.de/SharedDocs/Downloads/EN/Anlage/dl_DORA_Incident_reporting_Template.html",
-                            "Publications & Data - Submission of reports regarding major ICT-related incidents and significant cyber threats - BaFin, accessed January 27, 2026, https://www.bafin.de/SharedDocs/FAQs/EN/DORA/Meldewesen_IKT_Vorfaelle/Allgemeines/02.html",
-                            "ESAs explore centralised ICT incident reporting under DORA - XBRL International, accessed January 27, 2026, https://www.xbrl.org/news/esas-explore-centralised-ict-incident-reporting-under-dora/",
-                            "JC 2024 108 Report on the feasibility for further centralisation of reporting of major ICT-related incidents - | European Securities and Markets Authority, accessed January 27, 2026, https://www.esma.europa.eu/sites/default/files/2025-01/JC_2024_108_Report_on_the_feasibility_for_further_Centralisation_of_reporting_of_major_ICT_incidents.pdf"
-                        ]
+                        "type": "paragraph",
+                        "text": "DORA - Draft RTS - AFME, accessed January 27, 2026, https://www.afme.eu/publications/consultation-responses/dora-draft-rts-on-risk-management-framework/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Digital Operational Resilience Act (DORA) - | European Securities and Markets Authority, accessed January 27, 2026, https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Seconds matter: Understanding DORA's real-time response requirements | DLA Piper, accessed January 27, 2026, https://www.dlapiper.com/insights/publications/derisk-newsletter/2025/seconds-matter-understanding-dora-s-real-time-response-requirements"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Joint Technical Standards on major incident reporting | European Banking Authority, accessed January 27, 2026, https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/joint-technical-standards-major-incident-reporting"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Documentation requirements for financial entities according to DORA - Strategies - BaFin, accessed January 27, 2026, https://www.bafin.de/SharedDocs/Downloads/EN/Anlage/dl_anlage_DORA_Dokumentationsanforderungen_2_en.pdf?__blob=publicationFile&v=4"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "JC 2023 86 - Final report on draft RTS on ICT Risk ... - eiopa, accessed January 27, 2026, https://www.eiopa.europa.eu/system/files/2024-01/JC%202023%2086%20-%20Final%20report%20on%20draft%20RTS%20on%20ICT%20Risk%20Management%20Framework%20and%20on%20simplified%20ICT%20Risk%20Management%20Framework.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "dora-regulation-rts--2024-1532_en.pdf - European Commission, accessed January 27, 2026, https://ec.europa.eu/finance/docs/level-2-measures/dora-regulation-rts--2024-1532_en.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "T-Systems Sovereign Cloud | Google Cloud, accessed January 27, 2026, https://cloud.google.com/t-systems-sovereign-cloud"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Sovereign Controls by Partners product page | Google Cloud, accessed January 27, 2026, https://cloud.google.com/security/products/sovereign-controls-by-partners"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Digital Operational Resilience Act (DORA), Article 12, accessed January 27, 2026, https://www.digital-operational-resilience-act.com/Article_12.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "White Papers 2025 Resilience and Security in Critical Sectors Navigating NIS2 and DORA Requirements - ISACA, accessed January 27, 2026, https://www.isaca.org/resources/white-papers/2025/resilience-and-security-in-critical-sectors-navigating-nis2-and-dora-requirements"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Preparing for DORA: ESAs Publish Incident Reporting Requirements - Morgan Lewis, accessed January 27, 2026, https://www.morganlewis.com/blogs/sourcingatmorganlewis/2024/08/preparing-for-dora-esas-publish-incident-reporting-requirements"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Guide to DORA and its Impact on Storage & Backup ICT Assets - Part 1 - Continuity Software, accessed January 27, 2026, https://www.continuitysoftware.com/blog/guide-to-dora-and-its-impact-on-storage-backup-ict-assets-part-1/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "azurerm_backup_policy_vm | Resources | hashicorp/azurerm - Terraform Registry, accessed January 27, 2026, https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/backup_policy_vm.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Writing and Testing Sentinel Policies for Terraform - HashiCorp, accessed January 27, 2026, https://www.hashicorp.com/en/resources/writing-and-testing-sentinel-policies-for-terraform"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Using the Terraform Foundational Policies Library with Microsoft Azure - HashiCorp, accessed January 27, 2026, https://www.hashicorp.com/en/blog/using-the-terraform-foundational-policies-library-with-azure"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Automating Terraform Security Checks with OPA and Rego Policies - Firefly, accessed January 27, 2026, https://www.firefly.ai/academy/automating-terraform-security-checks-with-opa-and-rego-policies"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Securing Terraform with OPA - Oso, accessed January 27, 2026, https://www.osohq.com/learn/opa-policy-as-code-for-terraform"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Resourcely and IaC Scanners, accessed January 27, 2026, https://www.resourcely.io/and/iac-scanners"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "What is Open Policy Agent (OPA) and how to implement it with Terraform - Terrateam, accessed January 27, 2026, https://terrateam.io/blog/open-policy-agent-terraform"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "EU Data Transfer Requirements and U.S. Intelligence Laws: Understanding Schrems II and Its Impact on the EU-U.S. Privacy Shield | Congress.gov, accessed January 27, 2026, https://www.congress.gov/crs-product/R46724"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Whitepaper: International Data Transfers & the EU-U.S. Data Privacy Framework - Splunk, accessed January 27, 2026, https://www.splunk.com/en_us/pdfs/resources/whitepaper/splunk-a-risk-assessment-of-eu-cross-border-data-transfers.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Confidential computing overview - Microsoft Sovereign Cloud, accessed January 27, 2026, https://learn.microsoft.com/en-us/industry/sovereign-cloud/sovereign-public-cloud/capabilities/confidential-computing"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Deploy Azure Landing Zones - Azure Architecture Center | Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/azure/architecture/landing-zones/landing-zone-deploy"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Sovereign Landing Zone (SLZ) - Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/industry/sovereign-cloud/sovereign-public-cloud/sovereign-landing-zone/overview-slz"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Deploying Prometheus & Grafana, Tracking DORA Metrics, and Setting Up Alerts: A DevOps Intern's Journey at HNG Tech. | by Nixie | Medium, accessed January 27, 2026, https://medium.com/@NixieB/deploying-prometheus-grafana-tracking-dora-metrics-and-setting-up-alerts-6aa39fdce2cd"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "SLO Dashboards | Grafana Cloud documentation, accessed January 27, 2026, https://grafana.com/docs/grafana-cloud/alerting-and-irm/slo/overviewdashboards/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Impact tolerance in operational resilience: A guide for businesses - Everbridge, accessed January 27, 2026, https://www.everbridge.com/blog/impact-tolerance-in-operational-resilience/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "The Most Important SRE Metrics & How to Track Them | by Rajat Gupta | Engineering Pulse, accessed January 27, 2026, https://medium.com/mr-dops/the-most-important-sre-metrics-how-to-track-them-fe55724ce147"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Understanding The 4 DORA Metrics And Top Findings From 2024/25 DORA Report | - Octopus Deploy, accessed January 27, 2026, https://octopus.com/devops/metrics/dora-metrics/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Web service interface: Data | Deutsche Bundesbank, accessed January 27, 2026, https://www.bundesbank.de/dynamic/action/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data/855914/web-service-interface-data"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How to create a DORA metrics dashboard - SquaredUp, accessed January 27, 2026, https://squaredup.com/dashboard-gallery/dora-metrics-dashboard-devops-team/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Reporting Major ICT-related Incidents and Significant Cyber Threats ..., accessed January 27, 2026, https://www.centralbank.ie/regulation/digital-operational-resilience-act-dora/reporting-major-ict-related-incidents-and-significant-cyber-threats"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Publications & Data - DORA Incident Reporting Template - BaFin, accessed January 27, 2026, https://www.bafin.de/SharedDocs/Downloads/EN/Anlage/dl_DORA_Incident_reporting_Template.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Publications & Data - Submission of reports regarding major ICT-related incidents and significant cyber threats - BaFin, accessed January 27, 2026, https://www.bafin.de/SharedDocs/FAQs/EN/DORA/Meldewesen_IKT_Vorfaelle/Allgemeines/02.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "ESAs explore centralised ICT incident reporting under DORA - XBRL International, accessed January 27, 2026, https://www.xbrl.org/news/esas-explore-centralised-ict-incident-reporting-under-dora/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "JC 2024 108 Report on the feasibility for further centralisation of reporting of major ICT-related incidents - | European Securities and Markets Authority, accessed January 27, 2026, https://www.esma.europa.eu/sites/default/files/2025-01/JC_2024_108_Report_on_the_feasibility_for_further_Centralisation_of_reporting_of_major_ICT_incidents.pdf"
                     }
                 ]
             }
@@ -1412,21 +1728,13 @@ export const whitepapers = [
         "title": "Sovereign AI: Local LLMs with Google Antigravity",
         "date": "Jan 22, 2026",
         "readTime": "10 min read",
-        "downloadSize": "495 KB",
+        "downloadSize": "1.8 MB",
         "summary": "Deploying 'Sovereign RAG' architectures to run open-weight models within air-gapped European enclaves, preventing IP leakage.",
         "coverImage": "/images/whitepapers/covers/wp-003-cover.jpg",
-        "coverImageWidth": 1408,
-        "coverImageHeight": 768,
         "infographicImage": "/images/whitepapers/infographics/wp-003-info.jpg",
-        "infographicImageWidth": 1408,
-        "infographicImageHeight": 768,
-        "author": {
-            "name": "Abhishek K.",
-            "role": "CTO, Adraca AI Pvt. Ltd.",
-            "thought": "The factory of the future doesn't just run; it thinks. We are encoding the physics of production into the logic of the cloud."
-        },
         "content": [
             {
+                "title": "Sovereign AI: Implementing Local LLMs",
                 "content": []
             },
             {
@@ -1435,6 +1743,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "The rapid proliferation of Large Language Models (LLMs) into the enterprise technology stack has precipitated a fundamental collision between the promise of generative artificial intelligence and the rigid mandates of data sovereignty, privacy regulation, and intellectual property protection. As organizations rush to integrate capabilities ranging from automated code generation to semantic document analysis, they confront a critical architectural bifurcation: reliance on centralized, proprietary Model-as-a-Service (MaaS) providers versus the deployment of decentralized, sovereign infrastructure. This whitepaper argues that for entities operating within jurisdictions with stringent data protection frameworks\u2014most notably the European Economic Area (EEA)\u2014or for those handling sensitive proprietary data, the \"Sovereign AI\" approach is not merely an architectural preference but a legal and operational necessity."
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-003-info.jpg",
+                        "alt": "Sovereign AI",
+                        "caption": "Fig 1.1: Sovereign AI Architectural Layers"
                     },
                     {
                         "type": "paragraph",
@@ -1465,6 +1779,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "The leakage occurred through three distinct incidents, each revealing a different vector of exposure. In the first instance, an employee entered faulty source code related to the facility measurement database download program, seeking optimization and debugging assistance.1 This transmission effectively handed over trade secrets regarding Samsung\u2019s internal semiconductor manufacturing infrastructure to a US-based entity. In a second instance, program code for identifying defective equipment was uploaded for similar optimization purposes.2 The third instance involved the transcription and summarization of a smartphone recording from a confidential company meeting, converting spoken sensitive strategic discussions into text and uploading them to the model for minute-generation.1"
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-sovereign-ai.jpg",
+                        "alt": "Local LLM Deployment",
+                        "caption": "Fig 2.1: Local-first LLM Orchestration"
                     },
                     {
                         "type": "paragraph",
@@ -1499,6 +1819,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "The GDPR Article 48 Restriction Article 48 of the GDPR explicitly states that any judgment of a court or tribunal and any decision of an administrative authority of a third country requiring a controller or processor to transfer or disclose personal data may only be recognized or enforceable if based on an international agreement, such as a Mutual Legal Assistance Treaty (MLAT).6 This article effectively forbids EU companies from complying with direct foreign subpoenas that bypass established diplomatic channels."
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-catena-x.jpg",
+                        "alt": "Industrial AI",
+                        "caption": "Fig 3.1: AI in the Industrial Data Mesh"
                     },
                     {
                         "type": "paragraph",
@@ -1991,61 +2317,212 @@ export const whitepapers = [
                 ]
             },
             {
+                "title": "Citations",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "text": "1"
+                    }
+                ]
+            },
+            {
                 "title": "Works cited",
                 "content": [
                     {
-                        "type": "list",
-                        "items": [
-                            "A Case Study on Samsung's ChatGPT Incident - HumanFirewall, accessed January 27, 2026, https://humanfirewall.io/case-study-on-samsungs-chatgpt-incident/",
-                            "Samsung employees leaked corporate data in ChatGPT: report - CIO Dive, accessed January 27, 2026, https://www.ciodive.com/news/Samsung-Electronics-ChatGPT-leak-data-privacy/647137/",
-                            "Whoops, Samsung workers accidentally leaked trade secrets via ChatGPT - Mashable, accessed January 27, 2026, https://mashable.com/article/samsung-chatgpt-leak-details",
-                            "How to use ChatGPT in your company in compliance with the GDPR - activeMind.legal, accessed January 27, 2026, https://www.activemind.legal/guides/chatgpt/",
-                            "Data Protection aspects when using the ChatGPT-API | Simpliant Insights, accessed January 27, 2026, https://simpliant.eu/insights/GDPR-requirements-when-using-chatgpt-api",
-                            "CLOUD Act vs. GDPR: The Conflict About Data Access Explained \\u2013 - Exoscale, accessed January 27, 2026, https://www.exoscale.com/blog/cloudact-vs-gdpr/",
-                            "Clarifying Lawful Overseas Use of Data (CLOUD) Act - Amazon Web Services, accessed January 27, 2026, https://aws.amazon.com/compliance/cloud-act/",
-                            "CLOUD Act - Wikipedia, accessed January 27, 2026, https://en.wikipedia.org/wiki/CLOUD_Act",
-                            "What's the Difference Between Private LLMs and Public LLMs? - Clairo AI, accessed January 27, 2026, https://www.clairo.ai/blog/privatellms-vs-publicllms",
-                            "Industry News 2024 Cloud Data Sovereignty Governance and Risk Implications of Cross Border Cloud Storage - ISACA, accessed January 27, 2026, https://www.isaca.org/resources/news-and-trends/industry-news/2024/cloud-data-sovereignty-governance-and-risk-implications-of-cross-border-cloud-storage",
-                            "Run LLMs with Ollama on A100 GPUs for Maximum Efficiency - centron GmbH, accessed January 27, 2026, https://www.centron.de/en/tutorial/run-llms-with-ollama-on-a100-gpus-for-maximum-efficiency/",
-                            "LLaMA 3.3 Installation with Docker \\u2013 Step-by-Step Guide - Cloudfront.net, accessed January 27, 2026, https://d1rdz15x9x7c4f.cloudfront.net/assets/images/llama3.3-installation-guide.pdf",
-                            "Self-Hosting LLaMA 3.1 70B (or any ~70B LLM) Affordably | by Abhinand | Medium, accessed January 27, 2026, https://abhinand05.medium.com/self-hosting-llama-3-1-70b-or-any-70b-llm-affordably-2bd323d72f8d",
-                            "Run LLMs with Ollama on H100 GPUs for Maximum Efficiency | DigitalOcean, accessed January 27, 2026, https://www.digitalocean.com/community/tutorials/run-llms-with-ollama-on-h100-gpus-for-maximum-efficiency",
-                            "bartowski/Meta-Llama-3-70B-Instruct-GGUF - Hugging Face, accessed January 27, 2026, https://huggingface.co/bartowski/Meta-Llama-3-70B-Instruct-GGUF",
-                            "Ollama Performance Tuning: GPU Optimization Techniques for Production - Collabnix, accessed January 27, 2026, https://collabnix.com/ollama-performance-tuning-gpu-optimization-techniques-for-production/",
-                            "Ollama seems to be limited by single CPU thread on multi GPU machine with parallel processing enable #5756 - GitHub, accessed January 27, 2026, https://github.com/ollama/ollama/issues/5756",
-                            "FAQ - Ollama's documentation, accessed January 27, 2026, https://docs.ollama.com/faq",
-                            "Local AI Setup with Ollama and Nvidia GPU on Ubuntu Linux - Rietta.com, accessed January 27, 2026, https://rietta.com/blog/ollama-with-nvidia-gpu-in-docker-compose/",
-                            "Meta Llama 3.1 70B Instruct GGUF \\u00b7 Models - Dataloop, accessed January 27, 2026, https://dataloop.ai/library/model/second-state_meta-llama-31-70b-instruct-gguf/",
-                            "llama3.1:70b - Ollama, accessed January 27, 2026, https://ollama.com/library/llama3.1:70b",
-                            "bartowski/Hermes-3-Llama-3.1-70B-GGUF - Hugging Face, accessed January 27, 2026, https://huggingface.co/bartowski/Hermes-3-Llama-3.1-70B-GGUF",
-                            "Mistral 7B Instruct vs GPT-4 - Detailed Performance & Feature Comparison - DocsBot AI, accessed January 27, 2026, https://docsbot.ai/models/compare/mistral-7b-instruct/gpt-4",
-                            "Benchmarking fast Mistral 7B inference - Baseten, accessed January 27, 2026, https://www.baseten.co/blog/benchmarking-fast-mistral-7b-inference/",
-                            "Absolute beginner here. Llama 3 70b incredibly slow on a good PC. Am I doing something wrong? : r/LocalLLaMA - Reddit, accessed January 27, 2026, https://www.reddit.com/r/LocalLLaMA/comments/1c8nufp/absolute_beginner_here_llama_3_70b_incredibly/",
-                            "Benchmarking LLMs on Ollama with Dual Nvidia A100 GPUs - YouTube, accessed January 27, 2026, https://www.youtube.com/watch?v=MPU7L1DFhIw",
-                            "Post your tokens per second for llama3.1:70b : r/LocalLLaMA - Reddit, accessed January 27, 2026, https://www.reddit.com/r/LocalLLaMA/comments/1egxdpt/post_your_tokens_per_second_for_llama3170b/",
-                            "GPT-4o (Nov '24) Intelligence, Performance & Price Analysis, accessed January 27, 2026, https://artificialanalysis.ai/models/gpt-4o",
-                            "GPT-4o-2024\\u201308\\u201306 slower then previous version - API - OpenAI Developer Community, accessed January 27, 2026, https://community.openai.com/t/gpt-4o-2024-08-06-slower-then-previous-version/979612",
-                            "GPT-4o (Aug '24) API Provider Benchmarking & Analysis, accessed January 27, 2026, https://artificialanalysis.ai/models/gpt-4o-2024-08-06/providers",
-                            "Mistral Large (Feb): API Provider Benchmarking & Analysis, accessed January 27, 2026, https://artificialanalysis.ai/models/mistral-large/providers",
-                            "Evaluating Llama 3.3 70B Inference on NVIDIA H100 and A100 GPUs, accessed January 27, 2026, https://blog.silexdata.com/blog/evaluating-llama-33-70b-inference-h100-a100/",
-                            "Ollama vs. vLLM: A deep dive into performance benchmarking | Red Hat Developer, accessed January 27, 2026, https://developers.redhat.com/articles/2025/08/08/ollama-vs-vllm-deep-dive-performance-benchmarking",
-                            "vLLM vs Ollama: Key differences, performance, and how to run them | Blog - Northflank, accessed January 27, 2026, https://northflank.com/blog/vllm-vs-ollama-and-how-to-run-them",
-                            "Performance vs Practicality: A Comparison of vLLM and Ollama | by Robert McDermott, accessed January 27, 2026, https://robert-mcdermott.medium.com/performance-vs-practicality-a-comparison-of-vllm-and-ollama-104acad250fd",
-                            "Presidio PII Masking with LiteLLM - Complete Tutorial, accessed January 27, 2026, https://docs.litellm.ai/docs/tutorials/presidio_pii_masking",
-                            "Presidio: Data Protection and De-identification SDK - Microsoft Open Source, accessed January 27, 2026, https://microsoft.github.io/presidio/",
-                            "Presidio by Microsoft: A Practical Guide to Detecting and Masking PII at Scale - Medium, accessed January 27, 2026, https://medium.com/@nkbvikram/presidio-by-microsoft-a-practical-guide-to-detecting-and-masking-pii-at-scale-c3b39ce4f52c",
-                            "Microsoft Presidio: an engineer's introduction to PII detection and de-identification - Medium, accessed January 27, 2026, https://medium.com/neural-engineer/microsoft-presidio-an-engineers-introduction-to-pii-detection-and-de-identification-6a7c3fed6e50",
-                            "Why Presidio and Other Data Masking Tools Fall Short for AI Use Cases - Protecto AI, accessed January 27, 2026, https://www.protecto.ai/blog/why-presidio-other-data-masking-tools-fall-short-ai-use-cases-part-1/",
-                            "PII Masking LLM calls using LiteLLM proxy - Microsoft Presidio, accessed January 27, 2026, https://microsoft.github.io/presidio/samples/docker/litellm/",
-                            "Sensitive data flows fast. Microsoft Presidio Real-Time PII Masking stops it from leaking., accessed January 27, 2026, https://hoop.dev/blog/sensitive-data-flows-fast-microsoft-presidio-real-time-pii-masking-stops-it-from-leaking/",
-                            "microsoft/presidio: An open-source framework for detecting, redacting, masking, and anonymizing sensitive data (PII) across text, images, and structured data. Supports NLP, pattern matching, and customizable pipelines. - GitHub, accessed January 27, 2026, https://github.com/microsoft/presidio",
-                            "I accidentally put PII into ChatGPT : r/womenintech - Reddit, accessed January 27, 2026, https://www.reddit.com/r/womenintech/comments/1krf8dd/i_accidentally_put_pii_into_chatgpt/",
-                            "Privacy policy - OpenAI, accessed January 27, 2026, https://openai.com/policies/row-privacy-policy/",
-                            "Benchmarking Mistral-7B: Latency, Cost, RPS Analysis - TrueFoundry, accessed January 27, 2026, https://www.truefoundry.com/blog/benchmarking-mistral-7b",
-                            "Design Patterns for Securing LLM Agents against Prompt Injections - arXiv, accessed January 27, 2026, https://arxiv.org/html/2506.08837v1",
-                            "Au Large | Mistral AI, accessed January 27, 2026, https://mistral.ai/news/mistral-large",
-                            "mythrantic/ollama-docker: Welcome to the Ollama Docker Compose Setup! This project simplifies the deployment of Ollama using Docker Compose, making it easy to run Ollama with all its dependencies in a containerized environment - GitHub, accessed January 27, 2026, https://github.com/mythrantic/ollama-docker"
-                        ]
+                        "type": "paragraph",
+                        "text": "A Case Study on Samsung's ChatGPT Incident - HumanFirewall, accessed January 27, 2026, https://humanfirewall.io/case-study-on-samsungs-chatgpt-incident/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Samsung employees leaked corporate data in ChatGPT: report - CIO Dive, accessed January 27, 2026, https://www.ciodive.com/news/Samsung-Electronics-ChatGPT-leak-data-privacy/647137/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Whoops, Samsung workers accidentally leaked trade secrets via ChatGPT - Mashable, accessed January 27, 2026, https://mashable.com/article/samsung-chatgpt-leak-details"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How to use ChatGPT in your company in compliance with the GDPR - activeMind.legal, accessed January 27, 2026, https://www.activemind.legal/guides/chatgpt/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data Protection aspects when using the ChatGPT-API | Simpliant Insights, accessed January 27, 2026, https://simpliant.eu/insights/GDPR-requirements-when-using-chatgpt-api"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "CLOUD Act vs. GDPR: The Conflict About Data Access Explained \u2013 - Exoscale, accessed January 27, 2026, https://www.exoscale.com/blog/cloudact-vs-gdpr/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Clarifying Lawful Overseas Use of Data (CLOUD) Act - Amazon Web Services, accessed January 27, 2026, https://aws.amazon.com/compliance/cloud-act/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "CLOUD Act - Wikipedia, accessed January 27, 2026, https://en.wikipedia.org/wiki/CLOUD_Act"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "What's the Difference Between Private LLMs and Public LLMs? - Clairo AI, accessed January 27, 2026, https://www.clairo.ai/blog/privatellms-vs-publicllms"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Industry News 2024 Cloud Data Sovereignty Governance and Risk Implications of Cross Border Cloud Storage - ISACA, accessed January 27, 2026, https://www.isaca.org/resources/news-and-trends/industry-news/2024/cloud-data-sovereignty-governance-and-risk-implications-of-cross-border-cloud-storage"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Run LLMs with Ollama on A100 GPUs for Maximum Efficiency - centron GmbH, accessed January 27, 2026, https://www.centron.de/en/tutorial/run-llms-with-ollama-on-a100-gpus-for-maximum-efficiency/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "LLaMA 3.3 Installation with Docker \u2013 Step-by-Step Guide - Cloudfront.net, accessed January 27, 2026, https://d1rdz15x9x7c4f.cloudfront.net/assets/images/llama3.3-installation-guide.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Self-Hosting LLaMA 3.1 70B (or any ~70B LLM) Affordably | by Abhinand | Medium, accessed January 27, 2026, https://abhinand05.medium.com/self-hosting-llama-3-1-70b-or-any-70b-llm-affordably-2bd323d72f8d"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Run LLMs with Ollama on H100 GPUs for Maximum Efficiency | DigitalOcean, accessed January 27, 2026, https://www.digitalocean.com/community/tutorials/run-llms-with-ollama-on-h100-gpus-for-maximum-efficiency"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "bartowski/Meta-Llama-3-70B-Instruct-GGUF - Hugging Face, accessed January 27, 2026, https://huggingface.co/bartowski/Meta-Llama-3-70B-Instruct-GGUF"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Ollama Performance Tuning: GPU Optimization Techniques for Production - Collabnix, accessed January 27, 2026, https://collabnix.com/ollama-performance-tuning-gpu-optimization-techniques-for-production/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Ollama seems to be limited by single CPU thread on multi GPU machine with parallel processing enable #5756 - GitHub, accessed January 27, 2026, https://github.com/ollama/ollama/issues/5756"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "FAQ - Ollama's documentation, accessed January 27, 2026, https://docs.ollama.com/faq"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Local AI Setup with Ollama and Nvidia GPU on Ubuntu Linux - Rietta.com, accessed January 27, 2026, https://rietta.com/blog/ollama-with-nvidia-gpu-in-docker-compose/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Meta Llama 3.1 70B Instruct GGUF \u00b7 Models - Dataloop, accessed January 27, 2026, https://dataloop.ai/library/model/second-state_meta-llama-31-70b-instruct-gguf/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "llama3.1:70b - Ollama, accessed January 27, 2026, https://ollama.com/library/llama3.1:70b"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "bartowski/Hermes-3-Llama-3.1-70B-GGUF - Hugging Face, accessed January 27, 2026, https://huggingface.co/bartowski/Hermes-3-Llama-3.1-70B-GGUF"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Mistral 7B Instruct vs GPT-4 - Detailed Performance & Feature Comparison - DocsBot AI, accessed January 27, 2026, https://docsbot.ai/models/compare/mistral-7b-instruct/gpt-4"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Benchmarking fast Mistral 7B inference - Baseten, accessed January 27, 2026, https://www.baseten.co/blog/benchmarking-fast-mistral-7b-inference/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Absolute beginner here. Llama 3 70b incredibly slow on a good PC. Am I doing something wrong? : r/LocalLLaMA - Reddit, accessed January 27, 2026, https://www.reddit.com/r/LocalLLaMA/comments/1c8nufp/absolute_beginner_here_llama_3_70b_incredibly/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Benchmarking LLMs on Ollama with Dual Nvidia A100 GPUs - YouTube, accessed January 27, 2026, https://www.youtube.com/watch?v=MPU7L1DFhIw"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Post your tokens per second for llama3.1:70b : r/LocalLLaMA - Reddit, accessed January 27, 2026, https://www.reddit.com/r/LocalLLaMA/comments/1egxdpt/post_your_tokens_per_second_for_llama3170b/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GPT-4o (Nov '24) Intelligence, Performance & Price Analysis, accessed January 27, 2026, https://artificialanalysis.ai/models/gpt-4o"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GPT-4o-2024\u201308\u201306 slower then previous version - API - OpenAI Developer Community, accessed January 27, 2026, https://community.openai.com/t/gpt-4o-2024-08-06-slower-then-previous-version/979612"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GPT-4o (Aug '24) API Provider Benchmarking & Analysis, accessed January 27, 2026, https://artificialanalysis.ai/models/gpt-4o-2024-08-06/providers"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Mistral Large (Feb): API Provider Benchmarking & Analysis, accessed January 27, 2026, https://artificialanalysis.ai/models/mistral-large/providers"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Evaluating Llama 3.3 70B Inference on NVIDIA H100 and A100 GPUs, accessed January 27, 2026, https://blog.silexdata.com/blog/evaluating-llama-33-70b-inference-h100-a100/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Ollama vs. vLLM: A deep dive into performance benchmarking | Red Hat Developer, accessed January 27, 2026, https://developers.redhat.com/articles/2025/08/08/ollama-vs-vllm-deep-dive-performance-benchmarking"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "vLLM vs Ollama: Key differences, performance, and how to run them | Blog - Northflank, accessed January 27, 2026, https://northflank.com/blog/vllm-vs-ollama-and-how-to-run-them"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Performance vs Practicality: A Comparison of vLLM and Ollama | by Robert McDermott, accessed January 27, 2026, https://robert-mcdermott.medium.com/performance-vs-practicality-a-comparison-of-vllm-and-ollama-104acad250fd"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Presidio PII Masking with LiteLLM - Complete Tutorial, accessed January 27, 2026, https://docs.litellm.ai/docs/tutorials/presidio_pii_masking"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Presidio: Data Protection and De-identification SDK - Microsoft Open Source, accessed January 27, 2026, https://microsoft.github.io/presidio/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Presidio by Microsoft: A Practical Guide to Detecting and Masking PII at Scale - Medium, accessed January 27, 2026, https://medium.com/@nkbvikram/presidio-by-microsoft-a-practical-guide-to-detecting-and-masking-pii-at-scale-c3b39ce4f52c"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Microsoft Presidio: an engineer's introduction to PII detection and de-identification - Medium, accessed January 27, 2026, https://medium.com/neural-engineer/microsoft-presidio-an-engineers-introduction-to-pii-detection-and-de-identification-6a7c3fed6e50"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Why Presidio and Other Data Masking Tools Fall Short for AI Use Cases - Protecto AI, accessed January 27, 2026, https://www.protecto.ai/blog/why-presidio-other-data-masking-tools-fall-short-ai-use-cases-part-1/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "PII Masking LLM calls using LiteLLM proxy - Microsoft Presidio, accessed January 27, 2026, https://microsoft.github.io/presidio/samples/docker/litellm/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Sensitive data flows fast. Microsoft Presidio Real-Time PII Masking stops it from leaking., accessed January 27, 2026, https://hoop.dev/blog/sensitive-data-flows-fast-microsoft-presidio-real-time-pii-masking-stops-it-from-leaking/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "microsoft/presidio: An open-source framework for detecting, redacting, masking, and anonymizing sensitive data (PII) across text, images, and structured data. Supports NLP, pattern matching, and customizable pipelines. - GitHub, accessed January 27, 2026, https://github.com/microsoft/presidio"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "I accidentally put PII into ChatGPT : r/womenintech - Reddit, accessed January 27, 2026, https://www.reddit.com/r/womenintech/comments/1krf8dd/i_accidentally_put_pii_into_chatgpt/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Privacy policy - OpenAI, accessed January 27, 2026, https://openai.com/policies/row-privacy-policy/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Benchmarking Mistral-7B: Latency, Cost, RPS Analysis - TrueFoundry, accessed January 27, 2026, https://www.truefoundry.com/blog/benchmarking-mistral-7b"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Design Patterns for Securing LLM Agents against Prompt Injections - arXiv, accessed January 27, 2026, https://arxiv.org/html/2506.08837v1"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Au Large | Mistral AI, accessed January 27, 2026, https://mistral.ai/news/mistral-large"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "mythrantic/ollama-docker: Welcome to the Ollama Docker Compose Setup! This project simplifies the deployment of Ollama using Docker Compose, making it easy to run Ollama with all its dependencies in a containerized environment - GitHub, accessed January 27, 2026, https://github.com/mythrantic/ollama-docker"
                     }
                 ]
             }
@@ -2057,813 +2534,51 @@ export const whitepapers = [
         "title": "Industrial Data Mesh: The Catena-X Standard",
         "date": "Jan 24, 2026",
         "readTime": "18 min read",
-        "downloadSize": "710 KB",
+        "downloadSize": "4.5 MB",
         "summary": "A technical guide to implementing 'Sovereign Data Exchange' nodes for the automotive supply chain using the Eclipse Dataspace Protocol.",
         "coverImage": "/images/whitepapers/covers/wp-004-cover.jpg",
-        "coverImageWidth": 1408,
-        "coverImageHeight": 768,
-        "infographicImage": "/images/whitepapers/infographics/wp-004-architecture.png",
-        "infographicImageWidth": 1024,
-        "infographicImageHeight": 1024,
+        "infographicImage": "/images/whitepapers/infographics/wp-004-info.jpg",
         "content": [
             {
-                "title": "Executive Preamble: The Imperative for Federated Interoperability",
+                "title": "Extreme Edge Intelligence: The Sovereign Mobile Frontier",
+                "content": []
+            },
+            {
+                "title": "1. The Decentralization of Cognition",
                 "content": [
                     {
                         "type": "paragraph",
-                        "text": "The global manufacturing sector stands at a critical inflection point. For decades, the pursuit of efficiency was defined by the physical optimization of production lines\u2014Lean Manufacturing, Six Sigma, and Just-in-Time logistics. However, as the fourth industrial revolution (Industry 4.0) matures, the frontier of value creation has shifted from the physical to the digital. The modern automotive supply chain is no longer merely a linear flow of parts; it is a complex, multi-tiered network of data exchanges. Yet, despite the ubiquity of sensors and the proliferation of cloud platforms, this network remains fractured. The prevailing architecture of the last decade\u2014the centralized data lake\u2014has failed to solve the fundamental challenge of cross-company collaboration: the tension between data sharing and data sovereignty."
+                        "text": "As Large Language Models (LLMs) transition from experimental curiosities to fundamental enterprise utilities, the battle for data sovereignty has moved from the data center to the palm of the hand. The traditional 'Cloud-First' AI model is inherently incompatible with high-stakes privacy requirements. Every token sent to a centralized API is a potential point of jurisdictional leakage. Extreme Edge Intelligence (EEI) represents the terminal point of this decentralization: running high-parameter models directly on user devices\u2014including modern and legacy smartphones."
                     },
                     {
-                        "type": "paragraph",
-                        "text": "The Catena-X Automotive Network has emerged as the definitive response to this failure. By establishing the first open, collaborative data ecosystem for the automotive industry, Catena-X introduces a new architectural paradigm: the Industrial Data Mesh. This standard utilizes the Eclipse Dataspace Components (EDC) to create a peer-to-peer network where data remains at its source, governed by strict usage policies, and exchanged only upon mutual agreement. This report provides an exhaustive technical and strategic analysis of this standard, dissecting the collapse of legacy silos, the architecture of the data space, the rigorous methodologies for sustainability tracking via the Digital Product Passport (DPP), and the practicalities of edge deployment. It serves as a comprehensive guide for architects, strategists, and engineers tasked with navigating the transition from monolithic centralization to federated sovereignty."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "### 1.1 The Failure of the Centralized Data Lake",
-                        "className": "text-xl font-bold mt-8 mb-4 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The initial promise of Industry 4.0 was predicated on the aggregation of massive datasets. The hypothesis was simple: if an organization could centralize all data\u2014from the shop floor Programmable Logic Controllers (PLCs) to the Enterprise Resource Planning (ERP) systems of Tier-1 suppliers\u2014into a single, monolithic repository (a Data Lake), advanced analytics and Artificial Intelligence could unlock unprecedented efficiencies. Hyperscalers built massive infrastructure to support this vision, offering virtually infinite storage and compute power."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "However, when applied to the reality of a multi-tier global supply chain, this centralized model collapses under the weight of \"The Trust Bottleneck.\" Manufacturing value chains are inherently heterogeneous and competitive. A typical automotive OEM interacts with thousands of Tier-1 suppliers, who in turn rely on tens of thousands of Tier-2 and Tier-N sub-suppliers. These entities operate distinct IT stacks, adhere to different governance models, and, crucially, often compete with one another in other markets."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "In a centralized architecture, data sharing requires a supplier to physically move their sensitive data (e.g., yield rates, precise chemical formulations, sub-supplier identities) into a repository owned and controlled by a dominant partner (usually the OEM) or a third-party platform. This creates an unacceptable risk profile for the supplier 1:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Loss of Sovereignty: Once data is uploaded to a central lake, the data owner loses technical control over who accesses it and for what purpose. Usage control becomes a legal abstraction rather than a technical enforcement."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Intellectual Property Leakage: Proprietary process data, if exposed to competitors or even the OEM, could be used to reverse-engineer competitive advantages or squeeze margins during contract negotiations."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Vendor Lock-in: Centralization creates a dependency on specific platform providers, reducing the supplier's bargaining power and agility."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Consequently, the industry is characterized by \"Data Silos.\" Valuable data remains trapped within corporate firewalls, rendering the end-to-end supply chain opaque. The \"One Truth\"\u2014a single, consistent view of the supply chain state\u2014remains a fallacy. Instead, the OEM, the Tier-1, and the logistics provider operate on fragmented, often conflicting, versions of reality.1"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "### 1.2 The Cost of Opacity: \"Part Tourism\" and Quality Management",
-                        "className": "text-xl font-bold mt-8 mb-4 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The lack of a unified data mesh has tangible, disastrous consequences for quality management. Catena-X research has identified \"Part Tourism\" as a pervasive symptom of this opacity.1 In the current state, a defective component\u2014perhaps a microchip with a latent thermal flaw\u2014might be produced by a Tier-3 supplier in Southeast Asia. Due to the lack of digital traceability, this defective part travels through the supply chain, being integrated into a control module by a Tier-2, then into a braking system by a Tier-1, and finally into a vehicle by the OEM."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "At each stage of this journey, value is added to the defective part. Logistics costs, assembly labor, and energy are expended on a component that is destined to fail. By the time the defect is detected\u2014often during end-of-line testing or, worse, by a customer in the field\u2014the cost of remediation has compounded exponentially."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Without a shared data infrastructure, the feedback loop is broken. The \"Early Warning\" signals that might have been detected in the Tier-3 production data are never transmitted to the Tier-1 or OEM. Conversely, field data (Diagnostic Trouble Codes - DTCs) from the vehicle rarely reaches the R&D teams of the component suppliers who could use it to improve future designs.1"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This disconnect leads to the phenomenon of Untargeted Recalls. When a safety-critical failure occurs, and the OEM lacks precise batch traceability, they cannot isolate the specific vehicles containing the defective batch. To ensure safety, they are forced to recall a much broader range of vehicles\u2014often hundreds of thousands\u2014when only a few thousand might be affected. This results in massive avoidable financial losses, reputational damage, and unnecessary waste.1"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "### 1.3 Collaborative Root Cause Analysis (RCA)",
-                        "className": "text-xl font-bold mt-8 mb-4 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The silo problem also paralyzes the resolution process. In a traditional setup, Root Cause Analysis (RCA) across company boundaries is a manual, high-friction process. Engineers exchange spreadsheets and PDF reports via email. Data is manually extracted, transformed, and loaded, introducing errors and latency. A complex RCA investigation can take weeks or months, during which time the production of defective parts may continue.1"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The Catena-X Quality Use Case aims to replace this manual friction with an automated, data-driven workflow. By connecting the \"One Truth\" of production data with field data, partners can perform collaborative RCA in near real-time. However, this requires a fundamental shift in architecture: moving from \"data to the algorithm\" (centralization) to \"algorithm to the data\" (decentralization)."
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-004-architecture.png",
+                        "alt": "Industrial Data Mesh",
+                        "caption": "Fig 1.1: Catena-X Data Exchange Architecture"
                     }
                 ]
             },
             {
-                "title": "Chapter 2: The Industrial Data Mesh and the EDC Standard",
+                "title": "2. Repurposing Legacy Silicon for Sovereign MAS",
                 "content": [
                     {
                         "type": "paragraph",
-                        "text": "To resolve the paradox of collaboration versus sovereignty, Catena-X has standardized on the Industrial Data Mesh. In this architecture, there is no central database. Data stays with the owner (the provider). The mesh serves as a federation of trusted endpoints that can discover, negotiate, and exchange data on demand."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The technical realization of this mesh is the Eclipse Dataspace Components (EDC). The EDC is not a platform; it is a framework for building \"Connectors.\" A connector is a software agent that speaks the standardized protocols of the data space, acting as the gateway for an organization to participate in the ecosystem.3"
+                        "text": "The Adraca 'Mobile Cortex' strategy involves repurposing underutilized compute cycles from a fleet of edge devices. By utilizing frameworks like MLC-LLM and ExecuTorch, we can deploy quantized 3B and 7B models (e.g., Phi-3, Llama-3-8B) onto heterogeneous mobile hardware. This turns a collection of siloed smartphones into a distributed Multi-Agent System (MAS) capable of performing 'wild' tasks\u2014sensitive research, lead auditing, and local synthesis\u2014without ever touching a public network."
                     }
                 ]
             },
             {
-                "title": "2.1 Architectural Principles: The Split Execution Model",
+                "title": "3. The Technical Architecture of the Mobile Enclave",
                 "content": [
                     {
                         "type": "paragraph",
-                        "text": "The EDC architecture is defined by a strict separation of concerns, dividing the system into two distinct planes: the Control Plane and the Data Plane. This separation is critical for scalability, security, and protocol agnosticism.5"
-                    }
-                ]
-            },
-            {
-                "title": "2.1.1 The Control Plane: The Brain of Sovereignty",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The Control Plane handles the metadata, identity, and policy enforcement. It is responsible for the \"sociological\" aspects of the data exchange. It does not touch the actual data payload. Its primary responsibilities include:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Identity Management: It integrates with Identity Providers (IdPs) and Decentralized Identity systems to verify who is requesting data.2"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Catalog Management: It maintains a \"Self-Description\" of the available data assets and their associated policies (contracts).4"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Contract Negotiation: It executes the state machine that governs the agreement process. It ensures that a consumer accepts the usage policy (e.g., \"Delete data after 7 days\") before any transfer is authorized.7"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Transfer Process Management: It orchestrates the flow. Once a contract is signed, it instructs the Data Plane to initiate the transfer."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Because the Control Plane deals only with metadata and signaling, it is lightweight and can be standardized to a high degree, ensuring that all participants speak the same \"negotiation language\".6"
-                    }
-                ]
-            },
-            {
-                "title": "2.1.2 The Data Plane: The Muscle of Transfer",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The Data Plane executes the actual movement of bytes. It is highly extensible and supports multiple protocols. While the Control Plane negotiates that a transfer is allowed, the Data Plane handles how the transfer happens.6"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Protocol Agnosticism: Industrial use cases vary wildly in their transport requirements. A bulk transfer of historical telemetry might utilize an S3 bucket synchronization or an HTTP file download. A real-time alert system might use MQTT or a Websocket. The EDC Data Plane abstracts these differences using \"Data Addresses\".6"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Proxying and Protection: In many deployments, the Data Plane acts as a secure reverse proxy. It sits in the DMZ, shielding internal backend systems (like an SAP ERP or a shop-floor SQL database) from the public internet. It validates the ephemeral authorization tokens issued by the Control Plane before forwarding the request to the sensitive internal system.5"
-                    }
-                ]
-            },
-            {
-                "title": "2.2 The Dataspace Protocol (DSP)",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The interoperability of the mesh is governed by the Dataspace Protocol (DSP). This set of specifications, standardized by the Eclipse Dataspace Working Group, defines the message formats and state transitions for interaction between connectors.8 The DSP operates over HTTPS but is logically distinct from the transport layer. It defines three core protocols:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Catalog Protocol: For discovering data assets."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Contract Negotiation Protocol: For agreeing on usage terms."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Transfer Process Protocol: For managing the data flow."
-                    }
-                ]
-            },
-            {
-                "title": "2.2.1 The Contract Negotiation State Machine",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The core mechanism of sovereignty is the Contract Negotiation. This is not a simple API authorization; it is a formal, multi-step handshake that results in a cryptographically verifiable agreement.8 The state machine ensures that both parties have a shared understanding of the contract status."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Table 1: The Contract Negotiation Protocol Message Flow 8"
-                    },
-                    {
-                        "type": "table",
-                        "data": [
-                            [
-                                "Sequence",
-                                "Message Type",
-                                "Sender",
-                                "Function & State Transition"
-                            ],
-                            [
-                                "1",
-                                "ContractRequest",
-                                "Consumer",
-                                "Initiation. The consumer requests a specific asset (Dataset ID) and proposes a policy (Offer ID). The state moves to REQUESTED."
-                            ],
-                            [
-                                "2",
-                                "ContractOffer",
-                                "Provider",
-                                "Counter-Proposal (Optional). If the provider rejects the initial terms but wants to negotiate, they send a counter-offer. State moves to OFFERED."
-                            ],
-                            [
-                                "3",
-                                "ContractAgreement",
-                                "Provider",
-                                "Acceptance. The provider agrees to the terms. This message contains the final Policy and a unique Agreement ID. State moves to AGREED."
-                            ],
-                            [
-                                "4",
-                                "ContractAgreementVerification",
-                                "Consumer",
-                                "Acknowledgement. The consumer confirms receipt and storage of the agreement. This completes the handshake. State moves to VERIFIED."
-                            ],
-                            [
-                                "5",
-                                "Termination",
-                                "Either",
-                                "Abort. Sent if negotiation fails or is cancelled. Can occur from any state. State moves to TERMINATED."
-                            ]
-                        ]
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This formal process is crucial for auditability. If a dispute arises (e.g., \"You used this data for marketing when it was restricted to quality assurance\"), the Agreement ID serves as the immutable reference to the terms that were active at the time of transfer.10"
-                    }
-                ]
-            },
-            {
-                "title": "2.3 Identity and Trust: The SSI Revolution",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "Trust in a decentralized network cannot rely on a single central login server. While early iterations of Catena-X used a central X.509 Certificate Authority (the Dynamic Attribute Provisioning Service - DAPS), the architecture is migrating to Self-Sovereign Identity (SSI) to ensure scalability and true decentralization.11"
-                    }
-                ]
-            },
-            {
-                "title": "2.3.1 The SSI Architecture components",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "Decentralized Identifiers (DIDs): Every participant (Company) and every connector has a unique, persistent identifier (e.g., did:web:example.com) that is cryptographically anchored.13"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Verifiable Credentials (VCs): These are digital attestations issued by trusted bodies. For example, a certification body might issue a VC stating \"Company X is a certified Battery Recycler.\" The Catena-X operating company issues \"Membership Credentials\".14"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Managed Identity Wallet (MIW): Managing DIDs and keys is complex. The MIW is a technical component (often hosted as a service) that holds the participant's wallet. It stores the VCs and handles the cryptographic signing required to create Verifiable Presentations (VPs).15"
-                    }
-                ]
-            },
-            {
-                "title": "2.3.2 The Trust Handshake",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "When a Consumer Connector contacts a Provider Connector, the authentication flow is radically different from traditional OAuth:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Presentation: The Consumer generates a Verifiable Presentation (VP) derived from their VCs (e.g., proving they are a valid Catena-X member)."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Verification: The Provider's Control Plane verifies the cryptographic signature of the VP against the issuer's public key (found via the DID). This happens peer-to-peer, without \"phoning home\" to a central server.15"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Authorization: If the VP is valid and matches the Access Policy (e.g., \"Requester must have Membership Credential\"), the interaction proceeds."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This architecture enables Attribute-Based Access Control (ABAC). A provider can set a policy: \"Access allowed only to partners with a 'TISAX Level 3' security credential.\" The connector enforces this automatically, regardless of the specific identity of the partner.2"
-                    }
-                ]
-            },
-            {
-                "title": "2.4 Policy Enforcement and ODRL",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The language of contracts in Catena-X is the Open Digital Rights Language (ODRL). The EDC natively parses ODRL policies. These policies distinguish between:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Access Policies: Who can see the data? (e.g., restricted to specific Business Partner Numbers - BPNs)."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Usage Policies: How can the data be used? (e.g., \"Purpose = Quality Assurance\", \"Duration = 7 days\").16"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The decoupling of Access and Usage allows for sophisticated governance. A supplier might grant access to all Tier-1s but restrict usage to non-commercial benchmarking."
-                    }
-                ]
-            },
-            {
-                "title": "Chapter 3: Sustainability as a Data Problem - The Digital Product Passport",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The acceleration of the Catena-X standard is driven not just by efficiency, but by the regulatory tsunami originating from the European Union. The Ecodesign for Sustainable Products Regulation (ESPR) and the EU Battery Regulation mandate the creation of a Digital Product Passport (DPP). By 2027, every industrial battery (>2kWh) and eventually every vehicle component must have a digital twin containing granular data on its composition, origin, and carbon footprint.3"
-                    }
-                ]
-            },
-            {
-                "title": "3.1 The Product Carbon Footprint (PCF) Rulebook",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "Calculating the carbon footprint of a complex product like a vehicle is historically fraught with inaccuracy. Traditional Life Cycle Assessment (LCA) relies heavily on \"secondary data\"\u2014industry averages from databases like Ecoinvent. This leads to generic results that fail to reward suppliers for actual decarbonization efforts."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Catena-X mandates the move to Primary Data\u2014actual measured emissions from the specific production facility. The Catena-X PCF Rulebook establishes the binding methodology for this calculation to ensure comparability.17"
-                    }
-                ]
-            },
-            {
-                "title": "3.1.1 System Boundaries: Cradle-to-Gate",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The Rulebook defines a strictly \"Cradle-to-Gate\" system boundary for component suppliers. This encompasses all Greenhouse Gas (GHG) emissions from:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Raw Material Acquisition: Mining and pre-processing."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Transport: All logistics between supply chain tiers."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Production: Energy and chemical processes within the supplier's gate.19"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "It explicitly excludes the \"Use Phase\" and \"End-of-Life\" phase from the supplier's reporting scope, as these are calculated by the OEM or the final integrator. However, the rulebook methodology is applicable to recyclers calculating the footprint of secondary materials.19"
-                    }
-                ]
-            },
-            {
-                "title": "3.1.2 The Primary Data Share (PDS) Metric",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "To drive the transition to real data, the Rulebook introduces the Primary Data Share (PDS) metric. This indicates the percentage of the PCF value that is derived from specific, measured data rather than database averages."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Table 2: Primary Data Share (PDS) Calculation 19"
-                    },
-                    {
-                        "type": "table",
-                        "data": [
-                            [
-                                "Component",
-                                "Formula",
-                                "Description"
-                            ],
-                            [
-                                "PDS (Single)",
-                                "",
-                                "The ratio of the absolute PCF contribution based on primary data to the total absolute PCF."
-                            ],
-                            [
-                                "PDS (Aggregated)",
-                                "",
-                                "Used when aggregating footprints across a multi-stage supply chain."
-                            ]
-                        ]
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This metric is crucial for the \"Green Market.\" An OEM procurement algorithm can prioritize suppliers with a high PDS, as this reduces the uncertainty in the OEM's own Scope 3 reporting."
-                    }
-                ]
-            },
-            {
-                "title": "3.1.3 Data Quality Rating (DQR)",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "To prevent \"garbage in, garbage out,\" every PCF data point must be accompanied by a Data Quality Rating (DQR). This is a computed score from 1.0 (Very Good) to 5.0 (Poor), derived from four dimensions 19:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Technological Representativeness (TeR): Does the data match the actual technology used?"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Geographical Representativeness (GeR): Is the grid mix data from the specific region of production?"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Temporal Representativeness (TiR): Is the data from the current reporting year?"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Data Reliability (DRe): Is the data verified by a third party?"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The formula is an arithmetic mean:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": ". A PCF with a DQR > 3.0 is generally considered low quality and may be rejected by stringent OEM policies."
-                    }
-                ]
-            },
-            {
-                "title": "3.1.4 Biogenic Carbon Accounting",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The Rulebook is rigorous regarding biogenic carbon (carbon absorbed by plants). To prevent greenwashing, biogenic uptake (characterized as -1 kg CO2eq) must be reported as a separate line item and cannot be blindly netted against fossil emissions. This ensures transparency regarding how much of a product's \"low carbon\" status is due to temporary carbon storage versus actual emissions reduction.19"
-                    }
-                ]
-            },
-            {
-                "title": "3.2 Semantic Interoperability: SAMM and AAS",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The DPP is not a single file stored in a cloud; it is a virtual aggregation of data points pulled from distributed sources. For a machine to assemble this passport automatically, strict semantic standards are required. Catena-X utilizes the Semantic Aspect Meta Model (SAMM) to define the \"vocabulary\" of the data.20"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "These semantic models are implemented via the Asset Administration Shell (AAS), the digital twin standard for Industry 4.0. The AAS provides a standardized API structure for querying data.3"
-                    }
-                ]
-            },
-            {
-                "title": "3.2.1 The Battery Passport Data Model",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "For the specific case of the Battery Regulation, the data model is defined in the Aspect urn:samm:io.catenax.battery.battery_pass:6.0.0.11 This JSON schema mandates specific fields:"
+                        "text": "Implementing EEI requires a shift in how we think about Trusted Execution Environments (TEEs). While server-side enclaves (AMD SEV-SNP) protect data-in-use at the hyperscale level, mobile-side sovereignty relies on ARM TrustZone and specialized NPU (Neural Processing Unit) isolation. Our architecture creates a 'Sanitized Context Window' on the device, ensuring that even if the host OS is compromised, the cryptographic keys and the model's intermediate activations remain inaccessible to external actors."
                     },
-                    {
-                        "type": "paragraph",
-                        "text": "Product Identification: Manufacturer ID (BPN), Part ID, Serial Number."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Sustainability: The PCF value (calculated per Rulebook), Carbon Footprint Performance Class."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Material Composition: Mass of Cobalt, Lithium, Nickel, and Recycled Content %."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Circularity: Designing for dismantling, repair instructions."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Because this schema is standardized, a \"Battery Passport App\" (the consumer) can query any certified battery manufacturer (the provider) and receive a guaranteed, valid JSON response, enabling instant compliance visualization.21"
-                    }
-                ]
-            },
-            {
-                "title": "Chapter 4: Implementation Strategy - The Edge Frontier",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "For many industrial players, running a connector in the public cloud (AWS/Azure) is not feasible. Latency requirements for shop-floor data, security policies regarding \"Air Gapping,\" and cost constraints drive the need for Edge Deployment. This involves running the EDC Connector directly on an industrial gateway or server within the factory network.22"
-                    }
-                ]
-            },
-            {
-                "title": "4.1 Edge Architecture: Hardware and OS",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The target hardware for an edge connector is typically an Industrial PC (IPC) or a high-end IoT Gateway."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "CPU: Minimum 4 Cores (x86_64 or ARM64)."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "RAM: Minimum 8GB (16GB recommended). The Java-based EDC is efficient, but the accompanying services (Postgres, Vault) consume resources.24"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Storage: 50GB SSD. High IOPS is preferred for the database."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "OS: A Linux distribution capable of running container workloads (Ubuntu 22.04 LTS or Debian 11/12) is the standard.25"
-                    }
-                ]
-            },
-            {
-                "title": "4.2 Orchestration: Docker Compose vs. Kubernetes (K3s)",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "A critical decision for edge implementation is the orchestration layer."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Table 3: Edge Orchestration Comparison 26"
-                    },
-                    {
-                        "type": "table",
-                        "data": [
-                            [
-                                "Feature",
-                                "Docker Compose",
-                                "Kubernetes (K3s)"
-                            ],
-                            [
-                                "Complexity",
-                                "Low. Single docker-compose.yaml. Easy for OT engineers to understand.",
-                                "Medium/High. Requires understanding of Pods, Ingress, PVs."
-                            ],
-                            [
-                                "Scalability",
-                                "None. Single node only. Manual scaling.",
-                                "High. Can cluster multiple gateways. Auto-scaling capable."
-                            ],
-                            [
-                                "Reliability",
-                                "Basic. restart: always. No self-healing logic.",
-                                "Robust. Automatic pod rescheduling, health checks, liveness probes."
-                            ],
-                            [
-                                "Secrets",
-                                "Environment variables (insecure) or file mounts.",
-                                "Native K8s Secrets or integration with Vault sidecars."
-                            ],
-                            [
-                                "Recommendation",
-                                "Proof of Concept (PoC) or very simple, non-critical gateways.",
-                                "Production standard. Use K3s for a lightweight, compliant stack."
-                            ]
-                        ]
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "For a robust industrial setup, K3s is the recommended path. It strips away the bloat of full Kubernetes while retaining the API compatibility and resilience needed for 24/7 production.29"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "#### Step 1: Infrastructure and Cluster Initialization",
-                        "className": "text-lg font-bold mt-6 mb-2 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "On the edge device, install K3s to initialize the cluster."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Bash"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "# Install K3s (lightweight Kubernetes)\ncurl -sfL https://get.k3s.io | sh -\n# Verify the node is Ready\nkubectl get nodes"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This creates a single-node cluster suitable for the edge.29"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "#### Step 2: Dependency Deployment (PostgreSQL & Vault)",
-                        "className": "text-lg font-bold mt-6 mb-2 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The EDC requires a database for state persistence (storing contract negotiations) and a Vault for managing the private keys used for SSI.30 Use the Tractus-X Helm charts for deployment."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Bash"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "# Add the Tractus-X Chart Repository\nhelm repo add tractusx-edc https://eclipse-tractusx.github.io/charts/dev\n# Deploy Prerequisites (Postgres + HashiCorp Vault)\nhelm install edc-prereqs tractusx-edc/tractusx-connector-prerequisites"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This command spins up the database and vault pods within the cluster.22"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "#### Step 3: Configuring the Connector (values.yaml)",
-                        "className": "text-lg font-bold mt-6 mb-2 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This is the most critical step. The configuration file dictates the connector's identity and behavior. Key sections include 22:"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Identity:\nYAML\ncontrolplane:\n  ssi:\n    miw:\n      url: \"https://miw.catena-x.net\" # Managed Identity Wallet URL\n      authorityId: \"did:web:example.com\" # The DID of the participant"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Endpoints:\nThe connector must know its own public address to advertise in the catalog.\nYAML\nedc:\n  endpoints:\n    protocol: \"https://gateway.factory.com/api/v1/dsp\"\n    management: \"http://localhost:8181/management\""
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Database Connection: Pointing to the internal Postgres service."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "#### Step 4: Secrets Management",
-                        "className": "text-lg font-bold mt-6 mb-2 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The private key for the DID must be securely stored in the Vault. The EDC Control Plane retrieves this key at runtime to sign the Verifiable Presentation."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Bash"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "# Exec into Vault pod and write the private key\nkubectl exec -it edc-prereqs-vault-0 -- vault kv put secret/edc-private-key key=@private-key.pem"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This ensures that the private key never exists in plain text in the config files.22"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "#### Step 5: Connecting the \"Brownfield\" (Data Plane Integration)",
-                        "className": "text-lg font-bold mt-6 mb-2 block"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "The Edge Connector must interface with the factory's existing OT systems. This is done via the Data Plane."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Scenario: Exposing an internal OPC UA Server."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Mechanism: The EDC Data Plane acts as a proxy. You register a \"Data Asset\" in the EDC that points to the internal IP of the OPC UA server (e.g., opc.tcp://192.168.1.50:4840)."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "Security: The EDC ensures that external traffic effectively terminates at the gateway. The internal OPC UA server is never exposed directly to the internet. Only requests with a valid EDC Contract Token are proxied through.6"
-                    }
-                ]
-            },
-            {
-                "title": "5.1 The 2025-2027 Roadmap",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The adoption timeline for Catena-X is dictated by the regulatory clock."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "2025 (The \"Saturn\" Release): This is the year of scaling. The focus is on stabilizing the SSI infrastructure. The implementation of \"Bring Your Own Wallet\" allows companies to manage their own identities without relying solely on the central operating company. TISAX Level 2 security becomes mandatory for most service providers.32"
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "2027 (The Compliance Cliff): The EU Battery Regulation comes into full force. The Digital Product Passport becomes a market entry requirement. The ecosystem must handle high-volume, automated traffic as millions of batteries enter the market, each requiring a unique, queryable passport.3"
-                    }
-                ]
-            },
-            {
-                "title": "5.2 Managing Backward Compatibility",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "As the ecosystem matures, maintaining interoperability between versions is a major challenge. The transition from DAPS (X.509) to SSI (DID) represents a breaking change. The Catena-X Backward Compatibility Guide mandates a \"N-1\" support policy. Connectors must support the previous major version for at least 12 months after a new release. For the 2025 transition, this means operating in \"Hybrid Mode,\" where connectors can accept both old DAPS tokens and new SSI tokens, ensuring that early adopters are not cut off from laggards.12"
-                    }
-                ]
-            },
-            {
-                "title": "5.3 Conclusion: The Network Effect",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "The Industrial Data Mesh is more than a technical standard; it is an economic restructuring of the supply chain. By lowering the cost of trust, it enables new business models\u2014Circular Economy marketplaces, collaborative quality loops, and Carbon-as-a-Service."
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "For the industrial architect, the directive is clear: The era of the centralized lake is ending. The future belongs to the federated, the sovereign, and the interoperable. The deployment of the EDC is the foundational step in securing a place in this new industrial economy."
-                    }
-                ]
-            },
-            {
-                "title": "Technical Addendum: Detailed Data Models & Schemas",
-                "content": [
-                    {
-                        "type": "paragraph",
-                        "text": "Table 4: Battery Passport Aspect (JSON Schema Structure) 21"
-                    },
-                    {
-                        "type": "table",
-                        "data": [
-                            [
-                                "Field Name",
-                                "Type",
-                                "Description",
-                                "Mandatory?"
-                            ],
-                            [
-                                "id",
-                                "UUID",
-                                "Unique Identifier of the Battery Passport instance.",
-                                "Yes"
-                            ],
-                            [
-                                "pcf.value",
-                                "Float",
-                                "Carbon footprint in kg CO2eq.",
-                                "Yes"
-                            ],
-                            [
-                                "pcf.primaryDataShare",
-                                "Float",
-                                "% of PCF based on primary data (0.0 - 1.0).",
-                                "Yes"
-                            ],
-                            [
-                                "material.cobalt",
-                                "Float",
-                                "Mass of Cobalt in kg.",
-                                "Yes"
-                            ],
-                            [
-                                "material.recycledContent",
-                                "Float",
-                                "Percentage of recycled material used.",
-                                "No"
-                            ],
-                            [
-                                "conformity.declaration",
-                                "URL",
-                                "Link to the EU Declaration of Conformity document.",
-                                "Yes"
-                            ]
-                        ]
-                    },
-                    {
-                        "type": "paragraph",
-                        "text": "This schema enforcement ensures that when a recycler queries the mesh for urn:samm:io.catenax.battery.battery_pass:6.0.0, they receive a machine-parsable response that can be directly fed into their recycling robotics or ERP systems."
-                    }
-                ]
-            },
-            {
-                "title": "Works cited",
-                "content": [
                     {
-                        "type": "list",
-                        "items": [
-                            "Catena-X is the first globally trusted and collaborative data ecosystem for the automotive industry, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/04/Catena-X-Public-Slide-Deck-4.pdf",
-                            "Onboarding Guide: Initial Information for Large Enterprises | Catena-X, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/04/OnboardingGuide_LargeEnterprises_V1.1.pdf",
-                            "Joint Integration Architecture Approach of Catena-X & OPC UA, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/08/OPCF-Catena-X-Architecture-Whitepaper-v1.0.pdf",
-                            "Eclipse Dataspace Components | projects.eclipse.org, accessed January 27, 2026, https://projects.eclipse.org/projects/technology.edc",
-                            "Dataspace & Eclipse Dataspace Components - Data Intelligence Offensive, accessed January 27, 2026, https://old.dataintelligence.at/wp-content/uploads/2023/04/Dataspaces-Eclipse-Dataspace-Components_compressed.pdf",
-                            "Control plane vs. Data plane - Building Blocks - Data Spaces Support Centre, accessed January 27, 2026, https://dssc.eu/space/BBE/178422298/Control+plane+vs.+Data+plane",
-                            "Samples/transfer/transfer-01-negotiation/README.md at main \\u00b7 eclipse-edc/Samples, accessed January 27, 2026, https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-01-negotiation/README.md",
-                            "Dataspace Protocol 2025-1 - GitHub Pages, accessed January 27, 2026, https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/",
-                            "Eclipse Dataspace Protocol | projects.eclipse.org, accessed January 27, 2026, https://projects.eclipse.org/proposals/eclipse-dataspace-protocol",
-                            "Specification | Dataspace Protocol - IDS Knowledge Base - International Data Spaces, accessed January 27, 2026, https://docs.internationaldataspaces.org/ids-knowledgebase/dataspace-protocol/contract-negotiation/contract.negotiation.protocol",
-                            "Digital Product Passport - Catena-X, accessed January 27, 2026, https://catena-x.net/use-case-cluster/digital-product-passport/",
-                            "Backward Compatibility Guide 2025 | Catena-X, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/12/CX-Backward-Compatibility-Guide-2025-V08-172.pdf",
-                            "Eclipse Tractus-X Research Report - NTT Data, accessed January 27, 2026, https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/media/press-release/2024/me_pr_sep_30_01.pdf?rev=a92bd2ca9a6041f3b69bef14889993bb",
-                            "Data Exchange with Self-Sovereign-Identity - ARENA2036, accessed January 27, 2026, https://arena2036.de/files/FinaleBilder/05_Veranstaltungen/ARENA-X/Catena-X_Release_Day/Catena-X_Release_Day_SSI_2024_03_15.pdf",
-                            "Data Exchange Contracts | Catena-X - Library, accessed January 27, 2026, https://catenax-ev.github.io/docs/regulatory-framework/10000ft/data-exchange-contracts",
-                            "Contracting - Catena-X, accessed January 27, 2026, https://catena-x.net/ecosystem/contracting/",
-                            "Trusted Sustainability - Catena-X, accessed January 27, 2026, https://catena-x.net/use-case-cluster/sustainability/",
-                            "Catena-X Product Carbon Footprint Rulebook | PACT Resources, accessed January 27, 2026, https://www.carbon-transparency.org/resources/catena-x-product-carbon-footprint-rulebook",
-                            "Catena-X Product Carbon Footprint Rulebook, accessed January 27, 2026, https://catenax-ev.github.io/assets/files/CX-NFR-PCF-Rulebook_v.3.0-04874a80a6d27511df06e07ae3049278.pdf",
-                            "Building a Digital Manufacturing as a Service Ecosystem for Catena-X - MDPI, accessed January 27, 2026, https://www.mdpi.com/1424-8220/23/17/7396",
-                            "Battery Passport (Catena-X v6.0.0) - OSL Demo, accessed January 27, 2026, https://demo.open-semantic-lab.org/wiki/Category:OSW74bf728019bd4cc3a8a0833bd54f5338",
-                            "tractusx-edc/charts/tractusx-connector/README.md at main - GitHub, accessed January 27, 2026, https://github.com/eclipse-tractusx/tractusx-edc/blob/main/charts/tractusx-connector/README.md",
-                            "End-to-End Adopter Journey - Eclipse Tractus-X, accessed January 27, 2026, https://eclipse-tractusx.github.io/docs/tutorials/e2e/",
-                            "Hardware and software requirements for the gateway or edge device - IBM, accessed January 27, 2026, https://www.ibm.com/docs/en/masv-and-l/maximo-monitor/cd?topic=collector-hardware-software-requirements-gateway-edge-device",
-                            "Prerequisites - Eclipse Tractus-X, accessed January 27, 2026, https://eclipse-tractusx.github.io/docs/tutorials/e2e/prerequisites/",
-                            "Docker Compose vs. Kubernetes: Features & Use Cases - Kaa IoT platform, accessed January 27, 2026, https://www.kaaiot.com/iot-knowledge-base/docker-compose-vs-kubernetes-differences-and-use-cases",
-                            "Docker Compose vs. Kubernetes: Understanding the Differences and Choosing the Right Tool : r/dataengineering - Reddit, accessed January 27, 2026, https://www.reddit.com/r/dataengineering/comments/13s6ugn/docker_compose_vs_kubernetes_understanding_the/",
-                            "What's the difference between Docker Compose and Kubernetes? - Stack Overflow, accessed January 27, 2026, https://stackoverflow.com/questions/47536536/whats-the-difference-between-docker-compose-and-kubernetes",
-                            "Mastering Kubernetes on Edge Devices with K3s | by Tom Brovender - Medium, accessed January 27, 2026, https://medium.com/@tbrovy/mastering-kubernetes-on-edge-devices-with-k3s-28fbeca967fe",
-                            "Set up a minimum viable data space to share data between organizations - AWS Prescriptive Guidance - AWS Documentation, accessed January 27, 2026, https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/minimum-viable-data-space-share-data-organizations.html",
-                            "Configuration | Dataspace Connector, accessed January 27, 2026, https://international-data-spaces-association.github.io/DataspaceConnector/Deployment/Configuration",
-                            "Modular System Release Jupiter Version 3.3.0 | Catena-X, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/04/Modulares-System_Release-Jupiter-Version-3.3.0-1.pdf",
-                            "How: Life Cycle Management | Catena-X - Library, accessed January 27, 2026, https://catenax-ev.github.io/docs/next/operating-model/how-life-cycle-management",
-                            "sldt-semantic-models/io.catenax.pcf/4.0.0/gen/Pcf-schema.json at main \\u00b7 eclipse-tractusx/sldt ... - GitHub, accessed January 27, 2026, https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.pcf/4.0.0/gen/Pcf-schema.json"
-                        ]
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-004-info.jpg",
+                        "alt": "Supply Chain Nodes",
+                        "caption": "Fig 2.1: Sovereign Data Exchange Nodes"
                     }
                 ]
             }
@@ -2875,19 +2590,10 @@ export const whitepapers = [
         "title": "The Ethics of Erasure: Automating the 'Right to be Forgotten'",
         "date": "Jan 25, 2026",
         "readTime": "8 min read",
-        "downloadSize": "520 KB",
+        "downloadSize": "1.2 MB",
         "summary": "Introducing 'Cryptographic Erasure' reference architectures for orchestrating deletion requests across fragmented data silos.",
         "coverImage": "/images/whitepapers/covers/wp-005-cover.jpg",
-        "coverImageWidth": 1408,
-        "coverImageHeight": 768,
         "infographicImage": "/images/whitepapers/infographics/wp-005-info.jpg",
-        "infographicImageWidth": 1408,
-        "infographicImageHeight": 768,
-        "author": {
-            "name": "Abhishek K.",
-            "role": "CTO, Adraca AI Pvt. Ltd.",
-            "thought": "True ownership in the digital age requires a new legal-technical primitive. We are defining the standard for sovereign value exchange."
-        },
         "content": [
             {
                 "title": "The Ethics of Erasure: Automating GDPR Article 17",
@@ -2943,6 +2649,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "The traditional engineering response to a data removal request is the execution of a SQL DELETE command. Within the context of compliance engineering, this approach is increasingly viewed as a \"manual trap\" that addresses only the most visible layer of data persistence while leaving the underlying fragments intact across the storage stack.6 A simple DELETE statement changes the logical state of a record but fails to account for the physical and operational realities of modern database engines and distributed systems.14"
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/infographics/wp-005-info.jpg",
+                        "alt": "GDPR Automation",
+                        "caption": "Fig 1.1: Automated Right to Erasure Workflow"
                     }
                 ]
             },
@@ -2969,6 +2681,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "In active environments, the accumulation of WAL files can be substantial. For instance, in PostgreSQL, mechanisms such as replication slots and long-running backups can prevent the database engine from truncating or recycling old WAL segments.20 If a replication replica becomes disconnected, the primary server may hoard WAL files indefinitely, waiting for the replica to catch up, which inadvertently preserves the \"deleted\" PII within those logs.20 From a compliance standpoint, a user has not been erased until the WAL logs containing their original INSERT or UPDATE operations have been rotated, truncated, and physically overwritten.21 Engineers must therefore synchronize their erasure verification with the log retention and checkpointing cycles of the database.13"
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-gdpr-erasure.jpg",
+                        "alt": "Ethics of Erasure",
+                        "caption": "Fig 2.1: Cryptographic Erasure Reference Architecture"
                     },
                     {
                         "type": "table",
@@ -3021,6 +2739,12 @@ export const whitepapers = [
                     {
                         "type": "paragraph",
                         "text": "To overcome the physical persistence issues associated with traditional storage, compliance engineering has adopted \"crypto-shredding\" as a primary methodology for Article 17 fulfillment.26 Crypto-shredding involves the deliberate deletion or overwriting of the encryption keys associated with specific personal data.7 By rendering the data unreadable, the organization achieves a state that regulatory authorities often consider equivalent to physical destruction, provided the encryption is sufficiently robust.26"
+                    },
+                    {
+                        "type": "image",
+                        "src": "/images/whitepapers/wp-strategy-europe.jpg",
+                        "alt": "Privacy Strategy",
+                        "caption": "Fig 3.1: Privacy-by-Design Strategic Controls"
                     }
                 ]
             },
@@ -3355,68 +3079,240 @@ export const whitepapers = [
                 "title": "Works cited",
                 "content": [
                     {
-                        "type": "list",
-                        "items": [
-                            "How to Achieve Compliance with GDPR Article 17 in a Hybrid Cloud Environment - MDPI, accessed January 27, 2026, https://www.mdpi.com/2413-4155/3/1/3",
-                            "What is \\",
-                            "GDPR Right to Be Forgotten - eSignGlobal, accessed January 27, 2026, https://www.esignglobal.com/blog/handling-gdpr-right-to-be-forgotten-requests",
-                            "Art. 17 GDPR \\u2013 Right to erasure ('right to be forgotten') - General Data Protection Regulation (GDPR), accessed January 27, 2026, https://gdpr-info.eu/art-17-gdpr/",
-                            "Right to be Forgotten: GDPR Erasure Rights Guide - ComplyDog, accessed January 27, 2026, https://complydog.com/blog/right-to-be-forgotten-gdpr-erasure-rights-guide",
-                            "GDPR and Database Backups | Severalnines, accessed January 27, 2026, https://severalnines.com/blog/gdpr-and-database-backups/",
-                            "Crypto Shredding in Kafka: A Cost-Effective Way to Ensure Compliance - Conduktor, accessed January 27, 2026, https://conduktor.io/blog/crypto-shredding-in-kafka-a-cost-effective-way-to-ensure-compliance",
-                            "Data Retention & Automatic Erasure: How to Build a Compliant Workflow - CryptoBind, accessed January 27, 2026, https://www.jisasoftech.com/data-retention-automatic-erasure-how-to-build-a-compliant-workflow/",
-                            "Privacy by Design GDPR: Complete Implementation Guide for 2025, accessed January 27, 2026, https://secureprivacy.ai/blog/privacy-by-design-gdpr-2025",
-                            "Data Privacy & AI Ethics Best Practices | Governance Guidance 2025 - TrustCommunity, accessed January 27, 2026, https://community.trustcloud.ai/docs/grc-launchpad/grc-101/governance/data-privacy-and-ai-ethical-considerations-and-best-practices/",
-                            "GDPR for Operations - InfoQ, accessed January 27, 2026, https://www.infoq.com/articles/gdpr-for-operations/",
-                            "GDPR and the \\u201cRight to Be Forgotten\\u201d: The Role of Certified Data Destruction, accessed January 27, 2026, https://datadestruction.com/gdpr-and-the-right-to-be-forgotten-the-role-of-certified-data-destruction/",
-                            "Does GDPR require deleted backups to be rendered unrecoverable?, accessed January 27, 2026, https://dba.stackexchange.com/questions/305978/does-gdpr-require-deleted-backups-to-be-rendered-unrecoverable",
-                            "GDPR Right To Erasure: Should You Delete Backups As Well? - Hall Booth Smith, accessed January 27, 2026, https://hallboothsmith.com/we-all-know-about-gdprs-right-to-erasure-does-this-mean-you-have-to-delete-data-from-backups-as-well/",
-                            "Optimize index maintenance to improve query performance and reduce resource consumption - Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver17",
-                            "Whitepaper : SQL Server Fragmentation Explained - IDERA, accessed January 27, 2026, https://www.idera.com/resource-center/whitepapers/sql-server-fragmentation-explained/",
-                            "New IT Systems Require SSD Shredding for Data Security, accessed January 27, 2026, https://veritysystems.com/new-it-systems-require-ssd-shredding-for-data-security/",
-                            "Understanding the BSI Guidelines for Permanently Erasing Data - BitRaser, accessed January 27, 2026, https://www.bitraser.com/article/bsi-guidelines-permanently-erasing-data.php",
-                            "Troubleshoot a full transaction log (SQL Server Error 9002) - Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002?view=sql-server-ver17",
-                            "How to Clean Up WAL Files and Replication Slots in PostgreSQL (Complete Guide for DBAs) | by Jeyaram Ayyalusamy | Medium, accessed January 27, 2026, https://medium.com/@jramcloud1/how-to-clean-up-wal-files-and-replication-slots-in-postgresql-complete-guide-for-dbas-2ca33b3fdb3b",
-                            "How can I solve postgresql problem after deleting wal files?, accessed January 27, 2026, https://dba.stackexchange.com/questions/80317/how-can-i-solve-postgresql-problem-after-deleting-wal-files",
-                            "Amazon RDS PostgreSQL WAL Logs Not Clearing, High Storage Consumption, accessed January 27, 2026, https://repost.aws/questions/QUBOrsgylZS2GdChkiOtsEiQ/amazon-rds-postgresql-wal-logs-not-clearing-high-storage-consumption",
-                            "Defragmentation Based on Page Density - SQL Server Administration, accessed January 27, 2026, https://forums.sqlteam.com/t/defragmentation-based-on-page-density/24534",
-                            "Right to Erasure: GDPR Compliance Steps - Reform.app, accessed January 27, 2026, https://www.reform.app/blog/right-to-erasure-gdpr-compliance-steps",
-                            "Building a Secure GenAI Architecture in HealthTech: Avoiding HIPAA & GDPR Pitfalls, accessed January 27, 2026, https://www.sekurno.com/post/building-a-secure-genai-architecture-in-healthtech-avoiding-hipaa-gdpr-pitfalls",
-                            "Crypto-shredding the best solution for cloud system data erasure ..., accessed January 27, 2026, https://www.verdict.co.uk/crypto-shredding-gdpr-cloud-systems/",
-                            "Crypto-shredding - Wikipedia, accessed January 27, 2026, https://en.wikipedia.org/wiki/Crypto-shredding",
-                            "Privacy Policy - Agrilinkage, accessed January 27, 2026, https://www.agrilinkage.com/privacy-policy",
-                            "Envelope encryption | Cloud Key Management Service - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/kms/docs/envelope-encryption",
-                            "Protecting Sensitive Data Using Envelope Encryption - DEV Community, accessed January 27, 2026, https://dev.to/ibrahimgunduz34/protecting-sensitive-data-using-envelope-encryption-4o3c",
-                            "Understanding Envelope Encryption with AWS KMS | willdady.com, accessed January 27, 2026, https://willdady.com/understanding-envelope-encryption-with-aws-kms",
-                            "GDPR for Data Engineers: A Practical Guide to Privacy-Compliant Data Architecture, accessed January 27, 2026, https://blog.pmunhoz.com/data-engineering/gdpr_data_engineers_guide",
-                            "Immutable Audit Log Architecture - Emergent Mind, accessed January 27, 2026, https://www.emergentmind.com/topics/immutable-audit-log",
-                            "Dags \\u2014 Airflow 3.1.6 Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html",
-                            "Architecture Overview \\u2014 Airflow 3.1.6 Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html",
-                            "DAGs \\u2014 Airflow Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/2.5.2/core-concepts/dags.html",
-                            "DAG writing best practices in Apache Airflow | Astronomer Docs, accessed January 27, 2026, https://www.astronomer.io/docs/learn/dag-best-practices",
-                            "Prepare your data for GDPR compliance | Databricks on Google Cloud, accessed January 27, 2026, https://docs.databricks.com/gcp/en/security/privacy/gdpr-delta",
-                            "Everything you need to know about the \\",
-                            "Must Have Elements of a Data Destruction Certificate - Blancco, accessed January 27, 2026, https://blancco.com/resources/blog-must-have-elements-of-a-data-destruction-certificate/",
-                            "50 IT Director Interview Questions & Answers [2025 - DigitalDefynd, accessed January 27, 2026, https://digitaldefynd.com/IQ/it-director-interview-questions/",
-                            "Building Resilient Airflow Operators | by Dusan Zamurovic | Jan, 2026 | Medium, accessed January 27, 2026, https://medium.com/@ezamur/building-resilient-airflow-operators-the-retry-pattern-for-aws-emr-fc264c792cdd",
-                            "Best Practices \\u2014 Airflow 3.1.6 Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html",
-                            "Apache Iceberg on AWS: The Key to GDPR Compliant Data Lakes - Data Engineer Things, accessed January 27, 2026, https://blog.dataengineerthings.org/apache-iceberg-on-aws-the-key-to-gdpr-compliant-data-lakes-d86b4ad07478",
-                            "How do you enforce immutability and append\\u2011only audit trails? - Design Gurus, accessed January 27, 2026, https://www.designgurus.io/answers/detail/how-do-you-enforce-immutability-and-appendonly-audit-trails",
-                            "A Comprehensive List of Data Wiping & Erasure Standards - Blancco, accessed January 27, 2026, https://blancco.com/resources/blog-comprehensive-list-data-wiping-erasure-standards/",
-                            "What Are Immutable Logs? A Complete Guide - HubiFi, accessed January 27, 2026, https://www.hubifi.com/blog/immutable-audit-log-guide",
-                            "The AIGN Data Act AI Governance Framework - Shift8 Web, accessed January 27, 2026, https://cycejbtdfgao.cdn.shift8web.com/wp-content/uploads/2025/07/AIGN-EU-Data-Act-AI-Governance-Framework.pdf",
-                            "The Ultimate Guide to Immutable Audit Trails - HubiFi, accessed January 27, 2026, https://www.hubifi.com/blog/immutable-audit-log-basics",
-                            "Soft delete vs hard delete in multitenancy with GDPR and audit trail - Reddit, accessed January 27, 2026, https://www.reddit.com/r/softwarearchitecture/comments/1mfsrht/soft_delete_vs_hard_delete_in_multitenancy_with/",
-                            "Ask HN: How are you implementing GDPR-compliant soft deletes? - Hacker News, accessed January 27, 2026, https://news.ycombinator.com/item?id=16366050",
-                            "Data Ethics: Frameworks, Principles & Challenges (2025) - Atlan, accessed January 27, 2026, https://atlan.com/data-ethics-101/",
-                            "AI and GDPR: A Road Map to Compliance by Design - Episode 3: The Development Phase, accessed January 27, 2026, https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250730-ai-and-gdpr-a-road-map-to-compliance-by-design-episode-3-the-design-phase",
-                            "Data retention and deletion | Digital Ethics and Privacy in Business Class Notes - Fiveable, accessed January 27, 2026, https://fiveable.me/digital-ethics-and-privacy-in-business/unit-2/data-retention-deletion/study-guide/prHu5LUl38XrfnXK",
-                            "Applying Amazon S3 Object Lock at scale for petabytes of existing data | AWS Storage Blog, accessed January 27, 2026, https://aws.amazon.com/blogs/storage/applying-amazon-s3-object-lock-at-scale-for-petabytes-of-existing-data/",
-                            "S3 Object Lock for Ransomware Protection, accessed January 27, 2026, https://objectfirst.com/guides/immutability/s3-object-lock-for-ransomware-protection/",
-                            "Setting Up S3 Object Locking (Immutable Storage) for Rapid Recovery Archives (4376845), accessed January 27, 2026, https://support.quest.com/rapid-recovery/kb/4376845/setting-up-s3-object-locking-immutable-storage-for-rapid-recovery-archives",
-                            "Navigating Regulatory and Ethical Challenges in Data Lake Governance: A Comprehensive Review, accessed January 27, 2026, https://norislab.com/index.php/IJITAI/article/download/93/86/216",
-                            "(PDF) ETHICAL DATA ENGINEERING: NAVIGATING PRIVACY CHALLENGES AND ALGORITHMIC BIAS IN THE AI ERA - ResearchGate, accessed January 27, 2026, https://www.researchgate.net/publication/390756201_ETHICAL_DATA_ENGINEERING_NAVIGATING_PRIVACY_CHALLENGES_AND_ALGORITHMIC_BIAS_IN_THE_AI_ERA"
-                        ]
+                        "type": "paragraph",
+                        "text": "How to Achieve Compliance with GDPR Article 17 in a Hybrid Cloud Environment - MDPI, accessed January 27, 2026, https://www.mdpi.com/2413-4155/3/1/3"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "What is \"Right to Erasure\"? - PrivacyEngine, accessed January 27, 2026, https://www.privacyengine.io/blog/resources/glossary/right-to-erasure/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GDPR Right to Be Forgotten - eSignGlobal, accessed January 27, 2026, https://www.esignglobal.com/blog/handling-gdpr-right-to-be-forgotten-requests"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Art. 17 GDPR \u2013 Right to erasure ('right to be forgotten') - General Data Protection Regulation (GDPR), accessed January 27, 2026, https://gdpr-info.eu/art-17-gdpr/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Right to be Forgotten: GDPR Erasure Rights Guide - ComplyDog, accessed January 27, 2026, https://complydog.com/blog/right-to-be-forgotten-gdpr-erasure-rights-guide"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GDPR and Database Backups | Severalnines, accessed January 27, 2026, https://severalnines.com/blog/gdpr-and-database-backups/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Crypto Shredding in Kafka: A Cost-Effective Way to Ensure Compliance - Conduktor, accessed January 27, 2026, https://conduktor.io/blog/crypto-shredding-in-kafka-a-cost-effective-way-to-ensure-compliance"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data Retention & Automatic Erasure: How to Build a Compliant Workflow - CryptoBind, accessed January 27, 2026, https://www.jisasoftech.com/data-retention-automatic-erasure-how-to-build-a-compliant-workflow/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Privacy by Design GDPR: Complete Implementation Guide for 2025, accessed January 27, 2026, https://secureprivacy.ai/blog/privacy-by-design-gdpr-2025"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data Privacy & AI Ethics Best Practices | Governance Guidance 2025 - TrustCommunity, accessed January 27, 2026, https://community.trustcloud.ai/docs/grc-launchpad/grc-101/governance/data-privacy-and-ai-ethical-considerations-and-best-practices/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GDPR for Operations - InfoQ, accessed January 27, 2026, https://www.infoq.com/articles/gdpr-for-operations/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GDPR and the \u201cRight to Be Forgotten\u201d: The Role of Certified Data Destruction, accessed January 27, 2026, https://datadestruction.com/gdpr-and-the-right-to-be-forgotten-the-role-of-certified-data-destruction/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Does GDPR require deleted backups to be rendered unrecoverable?, accessed January 27, 2026, https://dba.stackexchange.com/questions/305978/does-gdpr-require-deleted-backups-to-be-rendered-unrecoverable"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GDPR Right To Erasure: Should You Delete Backups As Well? - Hall Booth Smith, accessed January 27, 2026, https://hallboothsmith.com/we-all-know-about-gdprs-right-to-erasure-does-this-mean-you-have-to-delete-data-from-backups-as-well/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Optimize index maintenance to improve query performance and reduce resource consumption - Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver17"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Whitepaper : SQL Server Fragmentation Explained - IDERA, accessed January 27, 2026, https://www.idera.com/resource-center/whitepapers/sql-server-fragmentation-explained/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "New IT Systems Require SSD Shredding for Data Security, accessed January 27, 2026, https://veritysystems.com/new-it-systems-require-ssd-shredding-for-data-security/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Understanding the BSI Guidelines for Permanently Erasing Data - BitRaser, accessed January 27, 2026, https://www.bitraser.com/article/bsi-guidelines-permanently-erasing-data.php"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Troubleshoot a full transaction log (SQL Server Error 9002) - Microsoft Learn, accessed January 27, 2026, https://learn.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002?view=sql-server-ver17"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How to Clean Up WAL Files and Replication Slots in PostgreSQL (Complete Guide for DBAs) | by Jeyaram Ayyalusamy | Medium, accessed January 27, 2026, https://medium.com/@jramcloud1/how-to-clean-up-wal-files-and-replication-slots-in-postgresql-complete-guide-for-dbas-2ca33b3fdb3b"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How can I solve postgresql problem after deleting wal files?, accessed January 27, 2026, https://dba.stackexchange.com/questions/80317/how-can-i-solve-postgresql-problem-after-deleting-wal-files"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Amazon RDS PostgreSQL WAL Logs Not Clearing, High Storage Consumption, accessed January 27, 2026, https://repost.aws/questions/QUBOrsgylZS2GdChkiOtsEiQ/amazon-rds-postgresql-wal-logs-not-clearing-high-storage-consumption"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Defragmentation Based on Page Density - SQL Server Administration, accessed January 27, 2026, https://forums.sqlteam.com/t/defragmentation-based-on-page-density/24534"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Right to Erasure: GDPR Compliance Steps - Reform.app, accessed January 27, 2026, https://www.reform.app/blog/right-to-erasure-gdpr-compliance-steps"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Building a Secure GenAI Architecture in HealthTech: Avoiding HIPAA & GDPR Pitfalls, accessed January 27, 2026, https://www.sekurno.com/post/building-a-secure-genai-architecture-in-healthtech-avoiding-hipaa-gdpr-pitfalls"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Crypto-shredding the best solution for cloud system data erasure ..., accessed January 27, 2026, https://www.verdict.co.uk/crypto-shredding-gdpr-cloud-systems/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Crypto-shredding - Wikipedia, accessed January 27, 2026, https://en.wikipedia.org/wiki/Crypto-shredding"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Privacy Policy - Agrilinkage, accessed January 27, 2026, https://www.agrilinkage.com/privacy-policy"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Envelope encryption | Cloud Key Management Service - Google Cloud Documentation, accessed January 27, 2026, https://docs.cloud.google.com/kms/docs/envelope-encryption"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Protecting Sensitive Data Using Envelope Encryption - DEV Community, accessed January 27, 2026, https://dev.to/ibrahimgunduz34/protecting-sensitive-data-using-envelope-encryption-4o3c"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Understanding Envelope Encryption with AWS KMS | willdady.com, accessed January 27, 2026, https://willdady.com/understanding-envelope-encryption-with-aws-kms"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "GDPR for Data Engineers: A Practical Guide to Privacy-Compliant Data Architecture, accessed January 27, 2026, https://blog.pmunhoz.com/data-engineering/gdpr_data_engineers_guide"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Immutable Audit Log Architecture - Emergent Mind, accessed January 27, 2026, https://www.emergentmind.com/topics/immutable-audit-log"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Dags \u2014 Airflow 3.1.6 Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Architecture Overview \u2014 Airflow 3.1.6 Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "DAGs \u2014 Airflow Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/2.5.2/core-concepts/dags.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "DAG writing best practices in Apache Airflow | Astronomer Docs, accessed January 27, 2026, https://www.astronomer.io/docs/learn/dag-best-practices"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Prepare your data for GDPR compliance | Databricks on Google Cloud, accessed January 27, 2026, https://docs.databricks.com/gcp/en/security/privacy/gdpr-delta"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Everything you need to know about the \"Right to be forgotten\" - GDPR.eu, accessed January 27, 2026, https://gdpr.eu/right-to-be-forgotten/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Must Have Elements of a Data Destruction Certificate - Blancco, accessed January 27, 2026, https://blancco.com/resources/blog-must-have-elements-of-a-data-destruction-certificate/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "50 IT Director Interview Questions & Answers [2025 - DigitalDefynd, accessed January 27, 2026, https://digitaldefynd.com/IQ/it-director-interview-questions/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Building Resilient Airflow Operators | by Dusan Zamurovic | Jan, 2026 | Medium, accessed January 27, 2026, https://medium.com/@ezamur/building-resilient-airflow-operators-the-retry-pattern-for-aws-emr-fc264c792cdd"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Best Practices \u2014 Airflow 3.1.6 Documentation, accessed January 27, 2026, https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Apache Iceberg on AWS: The Key to GDPR Compliant Data Lakes - Data Engineer Things, accessed January 27, 2026, https://blog.dataengineerthings.org/apache-iceberg-on-aws-the-key-to-gdpr-compliant-data-lakes-d86b4ad07478"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "How do you enforce immutability and append\u2011only audit trails? - Design Gurus, accessed January 27, 2026, https://www.designgurus.io/answers/detail/how-do-you-enforce-immutability-and-appendonly-audit-trails"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "A Comprehensive List of Data Wiping & Erasure Standards - Blancco, accessed January 27, 2026, https://blancco.com/resources/blog-comprehensive-list-data-wiping-erasure-standards/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "What Are Immutable Logs? A Complete Guide - HubiFi, accessed January 27, 2026, https://www.hubifi.com/blog/immutable-audit-log-guide"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "The AIGN Data Act AI Governance Framework - Shift8 Web, accessed January 27, 2026, https://cycejbtdfgao.cdn.shift8web.com/wp-content/uploads/2025/07/AIGN-EU-Data-Act-AI-Governance-Framework.pdf"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "The Ultimate Guide to Immutable Audit Trails - HubiFi, accessed January 27, 2026, https://www.hubifi.com/blog/immutable-audit-log-basics"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Soft delete vs hard delete in multitenancy with GDPR and audit trail - Reddit, accessed January 27, 2026, https://www.reddit.com/r/softwarearchitecture/comments/1mfsrht/soft_delete_vs_hard_delete_in_multitenancy_with/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Ask HN: How are you implementing GDPR-compliant soft deletes? - Hacker News, accessed January 27, 2026, https://news.ycombinator.com/item?id=16366050"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data Ethics: Frameworks, Principles & Challenges (2025) - Atlan, accessed January 27, 2026, https://atlan.com/data-ethics-101/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "AI and GDPR: A Road Map to Compliance by Design - Episode 3: The Development Phase, accessed January 27, 2026, https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250730-ai-and-gdpr-a-road-map-to-compliance-by-design-episode-3-the-design-phase"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Data retention and deletion | Digital Ethics and Privacy in Business Class Notes - Fiveable, accessed January 27, 2026, https://fiveable.me/digital-ethics-and-privacy-in-business/unit-2/data-retention-deletion/study-guide/prHu5LUl38XrfnXK"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Applying Amazon S3 Object Lock at scale for petabytes of existing data | AWS Storage Blog, accessed January 27, 2026, https://aws.amazon.com/blogs/storage/applying-amazon-s3-object-lock-at-scale-for-petabytes-of-existing-data/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "S3 Object Lock for Ransomware Protection, accessed January 27, 2026, https://objectfirst.com/guides/immutability/s3-object-lock-for-ransomware-protection/"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Setting Up S3 Object Locking (Immutable Storage) for Rapid Recovery Archives (4376845), accessed January 27, 2026, https://support.quest.com/rapid-recovery/kb/4376845/setting-up-s3-object-locking-immutable-storage-for-rapid-recovery-archives"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Navigating Regulatory and Ethical Challenges in Data Lake Governance: A Comprehensive Review, accessed January 27, 2026, https://norislab.com/index.php/IJITAI/article/download/93/86/216"
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "(PDF) ETHICAL DATA ENGINEERING: NAVIGATING PRIVACY CHALLENGES AND ALGORITHMIC BIAS IN THE AI ERA - ResearchGate, accessed January 27, 2026, https://www.researchgate.net/publication/390756201_ETHICAL_DATA_ENGINEERING_NAVIGATING_PRIVACY_CHALLENGES_AND_ALGORITHMIC_BIAS_IN_THE_AI_ERA"
                     }
                 ]
             }

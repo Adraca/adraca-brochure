@@ -23,13 +23,25 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const t = (key: string) => {
     // Check if key exists in translations
     // @ts-ignore - Dynamic access to translations object
-    if (translations[key] && translations[key][language]) {
-      // @ts-ignore
-      return translations[key][language];
+    const keyParams = translations[key];
+
+    if (keyParams) {
+        // Return language specific translation if available
+        // @ts-ignore
+        if (keyParams[language]) {
+             // @ts-ignore
+            return keyParams[language];
+        }
+        // Fallback to English if available
+        // @ts-ignore
+        if (keyParams['en']) {
+             // @ts-ignore
+            return keyParams['en'];
+        }
     }
 
     // Warn in dev mode if key is missing
-    if (process.env.NODE_ENV === 'development' && !translations[key as keyof typeof translations]) {
+    if (process.env.NODE_ENV === 'development') {
       console.warn(`Missing translation for key: ${key}`);
     }
 

@@ -1798,3 +1798,69 @@ body.hovering .cursor-data {
         transform: rotate(360deg);
     }
 }
+
+/* --- PDF EXPORT COMPATIBILITY LAYER --- */
+.is-pdf-export .text-transparent,
+.is-pdf-export [class*="bg-clip-text"] {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    color: #0f172a !important; /* Force dark slate for readability */
+}
+
+.is-pdf-export .dark .text-transparent,
+.is-pdf-export .dark [class*="bg-clip-text"] {
+    color: #f1f5f9 !important; /* Force off-white in dark mode */
+}
+
+/* Specific fix for overlapping text and crowded layouts on export */
+.is-pdf-export h1, 
+.is-pdf-export h2 {
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+}
+
+.is-pdf-export * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0.01ms !important;
+}
+
+.is-pdf-export .snap-start {
+    min-height: 100vh !important;
+    padding-bottom: 8rem !important;
+    padding-top: 4rem !important;
+}
+
+.is-pdf-export .snap-start > div {
+     min-height: 100vh !important;
+}
+
+.is-pdf-export [class*="px-"].rounded-full {
+    display: inline-table !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    border-collapse: separate !important;
+    border-spacing: 4px 0 !important;
+    text-align: center !important;
+}
+
+.is-pdf-export [class*="px-"].rounded-full > * {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    float: none !important;
+    transform: translateY(-1px) !important; /* Shift text up slightly for PDF baseline correction */
+}
+
+/* Hide interactive/floating elements that might interfere */
+.is-pdf-export .cursor-dot,
+.is-pdf-export .cursor-outline,
+.is-pdf-export button:not([onClick*="handleDownloadPDF"]) {
+    display: none !important;
+}

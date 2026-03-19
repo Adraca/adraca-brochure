@@ -68,10 +68,13 @@ export default function Home() {
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t('product_validator_desc')}</p>
             </div>
             {/* Hover Code Reveal */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
-              <code className="text-xs font-mono text-emerald-400 break-words">
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
+              <code className="text-xs font-mono text-emerald-400 break-words mb-4">
                 {t('product_validator_code')}
               </code>
+              <a href="http://100.66.68.10:4000" target="_blank" className="px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-full hover:bg-blue-500 transition-colors">
+                Launch Demo
+              </a>
             </div>
           </GlassCard>
 
@@ -86,10 +89,13 @@ export default function Home() {
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t('product_dpp_desc')}</p>
             </div>
             {/* Hover Code Reveal */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
-              <code className="text-xs font-mono text-pink-400 break-words">
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
+              <code className="text-xs font-mono text-pink-400 break-words mb-4">
                 {t('product_dpp_code')}
               </code>
+              <a href="http://100.66.68.10:4002" target="_blank" className="px-4 py-2 bg-purple-600 text-white text-xs font-bold rounded-full hover:bg-purple-500 transition-colors">
+                Launch Demo
+              </a>
             </div>
           </GlassCard>
 
@@ -104,10 +110,13 @@ export default function Home() {
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t('product_synthetic_desc')}</p>
             </div>
             {/* Hover Code Reveal */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
-              <code className="text-xs font-mono text-cyan-400 break-words">
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
+              <code className="text-xs font-mono text-cyan-400 break-words mb-4">
                 {t('product_synthetic_code')}
               </code>
+              <a href="http://100.66.68.10:4003" target="_blank" className="px-4 py-2 bg-cyan-600 text-white text-xs font-bold rounded-full hover:bg-cyan-500 transition-colors">
+                Launch Demo
+              </a>
             </div>
           </GlassCard>
 
@@ -124,10 +133,13 @@ export default function Home() {
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t('product_search_desc')}</p>
             </div>
             {/* Hover Code Reveal */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
-              <code className="text-xs font-mono text-indigo-400 break-words">
+            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/90 backdrop-blur-sm p-4 text-center">
+              <code className="text-xs font-mono text-indigo-400 break-words mb-4">
                 {t('product_search_code')}
               </code>
+              <a href="http://100.66.68.10:4001" target="_blank" className="px-4 py-2 bg-indigo-600 text-white text-xs font-bold rounded-full hover:bg-indigo-500 transition-colors">
+                Launch Demo
+              </a>
             </div>
           </GlassCard>
         </div>

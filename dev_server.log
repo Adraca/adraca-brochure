@@ -1,0 +1,72 @@
+
+> adraca-web@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.10 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.29.4:3000
+
+ ✓ Starting...
+ ✓ Ready in 1299ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.5s
+Missing translation for key: tier_core_f4
+Missing translation for key: tier_ent_f4
+Missing translation for key: tier_oem_f4
+ GET / 200 in 4039ms
+Missing translation for key: tier_core_f4
+Missing translation for key: tier_ent_f4
+Missing translation for key: tier_oem_f4
+ HEAD / 200 in 174ms
+ ✓ Compiled /industries in 364ms
+ HEAD /industries 200 in 473ms
+ ○ Compiling /products ...
+ ✓ Compiled /products in 611ms
+ HEAD /products 200 in 712ms
+ ✓ Compiled /pricing in 317ms
+ HEAD /pricing 200 in 404ms
+ ✓ Compiled /about in 312ms
+ HEAD /about 200 in 398ms
+ ✓ Compiled /contact in 288ms
+ HEAD /contact 200 in 373ms
+ ✓ Compiled /products/cloud-infrastructure in 351ms
+ HEAD /products/cloud-infrastructure 200 in 440ms
+ ✓ Compiled /products/data-migration in 353ms
+Missing translation for key: protocol_tcp
+ HEAD /products/data-migration 200 in 448ms
+ ✓ Compiled /products/security-sovereignty in 293ms
+ HEAD /products/security-sovereignty 200 in 387ms
+ ✓ Compiled /intelligence in 293ms
+ HEAD /intelligence 200 in 379ms
+ ✓ Compiled /industries/consumer-goods in 314ms
+ HEAD /industries/consumer-goods 200 in 417ms
+ ✓ Compiled /industries/retail in 298ms
+ HEAD /industries/retail 200 in 390ms
+ ✓ Compiled /industries/cmt in 353ms
+ HEAD /industries/cmt 200 in 437ms
+ ✓ Compiled /industries/finance in 322ms
+ HEAD /industries/finance 200 in 427ms
+ ✓ Compiled /industries/energy in 478ms
+ HEAD /industries/energy 200 in 652ms
+ ✓ Compiled /industries/automotive in 423ms
+ HEAD /industries/automotive 200 in 522ms
+ ✓ Compiled /industries/health in 321ms
+ HEAD /industries/health 200 in 406ms
+ ✓ Compiled /compliance in 296ms
+ HEAD /compliance 200 in 370ms
+ ✓ Compiled /compliance/privacy in 308ms
+Missing translation for key: privacy_sec_12_note
+ HEAD /compliance/privacy 200 in 392ms
+ ✓ Compiled /impressum in 299ms
+ HEAD /impressum 200 in 384ms
+ ✓ Compiled /compliance/terms in 289ms
+ HEAD /compliance/terms 200 in 452ms
+ HEAD /contact 200 in 147ms
+ HEAD /contact?subject=Free_Audit 200 in 124ms
+ HEAD /products 200 in 74ms
+ ✓ Compiled /_not-found/page in 246ms
+ HEAD /demo 404 in 327ms
+ HEAD /compliance 200 in 67ms
+ HEAD /contact 200 in 68ms
+ HEAD /contact 200 in 66ms
+ HEAD /contact 200 in 78ms

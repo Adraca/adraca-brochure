@@ -12,6 +12,12 @@
           "text": "The digital infrastructure of the European Union (EU) exists in a state of profound tension. On one side lies the operational necessity of the American hyperscalers\u2014Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure\u2014whose technological maturity, scalability, and ecosystem depth are currently unrivaled. On the other side stands the uncompromising normative framework of European jurisprudence, anchored by the General Data Protection Regulation (GDPR) and reinforced by the Court of Justice of the European Union (CJEU). This tension is not merely a legal compliance issue; it is a fundamental engineering challenge that defines the current era of enterprise IT in Europe."
         },
         {
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-001-architecture.png",
+          "alt": "Sovereign Architecture",
+          "caption": "Fig 1.1: Sovereign Landing Zone Reference Architecture"
+        },
+        {
           "type": "paragraph",
           "text": "Following the invalidation of the Privacy Shield framework in the Schrems II ruling, European enterprises face a stark choice. They can retreat to on-premises data centers, sacrificing agility and innovation for certainty, or they can navigate the treacherous waters of US cloud adoption under the constant threat of regulatory enforcement and extraterritorial surveillance. The \"European Third Way\"\u2014a term increasingly used to describe a strategic path distinct from both US \"surveillance capitalism\" and Chinese state-control\u2014rejects this binary.1 It seeks to leverage the technical superiority of global cloud providers while mathematically enforcing European values of privacy and sovereignty."
         },
@@ -36,6 +42,12 @@
         {
           "type": "paragraph",
           "text": "The primary antagonist in the Schrems II narrative is the potential for US intelligence agencies to access data stored by US companies, regardless of the data's physical location. This capability is codified in the Clarifying Lawful Overseas Use of Data Act (CLOUD Act) of 2018."
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-001-info.jpg",
+          "alt": "Data Engineering Discipline",
+          "caption": "Fig 2.1: The Medallion Data Engineering Pipeline"
         }
       ]
     },
@@ -62,6 +74,12 @@
         {
           "type": "paragraph",
           "text": "FISA 702 allows the US Attorney General and Director of National Intelligence to authorize surveillance targeting non-US persons located outside the US to acquire foreign intelligence information. The definition of \"foreign intelligence\" is broad, and the targets are not necessarily suspected of crimes.7"
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-sovereign-ai.jpg",
+          "alt": "European Third Way",
+          "caption": "Fig 3.1: The European 'Third Way' Strategic Pillars"
         },
         {
           "type": "paragraph",
@@ -833,7 +851,14 @@
     },
     {
       "title": "The Engineering Paradigm Shift for Digital Operational Resilience",
-      "content": []
+      "content": [
+        {
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-002-info.jpg",
+          "alt": "DORA Compliance",
+          "caption": "Fig 1.1: DORA Digital Operational Resilience Framework"
+        }
+      ]
     },
     {
       "title": "Executive Summary",
@@ -862,6 +887,12 @@
         {
           "type": "paragraph",
           "text": "The European Supervisory Authorities (ESAs)\u2014EBA, EIOPA, and ESMA\u2014have developed detailed Regulatory Technical Standards (RTS) that translate the high-level legislative text of DORA into specific technical obligations. For infrastructure architects and platform engineers, these RTS documents function effectively as a non-negotiable requirements specification for the cloud platform."
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-dora-fintech.jpg",
+          "alt": "Fintech Resilience",
+          "caption": "Fig 2.1: Compliance-as-Code for Financial Entities"
         }
       ]
     },
@@ -884,6 +915,12 @@
         {
           "type": "paragraph",
           "text": "Immutable Infrastructure as a Compliance Necessity: The requirement for \"updated\" and \"resilient\" systems effectively deprecates the \"pet\" server model of long-lived, manually patched instances. To comply with Article 9 at scale, engineering teams must adopt immutable infrastructure patterns (e.g., replacing rather than patching instances) to eliminate configuration drift. Security patches must be applied upstream in the image build process, ensuring that the deployed infrastructure always matches the compliant \"desired state\" defined in the code repository."
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-strategy-europe.jpg",
+          "alt": "European Strategy",
+          "caption": "Fig 3.1: Strategic Resilience Roadmap"
         },
         {
           "type": "paragraph",
@@ -1676,6 +1713,12 @@
           "text": "The rapid proliferation of Large Language Models (LLMs) into the enterprise technology stack has precipitated a fundamental collision between the promise of generative artificial intelligence and the rigid mandates of data sovereignty, privacy regulation, and intellectual property protection. As organizations rush to integrate capabilities ranging from automated code generation to semantic document analysis, they confront a critical architectural bifurcation: reliance on centralized, proprietary Model-as-a-Service (MaaS) providers versus the deployment of decentralized, sovereign infrastructure. This whitepaper argues that for entities operating within jurisdictions with stringent data protection frameworks\u2014most notably the European Economic Area (EEA)\u2014or for those handling sensitive proprietary data, the \"Sovereign AI\" approach is not merely an architectural preference but a legal and operational necessity."
         },
         {
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-003-info.jpg",
+          "alt": "Sovereign AI",
+          "caption": "Fig 1.1: Sovereign AI Architectural Layers"
+        },
+        {
           "type": "paragraph",
           "text": "The \"Leakage Problem\" is the central antagonist in this narrative. When an enterprise utilizes a public API for LLM inference, it effectively outsources its cognitive processing to a third party, often located in a jurisdiction with incompatible surveillance laws. The friction between the European Union\u2019s General Data Protection Regulation (GDPR) and the United States\u2019 CLOUD Act creates a legal paradox that standard contractual clauses and encryption-at-rest cannot fully resolve. This paper proposes a comprehensive technical solution: the repatriation of inference workloads to local infrastructure utilizing NVIDIA A100 GPUs, containerized open-weights models such as Llama 3 and Mistral, and a defensive software architecture defined as the \"Sanitized Context Window.\""
         },
@@ -1704,6 +1747,12 @@
         {
           "type": "paragraph",
           "text": "The leakage occurred through three distinct incidents, each revealing a different vector of exposure. In the first instance, an employee entered faulty source code related to the facility measurement database download program, seeking optimization and debugging assistance.1 This transmission effectively handed over trade secrets regarding Samsung\u2019s internal semiconductor manufacturing infrastructure to a US-based entity. In a second instance, program code for identifying defective equipment was uploaded for similar optimization purposes.2 The third instance involved the transcription and summarization of a smartphone recording from a confidential company meeting, converting spoken sensitive strategic discussions into text and uploading them to the model for minute-generation.1"
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-sovereign-ai.jpg",
+          "alt": "Local LLM Deployment",
+          "caption": "Fig 2.1: Local-first LLM Orchestration"
         },
         {
           "type": "paragraph",
@@ -1738,6 +1787,12 @@
         {
           "type": "paragraph",
           "text": "The GDPR Article 48 Restriction Article 48 of the GDPR explicitly states that any judgment of a court or tribunal and any decision of an administrative authority of a third country requiring a controller or processor to transfer or disclose personal data may only be recognized or enforceable if based on an international agreement, such as a Mutual Legal Assistance Treaty (MLAT).6 This article effectively forbids EU companies from complying with direct foreign subpoenas that bypass established diplomatic channels."
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-catena-x.jpg",
+          "alt": "Industrial AI",
+          "caption": "Fig 3.1: AI in the Industrial Data Mesh"
         },
         {
           "type": "paragraph",
@@ -2442,916 +2497,45 @@
   ],
   "wp-004": [
     {
-      "title": "Industrial Data Mesh: The Catena-X Standard",
+      "title": "Extreme Edge Intelligence: The Sovereign Mobile Frontier",
       "content": []
     },
     {
-      "title": "Executive Preamble: The Imperative for Federated Interoperability",
+      "title": "1. The Decentralization of Cognition",
       "content": [
         {
           "type": "paragraph",
-          "text": "The global manufacturing sector stands at a critical inflection point. For decades, the pursuit of efficiency was defined by the physical optimization of production lines\u2014Lean Manufacturing, Six Sigma, and Just-in-Time logistics. However, as the fourth industrial revolution (Industry 4.0) matures, the frontier of value creation has shifted from the physical to the digital. The modern automotive supply chain is no longer merely a linear flow of parts; it is a complex, multi-tiered network of data exchanges. Yet, despite the ubiquity of sensors and the proliferation of cloud platforms, this network remains fractured. The prevailing architecture of the last decade\u2014the centralized data lake\u2014has failed to solve the fundamental challenge of cross-company collaboration: the tension between data sharing and data sovereignty."
+          "text": "As Large Language Models (LLMs) transition from experimental curiosities to fundamental enterprise utilities, the battle for data sovereignty has moved from the data center to the palm of the hand. The traditional 'Cloud-First' AI model is inherently incompatible with high-stakes privacy requirements. Every token sent to a centralized API is a potential point of jurisdictional leakage. Extreme Edge Intelligence (EEI) represents the terminal point of this decentralization: running high-parameter models directly on user devices\u2014including modern and legacy smartphones."
         },
         {
-          "type": "paragraph",
-          "text": "The Catena-X Automotive Network has emerged as the definitive response to this failure. By establishing the first open, collaborative data ecosystem for the automotive industry, Catena-X introduces a new architectural paradigm: the Industrial Data Mesh. This standard utilizes the Eclipse Dataspace Components (EDC) to create a peer-to-peer network where data remains at its source, governed by strict usage policies, and exchanged only upon mutual agreement. This report provides an exhaustive technical and strategic analysis of this standard, dissecting the collapse of legacy silos, the architecture of the data space, the rigorous methodologies for sustainability tracking via the Digital Product Passport (DPP), and the practicalities of edge deployment. It serves as a comprehensive guide for architects, strategists, and engineers tasked with navigating the transition from monolithic centralization to federated sovereignty."
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-004-architecture.png",
+          "alt": "Industrial Data Mesh",
+          "caption": "Fig 1.1: Catena-X Data Exchange Architecture"
         }
       ]
     },
     {
-      "title": "Chapter 1: The Architectural Crisis of Modern Manufacturing",
-      "content": []
-    },
-    {
-      "title": "1.1 The Failure of the Centralized Data Lake",
+      "title": "2. Repurposing Legacy Silicon for Sovereign MAS",
       "content": [
         {
           "type": "paragraph",
-          "text": "The initial promise of Industry 4.0 was predicated on the aggregation of massive datasets. The hypothesis was simple: if an organization could centralize all data\u2014from the shop floor Programmable Logic Controllers (PLCs) to the Enterprise Resource Planning (ERP) systems of Tier-1 suppliers\u2014into a single, monolithic repository (a Data Lake), advanced analytics and Artificial Intelligence could unlock unprecedented efficiencies. Hyperscalers built massive infrastructure to support this vision, offering virtually infinite storage and compute power."
-        },
-        {
-          "type": "paragraph",
-          "text": "However, when applied to the reality of a multi-tier global supply chain, this centralized model collapses under the weight of \"The Trust Bottleneck.\" Manufacturing value chains are inherently heterogeneous and competitive. A typical automotive OEM interacts with thousands of Tier-1 suppliers, who in turn rely on tens of thousands of Tier-2 and Tier-N sub-suppliers. These entities operate distinct IT stacks, adhere to different governance models, and, crucially, often compete with one another in other markets."
-        },
-        {
-          "type": "paragraph",
-          "text": "In a centralized architecture, data sharing requires a supplier to physically move their sensitive data (e.g., yield rates, precise chemical formulations, sub-supplier identities) into a repository owned and controlled by a dominant partner (usually the OEM) or a third-party platform. This creates an unacceptable risk profile for the supplier 1:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Loss of Sovereignty: Once data is uploaded to a central lake, the data owner loses technical control over who accesses it and for what purpose. Usage control becomes a legal abstraction rather than a technical enforcement."
-        },
-        {
-          "type": "paragraph",
-          "text": "Intellectual Property Leakage: Proprietary process data, if exposed to competitors or even the OEM, could be used to reverse-engineer competitive advantages or squeeze margins during contract negotiations."
-        },
-        {
-          "type": "paragraph",
-          "text": "Vendor Lock-in: Centralization creates a dependency on specific platform providers, reducing the supplier's bargaining power and agility."
-        },
-        {
-          "type": "paragraph",
-          "text": "Consequently, the industry is characterized by \"Data Silos.\" Valuable data remains trapped within corporate firewalls, rendering the end-to-end supply chain opaque. The \"One Truth\"\u2014a single, consistent view of the supply chain state\u2014remains a fallacy. Instead, the OEM, the Tier-1, and the logistics provider operate on fragmented, often conflicting, versions of reality.1"
+          "text": "The Adraca 'Mobile Cortex' strategy involves repurposing underutilized compute cycles from a fleet of edge devices. By utilizing frameworks like MLC-LLM and ExecuTorch, we can deploy quantized 3B and 7B models (e.g., Phi-3, Llama-3-8B) onto heterogeneous mobile hardware. This turns a collection of siloed smartphones into a distributed Multi-Agent System (MAS) capable of performing 'wild' tasks\u2014sensitive research, lead auditing, and local synthesis\u2014without ever touching a public network."
         }
       ]
     },
     {
-      "title": "1.2 The Cost of Opacity: \"Part Tourism\" and Quality Management",
+      "title": "3. The Technical Architecture of the Mobile Enclave",
       "content": [
         {
           "type": "paragraph",
-          "text": "The lack of a unified data mesh has tangible, disastrous consequences for quality management. Catena-X research has identified \"Part Tourism\" as a pervasive symptom of this opacity.1 In the current state, a defective component\u2014perhaps a microchip with a latent thermal flaw\u2014might be produced by a Tier-3 supplier in Southeast Asia. Due to the lack of digital traceability, this defective part travels through the supply chain, being integrated into a control module by a Tier-2, then into a braking system by a Tier-1, and finally into a vehicle by the OEM."
+          "text": "Implementing EEI requires a shift in how we think about Trusted Execution Environments (TEEs). While server-side enclaves (AMD SEV-SNP) protect data-in-use at the hyperscale level, mobile-side sovereignty relies on ARM TrustZone and specialized NPU (Neural Processing Unit) isolation. Our architecture creates a 'Sanitized Context Window' on the device, ensuring that even if the host OS is compromised, the cryptographic keys and the model's intermediate activations remain inaccessible to external actors."
         },
         {
-          "type": "paragraph",
-          "text": "At each stage of this journey, value is added to the defective part. Logistics costs, assembly labor, and energy are expended on a component that is destined to fail. By the time the defect is detected\u2014often during end-of-line testing or, worse, by a customer in the field\u2014the cost of remediation has compounded exponentially."
-        },
-        {
-          "type": "paragraph",
-          "text": "Without a shared data infrastructure, the feedback loop is broken. The \"Early Warning\" signals that might have been detected in the Tier-3 production data are never transmitted to the Tier-1 or OEM. Conversely, field data (Diagnostic Trouble Codes - DTCs) from the vehicle rarely reaches the R&D teams of the component suppliers who could use it to improve future designs.1"
-        },
-        {
-          "type": "paragraph",
-          "text": "This disconnect leads to the phenomenon of Untargeted Recalls. When a safety-critical failure occurs, and the OEM lacks precise batch traceability, they cannot isolate the specific vehicles containing the defective batch. To ensure safety, they are forced to recall a much broader range of vehicles\u2014often hundreds of thousands\u2014when only a few thousand might be affected. This results in massive avoidable financial losses, reputational damage, and unnecessary waste.1"
-        }
-      ]
-    },
-    {
-      "title": "1.3 Collaborative Root Cause Analysis (RCA)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The silo problem also paralyzes the resolution process. In a traditional setup, Root Cause Analysis (RCA) across company boundaries is a manual, high-friction process. Engineers exchange spreadsheets and PDF reports via email. Data is manually extracted, transformed, and loaded, introducing errors and latency. A complex RCA investigation can take weeks or months, during which time the production of defective parts may continue.1"
-        },
-        {
-          "type": "paragraph",
-          "text": "The Catena-X Quality Use Case aims to replace this manual friction with an automated, data-driven workflow. By connecting the \"One Truth\" of production data with field data, partners can perform collaborative RCA in near real-time. However, this requires a fundamental shift in architecture: moving from \"data to the algorithm\" (centralization) to \"algorithm to the data\" (decentralization)."
-        }
-      ]
-    },
-    {
-      "title": "Chapter 2: The Industrial Data Mesh and the EDC Standard",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "To resolve the paradox of collaboration versus sovereignty, Catena-X has standardized on the Industrial Data Mesh. In this architecture, there is no central database. Data stays with the owner (the provider). The mesh serves as a federation of trusted endpoints that can discover, negotiate, and exchange data on demand."
-        },
-        {
-          "type": "paragraph",
-          "text": "The technical realization of this mesh is the Eclipse Dataspace Components (EDC). The EDC is not a platform; it is a framework for building \"Connectors.\" A connector is a software agent that speaks the standardized protocols of the data space, acting as the gateway for an organization to participate in the ecosystem.3"
-        }
-      ]
-    },
-    {
-      "title": "2.1 Architectural Principles: The Split Execution Model",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The EDC architecture is defined by a strict separation of concerns, dividing the system into two distinct planes: the Control Plane and the Data Plane. This separation is critical for scalability, security, and protocol agnosticism.5"
-        }
-      ]
-    },
-    {
-      "title": "2.1.1 The Control Plane: The Brain of Sovereignty",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The Control Plane handles the metadata, identity, and policy enforcement. It is responsible for the \"sociological\" aspects of the data exchange. It does not touch the actual data payload. Its primary responsibilities include:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Identity Management: It integrates with Identity Providers (IdPs) and Decentralized Identity systems to verify who is requesting data.2"
-        },
-        {
-          "type": "paragraph",
-          "text": "Catalog Management: It maintains a \"Self-Description\" of the available data assets and their associated policies (contracts).4"
-        },
-        {
-          "type": "paragraph",
-          "text": "Contract Negotiation: It executes the state machine that governs the agreement process. It ensures that a consumer accepts the usage policy (e.g., \"Delete data after 7 days\") before any transfer is authorized.7"
-        },
-        {
-          "type": "paragraph",
-          "text": "Transfer Process Management: It orchestrates the flow. Once a contract is signed, it instructs the Data Plane to initiate the transfer."
-        },
-        {
-          "type": "paragraph",
-          "text": "Because the Control Plane deals only with metadata and signaling, it is lightweight and can be standardized to a high degree, ensuring that all participants speak the same \"negotiation language\".6"
-        }
-      ]
-    },
-    {
-      "title": "2.1.2 The Data Plane: The Muscle of Transfer",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The Data Plane executes the actual movement of bytes. It is highly extensible and supports multiple protocols. While the Control Plane negotiates that a transfer is allowed, the Data Plane handles how the transfer happens.6"
-        },
-        {
-          "type": "paragraph",
-          "text": "Protocol Agnosticism: Industrial use cases vary wildly in their transport requirements. A bulk transfer of historical telemetry might utilize an S3 bucket synchronization or an HTTP file download. A real-time alert system might use MQTT or a Websocket. The EDC Data Plane abstracts these differences using \"Data Addresses\".6"
-        },
-        {
-          "type": "paragraph",
-          "text": "Proxying and Protection: In many deployments, the Data Plane acts as a secure reverse proxy. It sits in the DMZ, shielding internal backend systems (like an SAP ERP or a shop-floor SQL database) from the public internet. It validates the ephemeral authorization tokens issued by the Control Plane before forwarding the request to the sensitive internal system.5"
-        }
-      ]
-    },
-    {
-      "title": "2.2 The Dataspace Protocol (DSP)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The interoperability of the mesh is governed by the Dataspace Protocol (DSP). This set of specifications, standardized by the Eclipse Dataspace Working Group, defines the message formats and state transitions for interaction between connectors.8 The DSP operates over HTTPS but is logically distinct from the transport layer. It defines three core protocols:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Catalog Protocol: For discovering data assets."
-        },
-        {
-          "type": "paragraph",
-          "text": "Contract Negotiation Protocol: For agreeing on usage terms."
-        },
-        {
-          "type": "paragraph",
-          "text": "Transfer Process Protocol: For managing the data flow."
-        }
-      ]
-    },
-    {
-      "title": "2.2.1 The Contract Negotiation State Machine",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The core mechanism of sovereignty is the Contract Negotiation. This is not a simple API authorization; it is a formal, multi-step handshake that results in a cryptographically verifiable agreement.8 The state machine ensures that both parties have a shared understanding of the contract status."
-        },
-        {
-          "type": "paragraph",
-          "text": "Table 1: The Contract Negotiation Protocol Message Flow 8"
-        },
-        {
-          "type": "table",
-          "data": [
-            [
-              "Sequence",
-              "Message Type",
-              "Sender",
-              "Function & State Transition"
-            ],
-            [
-              "1",
-              "ContractRequest",
-              "Consumer",
-              "Initiation. The consumer requests a specific asset (Dataset ID) and proposes a policy (Offer ID). The state moves to REQUESTED."
-            ],
-            [
-              "2",
-              "ContractOffer",
-              "Provider",
-              "Counter-Proposal (Optional). If the provider rejects the initial terms but wants to negotiate, they send a counter-offer. State moves to OFFERED."
-            ],
-            [
-              "3",
-              "ContractAgreement",
-              "Provider",
-              "Acceptance. The provider agrees to the terms. This message contains the final Policy and a unique Agreement ID. State moves to AGREED."
-            ],
-            [
-              "4",
-              "ContractAgreementVerification",
-              "Consumer",
-              "Acknowledgement. The consumer confirms receipt and storage of the agreement. This completes the handshake. State moves to VERIFIED."
-            ],
-            [
-              "5",
-              "Termination",
-              "Either",
-              "Abort. Sent if negotiation fails or is cancelled. Can occur from any state. State moves to TERMINATED."
-            ]
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "This formal process is crucial for auditability. If a dispute arises (e.g., \"You used this data for marketing when it was restricted to quality assurance\"), the Agreement ID serves as the immutable reference to the terms that were active at the time of transfer.10"
-        }
-      ]
-    },
-    {
-      "title": "2.3 Identity and Trust: The SSI Revolution",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "Trust in a decentralized network cannot rely on a single central login server. While early iterations of Catena-X used a central X.509 Certificate Authority (the Dynamic Attribute Provisioning Service - DAPS), the architecture is migrating to Self-Sovereign Identity (SSI) to ensure scalability and true decentralization.11"
-        }
-      ]
-    },
-    {
-      "title": "2.3.1 The SSI Architecture components",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "Decentralized Identifiers (DIDs): Every participant (Company) and every connector has a unique, persistent identifier (e.g., did:web:example.com) that is cryptographically anchored.13"
-        },
-        {
-          "type": "paragraph",
-          "text": "Verifiable Credentials (VCs): These are digital attestations issued by trusted bodies. For example, a certification body might issue a VC stating \"Company X is a certified Battery Recycler.\" The Catena-X operating company issues \"Membership Credentials\".14"
-        },
-        {
-          "type": "paragraph",
-          "text": "Managed Identity Wallet (MIW): Managing DIDs and keys is complex. The MIW is a technical component (often hosted as a service) that holds the participant's wallet. It stores the VCs and handles the cryptographic signing required to create Verifiable Presentations (VPs).15"
-        }
-      ]
-    },
-    {
-      "title": "2.3.2 The Trust Handshake",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "When a Consumer Connector contacts a Provider Connector, the authentication flow is radically different from traditional OAuth:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Presentation: The Consumer generates a Verifiable Presentation (VP) derived from their VCs (e.g., proving they are a valid Catena-X member)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Verification: The Provider's Control Plane verifies the cryptographic signature of the VP against the issuer's public key (found via the DID). This happens peer-to-peer, without \"phoning home\" to a central server.15"
-        },
-        {
-          "type": "paragraph",
-          "text": "Authorization: If the VP is valid and matches the Access Policy (e.g., \"Requester must have Membership Credential\"), the interaction proceeds."
-        },
-        {
-          "type": "paragraph",
-          "text": "This architecture enables Attribute-Based Access Control (ABAC). A provider can set a policy: \"Access allowed only to partners with a 'TISAX Level 3' security credential.\" The connector enforces this automatically, regardless of the specific identity of the partner.2"
-        }
-      ]
-    },
-    {
-      "title": "2.4 Policy Enforcement and ODRL",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The language of contracts in Catena-X is the Open Digital Rights Language (ODRL). The EDC natively parses ODRL policies. These policies distinguish between:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Access Policies: Who can see the data? (e.g., restricted to specific Business Partner Numbers - BPNs)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Usage Policies: How can the data be used? (e.g., \"Purpose = Quality Assurance\", \"Duration = 7 days\").16"
-        },
-        {
-          "type": "paragraph",
-          "text": "The decoupling of Access and Usage allows for sophisticated governance. A supplier might grant access to all Tier-1s but restrict usage to non-commercial benchmarking."
-        }
-      ]
-    },
-    {
-      "title": "Chapter 3: Sustainability as a Data Problem - The Digital Product Passport",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The acceleration of the Catena-X standard is driven not just by efficiency, but by the regulatory tsunami originating from the European Union. The Ecodesign for Sustainable Products Regulation (ESPR) and the EU Battery Regulation mandate the creation of a Digital Product Passport (DPP). By 2027, every industrial battery (>2kWh) and eventually every vehicle component must have a digital twin containing granular data on its composition, origin, and carbon footprint.3"
-        }
-      ]
-    },
-    {
-      "title": "3.1 The Product Carbon Footprint (PCF) Rulebook",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "Calculating the carbon footprint of a complex product like a vehicle is historically fraught with inaccuracy. Traditional Life Cycle Assessment (LCA) relies heavily on \"secondary data\"\u2014industry averages from databases like Ecoinvent. This leads to generic results that fail to reward suppliers for actual decarbonization efforts."
-        },
-        {
-          "type": "paragraph",
-          "text": "Catena-X mandates the move to Primary Data\u2014actual measured emissions from the specific production facility. The Catena-X PCF Rulebook establishes the binding methodology for this calculation to ensure comparability.17"
-        }
-      ]
-    },
-    {
-      "title": "3.1.1 System Boundaries: Cradle-to-Gate",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The Rulebook defines a strictly \"Cradle-to-Gate\" system boundary for component suppliers. This encompasses all Greenhouse Gas (GHG) emissions from:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Raw Material Acquisition: Mining and pre-processing."
-        },
-        {
-          "type": "paragraph",
-          "text": "Transport: All logistics between supply chain tiers."
-        },
-        {
-          "type": "paragraph",
-          "text": "Production: Energy and chemical processes within the supplier's gate.19"
-        },
-        {
-          "type": "paragraph",
-          "text": "It explicitly excludes the \"Use Phase\" and \"End-of-Life\" phase from the supplier's reporting scope, as these are calculated by the OEM or the final integrator. However, the rulebook methodology is applicable to recyclers calculating the footprint of secondary materials.19"
-        }
-      ]
-    },
-    {
-      "title": "3.1.2 The Primary Data Share (PDS) Metric",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "To drive the transition to real data, the Rulebook introduces the Primary Data Share (PDS) metric. This indicates the percentage of the PCF value that is derived from specific, measured data rather than database averages."
-        },
-        {
-          "type": "paragraph",
-          "text": "Table 2: Primary Data Share (PDS) Calculation 19"
-        },
-        {
-          "type": "table",
-          "data": [
-            [
-              "Component",
-              "Formula",
-              "Description"
-            ],
-            [
-              "PDS (Single)",
-              "",
-              "The ratio of the absolute PCF contribution based on primary data to the total absolute PCF."
-            ],
-            [
-              "PDS (Aggregated)",
-              "",
-              "Used when aggregating footprints across a multi-stage supply chain."
-            ]
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "This metric is crucial for the \"Green Market.\" An OEM procurement algorithm can prioritize suppliers with a high PDS, as this reduces the uncertainty in the OEM's own Scope 3 reporting."
-        }
-      ]
-    },
-    {
-      "title": "3.1.3 Data Quality Rating (DQR)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "To prevent \"garbage in, garbage out,\" every PCF data point must be accompanied by a Data Quality Rating (DQR). This is a computed score from 1.0 (Very Good) to 5.0 (Poor), derived from four dimensions 19:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Technological Representativeness (TeR): Does the data match the actual technology used?"
-        },
-        {
-          "type": "paragraph",
-          "text": "Geographical Representativeness (GeR): Is the grid mix data from the specific region of production?"
-        },
-        {
-          "type": "paragraph",
-          "text": "Temporal Representativeness (TiR): Is the data from the current reporting year?"
-        },
-        {
-          "type": "paragraph",
-          "text": "Data Reliability (DRe): Is the data verified by a third party?"
-        },
-        {
-          "type": "paragraph",
-          "text": "The formula is an arithmetic mean:"
-        },
-        {
-          "type": "paragraph",
-          "text": ". A PCF with a DQR > 3.0 is generally considered low quality and may be rejected by stringent OEM policies."
-        }
-      ]
-    },
-    {
-      "title": "3.1.4 Biogenic Carbon Accounting",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The Rulebook is rigorous regarding biogenic carbon (carbon absorbed by plants). To prevent greenwashing, biogenic uptake (characterized as -1 kg CO2eq) must be reported as a separate line item and cannot be blindly netted against fossil emissions. This ensures transparency regarding how much of a product's \"low carbon\" status is due to temporary carbon storage versus actual emissions reduction.19"
-        }
-      ]
-    },
-    {
-      "title": "3.2 Semantic Interoperability: SAMM and AAS",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The DPP is not a single file stored in a cloud; it is a virtual aggregation of data points pulled from distributed sources. For a machine to assemble this passport automatically, strict semantic standards are required. Catena-X utilizes the Semantic Aspect Meta Model (SAMM) to define the \"vocabulary\" of the data.20"
-        },
-        {
-          "type": "paragraph",
-          "text": "These semantic models are implemented via the Asset Administration Shell (AAS), the digital twin standard for Industry 4.0. The AAS provides a standardized API structure for querying data.3"
-        }
-      ]
-    },
-    {
-      "title": "3.2.1 The Battery Passport Data Model",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "For the specific case of the Battery Regulation, the data model is defined in the Aspect urn:samm:io.catenax.battery.battery_pass:6.0.0.11 This JSON schema mandates specific fields:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Product Identification: Manufacturer ID (BPN), Part ID, Serial Number."
-        },
-        {
-          "type": "paragraph",
-          "text": "Sustainability: The PCF value (calculated per Rulebook), Carbon Footprint Performance Class."
-        },
-        {
-          "type": "paragraph",
-          "text": "Material Composition: Mass of Cobalt, Lithium, Nickel, and Recycled Content %."
-        },
-        {
-          "type": "paragraph",
-          "text": "Circularity: Designing for dismantling, repair instructions."
-        },
-        {
-          "type": "paragraph",
-          "text": "Because this schema is standardized, a \"Battery Passport App\" (the consumer) can query any certified battery manufacturer (the provider) and receive a guaranteed, valid JSON response, enabling instant compliance visualization.21"
-        }
-      ]
-    },
-    {
-      "title": "Chapter 4: Implementation Strategy - The Edge Frontier",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "For many industrial players, running a connector in the public cloud (AWS/Azure) is not feasible. Latency requirements for shop-floor data, security policies regarding \"Air Gapping,\" and cost constraints drive the need for Edge Deployment. This involves running the EDC Connector directly on an industrial gateway or server within the factory network.22"
-        }
-      ]
-    },
-    {
-      "title": "4.1 Edge Architecture: Hardware and OS",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The target hardware for an edge connector is typically an Industrial PC (IPC) or a high-end IoT Gateway."
-        },
-        {
-          "type": "paragraph",
-          "text": "CPU: Minimum 4 Cores (x86_64 or ARM64)."
-        },
-        {
-          "type": "paragraph",
-          "text": "RAM: Minimum 8GB (16GB recommended). The Java-based EDC is efficient, but the accompanying services (Postgres, Vault) consume resources.24"
-        },
-        {
-          "type": "paragraph",
-          "text": "Storage: 50GB SSD. High IOPS is preferred for the database."
-        },
-        {
-          "type": "paragraph",
-          "text": "OS: A Linux distribution capable of running container workloads (Ubuntu 22.04 LTS or Debian 11/12) is the standard.25"
-        }
-      ]
-    },
-    {
-      "title": "4.2 Orchestration: Docker Compose vs. Kubernetes (K3s)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "A critical decision for edge implementation is the orchestration layer."
-        },
-        {
-          "type": "paragraph",
-          "text": "Table 3: Edge Orchestration Comparison 26"
-        },
-        {
-          "type": "table",
-          "data": [
-            [
-              "Feature",
-              "Docker Compose",
-              "Kubernetes (K3s)"
-            ],
-            [
-              "Complexity",
-              "Low. Single docker-compose.yaml. Easy for OT engineers to understand.",
-              "Medium/High. Requires understanding of Pods, Ingress, PVs."
-            ],
-            [
-              "Scalability",
-              "None. Single node only. Manual scaling.",
-              "High. Can cluster multiple gateways. Auto-scaling capable."
-            ],
-            [
-              "Reliability",
-              "Basic. restart: always. No self-healing logic.",
-              "Robust. Automatic pod rescheduling, health checks, liveness probes."
-            ],
-            [
-              "Secrets",
-              "Environment variables (insecure) or file mounts.",
-              "Native K8s Secrets or integration with Vault sidecars."
-            ],
-            [
-              "Recommendation",
-              "Proof of Concept (PoC) or very simple, non-critical gateways.",
-              "Production standard. Use K3s for a lightweight, compliant stack."
-            ]
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "For a robust industrial setup, K3s is the recommended path. It strips away the bloat of full Kubernetes while retaining the API compatibility and resilience needed for 24/7 production.29"
-        }
-      ]
-    },
-    {
-      "title": "4.3 Step-by-Step Implementation Guide (K3s)",
-      "content": []
-    },
-    {
-      "title": "Step 1: Infrastructure and Cluster Initialization",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "On the edge device, install K3s to initialize the cluster."
-        },
-        {
-          "type": "paragraph",
-          "text": "Bash"
-        },
-        {
-          "type": "paragraph",
-          "text": "# Install K3s (lightweight Kubernetes)\ncurl -sfL https://get.k3s.io | sh -\n# Verify the node is Ready\nkubectl get nodes"
-        },
-        {
-          "type": "paragraph",
-          "text": "This creates a single-node cluster suitable for the edge.29"
-        }
-      ]
-    },
-    {
-      "title": "Step 2: Dependency Deployment (PostgreSQL & Vault)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The EDC requires a database for state persistence (storing contract negotiations) and a Vault for managing the private keys used for SSI.30 Use the Tractus-X Helm charts for deployment."
-        },
-        {
-          "type": "paragraph",
-          "text": "Bash"
-        },
-        {
-          "type": "paragraph",
-          "text": "# Add the Tractus-X Chart Repository\nhelm repo add tractusx-edc https://eclipse-tractusx.github.io/charts/dev\n# Deploy Prerequisites (Postgres + HashiCorp Vault)\nhelm install edc-prereqs tractusx-edc/tractusx-connector-prerequisites"
-        },
-        {
-          "type": "paragraph",
-          "text": "This command spins up the database and vault pods within the cluster.22"
-        }
-      ]
-    },
-    {
-      "title": "Step 3: Configuring the Connector (values.yaml)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "This is the most critical step. The configuration file dictates the connector's identity and behavior. Key sections include 22:"
-        },
-        {
-          "type": "paragraph",
-          "text": "Identity:\nYAML\ncontrolplane:\n  ssi:\n    miw:\n      url: \"https://miw.catena-x.net\" # Managed Identity Wallet URL\n      authorityId: \"did:web:example.com\" # The DID of the participant"
-        },
-        {
-          "type": "paragraph",
-          "text": "Endpoints:\nThe connector must know its own public address to advertise in the catalog.\nYAML\nedc:\n  endpoints:\n    protocol: \"https://gateway.factory.com/api/v1/dsp\"\n    management: \"http://localhost:8181/management\""
-        },
-        {
-          "type": "paragraph",
-          "text": "Database Connection: Pointing to the internal Postgres service."
-        }
-      ]
-    },
-    {
-      "title": "Step 4: Secrets Management",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The private key for the DID must be securely stored in the Vault. The EDC Control Plane retrieves this key at runtime to sign the Verifiable Presentation."
-        },
-        {
-          "type": "paragraph",
-          "text": "Bash"
-        },
-        {
-          "type": "paragraph",
-          "text": "# Exec into Vault pod and write the private key\nkubectl exec -it edc-prereqs-vault-0 -- vault kv put secret/edc-private-key key=@private-key.pem"
-        },
-        {
-          "type": "paragraph",
-          "text": "This ensures that the private key never exists in plain text in the config files.22"
-        }
-      ]
-    },
-    {
-      "title": "Step 5: Connecting the \"Brownfield\" (Data Plane Integration)",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The Edge Connector must interface with the factory's existing OT systems. This is done via the Data Plane."
-        },
-        {
-          "type": "paragraph",
-          "text": "Scenario: Exposing an internal OPC UA Server."
-        },
-        {
-          "type": "paragraph",
-          "text": "Mechanism: The EDC Data Plane acts as a proxy. You register a \"Data Asset\" in the EDC that points to the internal IP of the OPC UA server (e.g., opc.tcp://192.168.1.50:4840)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Security: The EDC ensures that external traffic effectively terminates at the gateway. The internal OPC UA server is never exposed directly to the internet. Only requests with a valid EDC Contract Token are proxied through.6"
-        }
-      ]
-    },
-    {
-      "title": "Chapter 5: Strategic Outlook and Migration",
-      "content": []
-    },
-    {
-      "title": "5.1 The 2025-2027 Roadmap",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The adoption timeline for Catena-X is dictated by the regulatory clock."
-        },
-        {
-          "type": "paragraph",
-          "text": "2025 (The \"Saturn\" Release): This is the year of scaling. The focus is on stabilizing the SSI infrastructure. The implementation of \"Bring Your Own Wallet\" allows companies to manage their own identities without relying solely on the central operating company. TISAX Level 2 security becomes mandatory for most service providers.32"
-        },
-        {
-          "type": "paragraph",
-          "text": "2027 (The Compliance Cliff): The EU Battery Regulation comes into full force. The Digital Product Passport becomes a market entry requirement. The ecosystem must handle high-volume, automated traffic as millions of batteries enter the market, each requiring a unique, queryable passport.3"
-        }
-      ]
-    },
-    {
-      "title": "5.2 Managing Backward Compatibility",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "As the ecosystem matures, maintaining interoperability between versions is a major challenge. The transition from DAPS (X.509) to SSI (DID) represents a breaking change. The Catena-X Backward Compatibility Guide mandates a \"N-1\" support policy. Connectors must support the previous major version for at least 12 months after a new release. For the 2025 transition, this means operating in \"Hybrid Mode,\" where connectors can accept both old DAPS tokens and new SSI tokens, ensuring that early adopters are not cut off from laggards.12"
-        }
-      ]
-    },
-    {
-      "title": "5.3 Conclusion: The Network Effect",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "The Industrial Data Mesh is more than a technical standard; it is an economic restructuring of the supply chain. By lowering the cost of trust, it enables new business models\u2014Circular Economy marketplaces, collaborative quality loops, and Carbon-as-a-Service."
-        },
-        {
-          "type": "paragraph",
-          "text": "For the industrial architect, the directive is clear: The era of the centralized lake is ending. The future belongs to the federated, the sovereign, and the interoperable. The deployment of the EDC is the foundational step in securing a place in this new industrial economy."
-        }
-      ]
-    },
-    {
-      "title": "Technical Addendum: Detailed Data Models & Schemas",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "Table 4: Battery Passport Aspect (JSON Schema Structure) 21"
-        },
-        {
-          "type": "table",
-          "data": [
-            [
-              "Field Name",
-              "Type",
-              "Description",
-              "Mandatory?"
-            ],
-            [
-              "id",
-              "UUID",
-              "Unique Identifier of the Battery Passport instance.",
-              "Yes"
-            ],
-            [
-              "pcf.value",
-              "Float",
-              "Carbon footprint in kg CO2eq.",
-              "Yes"
-            ],
-            [
-              "pcf.primaryDataShare",
-              "Float",
-              "% of PCF based on primary data (0.0 - 1.0).",
-              "Yes"
-            ],
-            [
-              "material.cobalt",
-              "Float",
-              "Mass of Cobalt in kg.",
-              "Yes"
-            ],
-            [
-              "material.recycledContent",
-              "Float",
-              "Percentage of recycled material used.",
-              "No"
-            ],
-            [
-              "conformity.declaration",
-              "URL",
-              "Link to the EU Declaration of Conformity document.",
-              "Yes"
-            ]
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "This schema enforcement ensures that when a recycler queries the mesh for urn:samm:io.catenax.battery.battery_pass:6.0.0, they receive a machine-parsable response that can be directly fed into their recycling robotics or ERP systems."
-        }
-      ]
-    },
-    {
-      "title": "Works cited",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "Catena-X is the first globally trusted and collaborative data ecosystem for the automotive industry, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/04/Catena-X-Public-Slide-Deck-4.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Onboarding Guide: Initial Information for Large Enterprises | Catena-X, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/04/OnboardingGuide_LargeEnterprises_V1.1.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Joint Integration Architecture Approach of Catena-X & OPC UA, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/08/OPCF-Catena-X-Architecture-Whitepaper-v1.0.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Eclipse Dataspace Components | projects.eclipse.org, accessed January 27, 2026, https://projects.eclipse.org/projects/technology.edc"
-        },
-        {
-          "type": "paragraph",
-          "text": "Dataspace & Eclipse Dataspace Components - Data Intelligence Offensive, accessed January 27, 2026, https://old.dataintelligence.at/wp-content/uploads/2023/04/Dataspaces-Eclipse-Dataspace-Components_compressed.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Control plane vs. Data plane - Building Blocks - Data Spaces Support Centre, accessed January 27, 2026, https://dssc.eu/space/BBE/178422298/Control+plane+vs.+Data+plane"
-        },
-        {
-          "type": "paragraph",
-          "text": "Samples/transfer/transfer-01-negotiation/README.md at main \u00b7 eclipse-edc/Samples, accessed January 27, 2026, https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-01-negotiation/README.md"
-        },
-        {
-          "type": "paragraph",
-          "text": "Dataspace Protocol 2025-1 - GitHub Pages, accessed January 27, 2026, https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/"
-        },
-        {
-          "type": "paragraph",
-          "text": "Eclipse Dataspace Protocol | projects.eclipse.org, accessed January 27, 2026, https://projects.eclipse.org/proposals/eclipse-dataspace-protocol"
-        },
-        {
-          "type": "paragraph",
-          "text": "Specification | Dataspace Protocol - IDS Knowledge Base - International Data Spaces, accessed January 27, 2026, https://docs.internationaldataspaces.org/ids-knowledgebase/dataspace-protocol/contract-negotiation/contract.negotiation.protocol"
-        },
-        {
-          "type": "paragraph",
-          "text": "Digital Product Passport - Catena-X, accessed January 27, 2026, https://catena-x.net/use-case-cluster/digital-product-passport/"
-        },
-        {
-          "type": "paragraph",
-          "text": "Backward Compatibility Guide 2025 | Catena-X, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/12/CX-Backward-Compatibility-Guide-2025-V08-172.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Eclipse Tractus-X Research Report - NTT Data, accessed January 27, 2026, https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/media/press-release/2024/me_pr_sep_30_01.pdf?rev=a92bd2ca9a6041f3b69bef14889993bb"
-        },
-        {
-          "type": "paragraph",
-          "text": "Data Exchange with Self-Sovereign-Identity - ARENA2036, accessed January 27, 2026, https://arena2036.de/files/FinaleBilder/05_Veranstaltungen/ARENA-X/Catena-X_Release_Day/Catena-X_Release_Day_SSI_2024_03_15.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Data Exchange Contracts | Catena-X - Library, accessed January 27, 2026, https://catenax-ev.github.io/docs/regulatory-framework/10000ft/data-exchange-contracts"
-        },
-        {
-          "type": "paragraph",
-          "text": "Contracting - Catena-X, accessed January 27, 2026, https://catena-x.net/ecosystem/contracting/"
-        },
-        {
-          "type": "paragraph",
-          "text": "Trusted Sustainability - Catena-X, accessed January 27, 2026, https://catena-x.net/use-case-cluster/sustainability/"
-        },
-        {
-          "type": "paragraph",
-          "text": "Catena-X Product Carbon Footprint Rulebook | PACT Resources, accessed January 27, 2026, https://www.carbon-transparency.org/resources/catena-x-product-carbon-footprint-rulebook"
-        },
-        {
-          "type": "paragraph",
-          "text": "Catena-X Product Carbon Footprint Rulebook, accessed January 27, 2026, https://catenax-ev.github.io/assets/files/CX-NFR-PCF-Rulebook_v.3.0-04874a80a6d27511df06e07ae3049278.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "Building a Digital Manufacturing as a Service Ecosystem for Catena-X - MDPI, accessed January 27, 2026, https://www.mdpi.com/1424-8220/23/17/7396"
-        },
-        {
-          "type": "paragraph",
-          "text": "Battery Passport (Catena-X v6.0.0) - OSL Demo, accessed January 27, 2026, https://demo.open-semantic-lab.org/wiki/Category:OSW74bf728019bd4cc3a8a0833bd54f5338"
-        },
-        {
-          "type": "paragraph",
-          "text": "tractusx-edc/charts/tractusx-connector/README.md at main - GitHub, accessed January 27, 2026, https://github.com/eclipse-tractusx/tractusx-edc/blob/main/charts/tractusx-connector/README.md"
-        },
-        {
-          "type": "paragraph",
-          "text": "End-to-End Adopter Journey - Eclipse Tractus-X, accessed January 27, 2026, https://eclipse-tractusx.github.io/docs/tutorials/e2e/"
-        },
-        {
-          "type": "paragraph",
-          "text": "Hardware and software requirements for the gateway or edge device - IBM, accessed January 27, 2026, https://www.ibm.com/docs/en/masv-and-l/maximo-monitor/cd?topic=collector-hardware-software-requirements-gateway-edge-device"
-        },
-        {
-          "type": "paragraph",
-          "text": "Prerequisites - Eclipse Tractus-X, accessed January 27, 2026, https://eclipse-tractusx.github.io/docs/tutorials/e2e/prerequisites/"
-        },
-        {
-          "type": "paragraph",
-          "text": "Docker Compose vs. Kubernetes: Features & Use Cases - Kaa IoT platform, accessed January 27, 2026, https://www.kaaiot.com/iot-knowledge-base/docker-compose-vs-kubernetes-differences-and-use-cases"
-        },
-        {
-          "type": "paragraph",
-          "text": "Docker Compose vs. Kubernetes: Understanding the Differences and Choosing the Right Tool : r/dataengineering - Reddit, accessed January 27, 2026, https://www.reddit.com/r/dataengineering/comments/13s6ugn/docker_compose_vs_kubernetes_understanding_the/"
-        },
-        {
-          "type": "paragraph",
-          "text": "What's the difference between Docker Compose and Kubernetes? - Stack Overflow, accessed January 27, 2026, https://stackoverflow.com/questions/47536536/whats-the-difference-between-docker-compose-and-kubernetes"
-        },
-        {
-          "type": "paragraph",
-          "text": "Mastering Kubernetes on Edge Devices with K3s | by Tom Brovender - Medium, accessed January 27, 2026, https://medium.com/@tbrovy/mastering-kubernetes-on-edge-devices-with-k3s-28fbeca967fe"
-        },
-        {
-          "type": "paragraph",
-          "text": "Set up a minimum viable data space to share data between organizations - AWS Prescriptive Guidance - AWS Documentation, accessed January 27, 2026, https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/minimum-viable-data-space-share-data-organizations.html"
-        },
-        {
-          "type": "paragraph",
-          "text": "Configuration | Dataspace Connector, accessed January 27, 2026, https://international-data-spaces-association.github.io/DataspaceConnector/Deployment/Configuration"
-        },
-        {
-          "type": "paragraph",
-          "text": "Modular System Release Jupiter Version 3.3.0 | Catena-X, accessed January 27, 2026, https://catena-x.net/wp-content/uploads/2025/04/Modulares-System_Release-Jupiter-Version-3.3.0-1.pdf"
-        },
-        {
-          "type": "paragraph",
-          "text": "How: Life Cycle Management | Catena-X - Library, accessed January 27, 2026, https://catenax-ev.github.io/docs/next/operating-model/how-life-cycle-management"
-        },
-        {
-          "type": "paragraph",
-          "text": "sldt-semantic-models/io.catenax.pcf/4.0.0/gen/Pcf-schema.json at main \u00b7 eclipse-tractusx/sldt ... - GitHub, accessed January 27, 2026, https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.pcf/4.0.0/gen/Pcf-schema.json"
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-004-info.jpg",
+          "alt": "Supply Chain Nodes",
+          "caption": "Fig 2.1: Sovereign Data Exchange Nodes"
         }
       ]
     }
@@ -3411,6 +2595,12 @@
         {
           "type": "paragraph",
           "text": "The traditional engineering response to a data removal request is the execution of a SQL DELETE command. Within the context of compliance engineering, this approach is increasingly viewed as a \"manual trap\" that addresses only the most visible layer of data persistence while leaving the underlying fragments intact across the storage stack.6 A simple DELETE statement changes the logical state of a record but fails to account for the physical and operational realities of modern database engines and distributed systems.14"
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/infographics/wp-005-info.jpg",
+          "alt": "GDPR Automation",
+          "caption": "Fig 1.1: Automated Right to Erasure Workflow"
         }
       ]
     },
@@ -3437,6 +2627,12 @@
         {
           "type": "paragraph",
           "text": "In active environments, the accumulation of WAL files can be substantial. For instance, in PostgreSQL, mechanisms such as replication slots and long-running backups can prevent the database engine from truncating or recycling old WAL segments.20 If a replication replica becomes disconnected, the primary server may hoard WAL files indefinitely, waiting for the replica to catch up, which inadvertently preserves the \"deleted\" PII within those logs.20 From a compliance standpoint, a user has not been erased until the WAL logs containing their original INSERT or UPDATE operations have been rotated, truncated, and physically overwritten.21 Engineers must therefore synchronize their erasure verification with the log retention and checkpointing cycles of the database.13"
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-gdpr-erasure.jpg",
+          "alt": "Ethics of Erasure",
+          "caption": "Fig 2.1: Cryptographic Erasure Reference Architecture"
         },
         {
           "type": "table",
@@ -3489,6 +2685,12 @@
         {
           "type": "paragraph",
           "text": "To overcome the physical persistence issues associated with traditional storage, compliance engineering has adopted \"crypto-shredding\" as a primary methodology for Article 17 fulfillment.26 Crypto-shredding involves the deliberate deletion or overwriting of the encryption keys associated with specific personal data.7 By rendering the data unreadable, the organization achieves a state that regulatory authorities often consider equivalent to physical destruction, provided the encryption is sufficiently robust.26"
+        },
+        {
+          "type": "image",
+          "src": "/images/whitepapers/wp-strategy-europe.jpg",
+          "alt": "Privacy Strategy",
+          "caption": "Fig 3.1: Privacy-by-Design Strategic Controls"
         }
       ]
     },

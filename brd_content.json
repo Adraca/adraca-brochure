@@ -1,0 +1,781 @@
+{
+  "DORA_GDPR Cloud Compliance BRD.docx": [
+    {
+      "title": "Business Requirement Document: The Adraca Sovereign Validator",
+      "content": []
+    },
+    {
+      "title": "1. Executive Summary and Strategic Context",
+      "content": []
+    },
+    {
+      "title": "1.1. The Imperative for Sovereign Validation",
+      "content": [
+        "The European financial sector stands at a critical juncture where the convergence of digital transformation and regulatory stringency has created a complex operational paradox. Financial entities are increasingly reliant on hyperscale cloud infrastructure\u2014predominantly provided by non-European technological giants\u2014while simultaneously being subject to the most rigorous data sovereignty and operational resilience frameworks in the world. The introduction of Regulation (EU) 2022/2554, known as the Digital Operational Resilience Act (DORA), alongside the existing General Data Protection Regulation (GDPR), has fundamentally altered the compliance landscape.1 It is no longer sufficient to merely possess policy documents that assert compliance; financial institutions must now demonstrate, through technical evidence and continuous monitoring, that their digital infrastructure is resilient, secure, and sovereign.",
+        "The \"Adraca Sovereign Validator\" is proposed as a definitive technical solution to this challenge. It is a specialized, Python-based Command Line Interface (CLI) tool designed to bridge the gap between regulatory intent and infrastructure reality. By parsing the realized state of cloud infrastructure\u2014specifically the Terraform state files (.tfstate)\u2014the Validator provides an automated, immutable audit of the financial entity\u2019s adherence to DORA and GDPR. This document serves as the comprehensive Business Requirement Document (BRD) for the development of this tool, outlining the scope, functional logic, and compliance traceability necessary to satisfy European banking supervisors."
+      ]
+    },
+    {
+      "title": "1.2. Regulatory Drivers and the Cost of Non-Compliance",
+      "content": [
+        "The urgency for the Adraca Sovereign Validator is driven by the enforcement mechanisms embedded within the new regulatory framework. DORA, which became fully applicable on January 17, 2025, mandates a unified approach to managing ICT risks, explicitly holding financial entities responsible for the risks posed by their third-party providers.1 The cost of non-compliance is severe, ranging from administrative fines calculated as a percentage of total worldwide turnover to the potential revocation of banking licenses.",
+        "Furthermore, the \"Subcontracting RTS\" (Commission Delegated Regulation (EU) 2025/532), which entered into force in July 2025, has introduced granular requirements for monitoring the entire chain of ICT subcontractors.3 Financial entities must now identify the location of data processing not just for their primary providers, but for the subcontractors supporting critical functions.3 Manual verification of these deep-tier dependencies in a dynamic cloud environment is impossible. Automated validation against a \"known good\" state is the only viable path to compliance."
+      ]
+    },
+    {
+      "title": "1.3. Product Vision: The Adraca Sovereign Validator",
+      "content": [
+        "The Adraca Sovereign Validator is envisioned not merely as a compliance checker, but as a sovereignty enforcement engine. It operates on the principle of \"Compliance as Code,\" but with a distinct focus on the realized state rather than the intended state. While traditional static analysis tools scan Terraform code (HCL) to find syntax errors or basic security flaws, Adraca parses the JSON-formatted .tfstate file. This distinction is crucial for a Lead Cloud Security Architect because the state file represents the ground truth of what is actually running in the cloud provider's data center, capturing details that may be obfuscated in modules or variables within the code itself.6",
+        "The tool is built to integrate seamlessly into the DevSecOps pipelines of European banks, providing immediate feedback to engineers and generating audit-ready reports for compliance officers. It focuses specifically on three pillars of sovereignty:",
+        "Data Localization: Ensuring no data leaves the European Economic Area (EEA) without explicit, legal authorization.",
+        "Cryptographic Sovereignty: Enforcing the use of state-of-the-art encryption where the keys are managed by the bank, not the cloud provider.",
+        "Operational Resilience: Verifying that backup and recovery architectures meet the strict availability and segregation mandates of DORA Article 12."
+      ]
+    },
+    {
+      "title": "2. Product Scope and Technical Boundaries",
+      "content": []
+    },
+    {
+      "title": "2.1. In-Scope Functionality",
+      "content": [
+        "The Adraca Sovereign Validator is scoped to perform the following core functions:",
+        "Input Parsing: Ingestion of Terraform state files (.tfstate) generated by Terraform versions 1.0 and later. The tool supports both local state files and remote state fetched via authenticated connectors to AWS S3 or Azure Blob Storage backends.6",
+        "Multi-Cloud Support: The initial release targets the two dominant hyperscalers in the EU market: Amazon Web Services (AWS) and Microsoft Azure. Support is strictly limited to Infrastructure-as-Service (IaaS) and Platform-as-Service (PaaS) resources defined within the aws and azurerm providers.",
+        "Regulatory Mapping: The tool\u2019s logic engine contains a hard-coded mapping of technical attributes (e.g., kms_master_key_id, availability_zone, retention_period) to specific regulatory articles (e.g., DORA Art. 28, GDPR Art. 32).",
+        "Reporting: Output is generated in two formats:",
+        "Machine-Readable JSON: For integration with SIEM (Security Information and Event Management) systems and GRC (Governance, Risk, and Compliance) platforms.",
+        "Human-Readable Markdown/PDF: A detailed audit report highlighting \"Pass/Fail\" status for each resource, grouped by regulatory domain."
+      ]
+    },
+    {
+      "title": "2.2. Out-of-Scope Functionality",
+      "content": [
+        "To maintain focus and rigorous accuracy in the initial release, the following are explicitly out of scope:",
+        "Code Correction: The tool will identify violations but will not attempt to auto-remediate or modify the Terraform code. Auto-remediation in critical banking infrastructure carries unacceptable operational risk.",
+        "Runtime Penetration Testing: The Validator is a static analysis tool; it does not perform active network scanning or penetration testing (TLPT) as defined in DORA Article 26.",
+        "Google Cloud Platform (GCP): GCP support is deferred to Release 2.0.",
+        "Legal Interpretation: The tool provides technical evidence of compliance but does not offer legal counsel. It flags \"potential violations\" based on configured rules, which must be interpreted by the bank's legal compliance unit."
+      ]
+    },
+    {
+      "title": "2.3. Target Environment and Architecture",
+      "content": [
+        "The Validator is designed to run within a secure, ephemeral container within the bank's CI/CD environment (e.g., Jenkins, GitLab CI). It requires read-only access to the Terraform state backend.",
+        {
+          "type": "table",
+          "data": [
+            [
+              "Component",
+              "Specification"
+            ],
+            [
+              "Language",
+              "Python 3.11+ (Leveraging type hinting for strict logic)"
+            ],
+            [
+              "Input Format",
+              "JSON (Standard Terraform State Schema v4)"
+            ],
+            [
+              "Execution Context",
+              "Docker Container (Alpine Linux base)"
+            ],
+            [
+              "Permissions",
+              "Read-Only access to S3/Azure Blob (State Backend)"
+            ],
+            [
+              "Dependencies",
+              "Minimal external libraries to reduce supply chain risk (standard lib preferred)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3. Regulatory Deep Dive and Technical Implications",
+      "content": [
+        "To build an effective Validator, we must first deconstruct the legal text into technical requirements. This section analyzes the specific articles from DORA and GDPR that drive the tool's logic."
+      ]
+    },
+    {
+      "title": "3.1. DORA Article 28: Managing ICT Third-Party Risk",
+      "content": [
+        "DORA Article 28 is the cornerstone of third-party risk management in the new framework. It dictates that financial entities must manage ICT third-party risk as an integral component of their broader risk management.7",
+        "The Technical Implication: The regulation mandates that financial entities maintain a \"Register of Information\" regarding all contractual arrangements with ICT third-party service providers.8 Technically, this means the Adraca Validator must treat every cloud resource as a contract line item. It needs to extract the provider metadata (e.g., \"AWS\", \"Azure\") and map the specific service usage (e.g., \"RDS\", \"Lambda\") to the entity's critical function register. Crucially, Article 28(8) requires entities to ensure that ICT third-party service providers situated in third countries are compliant with EU standards.9 The Validator must inherently distinguish between \"Sovereign Regions\" (e.g., eu-central-1) and \"Third Country Regions\" (e.g., us-east-1), flagging resources deployed in the latter as high-risk items requiring specific legal derogations."
+      ]
+    },
+    {
+      "title": "3.2. Commission Delegated Regulation (EU) 2025/532: The Subcontracting Chain",
+      "content": [
+        "Entering into force in July 2025, this RTS supplements DORA with specific rules on subcontracting.3 Article 4 (Conditions for Subcontracting) is vital for this BRD. It requires that the financial entity is informed of the location where data is processed by subcontractors.3 The Technical Implication: Modern cloud services are often chains of dependencies. For example, an Azure SQL Database might rely on backend storage managed by a different internal Azure service, or a SaaS offering running on AWS might utilize Snowflake for analytics. The Validator needs a \"Knowledge Base\" (KB) that maps high-level cloud services to their underlying infrastructure dependencies. If a Terraform resource provisions a managed service known to replicate metadata to the US (a common issue with global control planes), the Validator must flag this as a Subcontracting RTS violation."
+      ]
+    },
+    {
+      "title": "3.3. DORA Article 12: Backup Policies and Operational Resilience",
+      "content": [
+        "Article 12 mandates that financial entities develop backup policies ensuring restoration with \"minimum downtime\" and \"limited disruption\".11 Segregation Requirement: Paragraph 3 requires backup systems to be \"physically and logically segregated\" from the source system.11 The Technical Implication: Logical segregation in the cloud is achieved through separate IAM accounts or subscriptions. Physical segregation is achieved through distinct Availability Zones (AZs) or Regions. The Adraca Validator must perform a \"Distance Check\":",
+        "Input: Primary Resource Region (e.g., eu-west-1), Backup Vault Region (e.g., eu-central-1).",
+        "Logic: If Primary.Region == Backup.Region AND Primary.Account == Backup.Account THEN Flag Violation (Lack of Segregation)."
+      ]
+    },
+    {
+      "title": "3.4. GDPR Chapter V: International Data Transfers",
+      "content": [
+        "While DORA focuses on resilience, GDPR focuses on privacy. Chapter V (Articles 44-50) restricts the transfer of personal data to third countries unless an adequacy decision or appropriate safeguards are in place.12 The Technical Implication: Following the Schrems II ruling, \"supplementary measures\" often mean technical encryption where the keys are held in the EU.13 The Validator must identify data flows or storage locations that constitute a \"transfer.\" If a .tfstate shows an S3 bucket in ap-southeast-1 (Singapore), the Validator must check for a corresponding \"Transfer Impact Assessment\" tag or flag it as a GDPR violation."
+      ]
+    },
+    {
+      "title": "3.5. EBA Guidelines on Encryption (EBA/GL/2019/04)",
+      "content": [
+        "The European Banking Authority's guidelines on ICT and security risk management set the standard for \"state of the art\" cryptography.14 The Technical Implication: The guidelines explicitly mention \"strong encryption\" and \"key management\".15 This translates to a requirement for AES-256 for data at rest and TLS 1.2+ for data in transit. Furthermore, the \"Sovereign Key\" requirement implies that keys should not be managed by the cloud provider's default settings (e.g., AWS-managed keys), but rather by the customer (CMK) or via an external HSM (BYOK).16"
+      ]
+    },
+    {
+      "title": "4. User Personas and Stories",
+      "content": [
+        "The Adraca Sovereign Validator is designed for three primary personas within the banking organization. Each has distinct needs and interaction models with the tool."
+      ]
+    },
+    {
+      "title": "4.1. The Lead Cloud Security Architect (The Guardian)",
+      "content": [
+        "Role: Responsible for the overall security posture and architectural compliance of the cloud environment.",
+        "Focus: Systematic enforcement of sovereignty and encryption standards.",
+        {
+          "type": "table",
+          "data": [
+            [
+              "ID",
+              "User Story",
+              "Acceptance Criteria"
+            ],
+            [
+              "US.1",
+              "As a Lead Architect, I want to enforce \"Customer Managed Keys\" (CMK) on all persistent storage layers so that we retain cryptographic sovereignty even if the cloud provider is subpoenaed.",
+              "The tool must detect aws_s3_bucket and azurerm_storage_account resources using default provider keys and flag them as critical violations.18"
+            ],
+            [
+              "US.2",
+              "As a Lead Architect, I want to define a \"Sovereign Region Whitelist\" (e.g., EEA only) so that no infrastructure can be accidentally deployed in non-compliant jurisdictions.",
+              "The tool must accept a configuration file listing allowed regions; any resource in .tfstate outside this list triggers a failure.3"
+            ],
+            [
+              "US.3",
+              "As a Lead Architect, I want to detect \"Drift\" between my intended IaC and the actual state regarding security groups and public access.",
+              "The tool must warn if the .tfstate contains attributes indicating public exposure (e.g., 0.0.0.0/0 in Security Groups) that violate DORA's network security principles."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4.2. The DevSecOps Engineer (The Builder)",
+      "content": [
+        "Role: Implements the CI/CD pipelines and manages the daily deployment of infrastructure.",
+        "Focus: Speed, integration, and clear error messaging.",
+        {
+          "type": "table",
+          "data": [
+            [
+              "ID",
+              "User Story",
+              "Acceptance Criteria"
+            ],
+            [
+              "US.4",
+              "As a DevSecOps Engineer, I want the Validator to run as a fast CLI tool in my pipeline so that I can catch compliance errors before the terraform apply stage completes.",
+              "The tool must parse a standard mid-sized state file (<50MB) in under 30 seconds and return a non-zero exit code on failure.18"
+            ],
+            [
+              "US.5",
+              "As a DevSecOps Engineer, I need error messages to reference the specific Terraform resource address (e.g., module.db.aws_db_instance.main) so I can locate and fix the code immediately.",
+              "Output logs must map the violation directly to the resource ID and name found in the .tfstate.20"
+            ],
+            [
+              "US.6",
+              "As a DevSecOps Engineer, I want to be able to \"suppress\" false positives using a tag in Terraform (e.g., adraca:ignore) for authorized exceptions.",
+              "The tool must respect specific resource tags that indicate a formally approved risk acceptance, logging these as \"Ignored Risks\" rather than failures."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4.3. The Compliance Officer / DPO (The Auditor)",
+      "content": [
+        "Role: Responsible for reporting to the ECB, national supervisors, and internal risk committees.",
+        "Focus: Traceability, reporting, and regulatory mapping.",
+        {
+          "type": "table",
+          "data": [
+            [
+              "ID",
+              "User Story",
+              "Acceptance Criteria"
+            ],
+            [
+              "US.7",
+              "As a Compliance Officer, I want a report that maps technical failures directly to DORA Articles (e.g., \"Violation of Article 12\") so I can understand the legal impact.",
+              "The final report must be grouped by Regulatory Domain (DORA, GDPR) rather than just technical resource type.16"
+            ],
+            [
+              "US.8",
+              "As a Compliance Officer, I need to verify the \"Subcontracting Chain\" for our critical applications to ensure data isn't processed in high-risk countries by backend vendors.",
+              "The tool must generate a \"Data Residency Map\" visualizing the geographic spread of all resources and known subcontractors.5"
+            ],
+            [
+              "US.9",
+              "As a Compliance Officer, I need to confirm that our backup retention policies meet the 5-year AML requirement.",
+              "The tool must audit backup lifecycle policies and flag any retention period shorter than 1825 days.21"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "5. Functional Requirements: The Core Rules Engine",
+      "content": [
+        "This section details the specific logic \"Rules\" that the Adraca Sovereign Validator must implement. These rules are the heart of the product, translating the regulatory prose into Pythonic logic."
+      ]
+    },
+    {
+      "title": "5.1. Rule 1: Data Localization and Sovereignty Boundary",
+      "content": [
+        "Goal: Enforce DORA Article 28(8) and GDPR Chapter V by strictly confining data processing to the European Economic Area (EEA).",
+        "Context: DORA requires financial entities to assess the risk of third-country providers.9 GDPR restricts transfers. The concept of \"Sovereignty\" implies that data should strictly reside in jurisdictions where EU law has primacy.",
+        "Technical Implementation:",
+        "The Validator will maintain a Region_Allowlist (e.g., eu-central-1, eu-west-1, eu-west-3, eu-north-1). It will iterate through every resource in the .tfstate that is capable of storing data.",
+        {
+          "type": "table",
+          "data": [
+            [
+              "Resource Type",
+              "Provider",
+              "Attribute to Check",
+              "Logic",
+              "Severity"
+            ],
+            [
+              "aws_s3_bucket",
+              "AWS",
+              "region",
+              "If region NOT IN Allowlist",
+              "CRITICAL"
+            ],
+            [
+              "aws_db_instance",
+              "AWS",
+              "availability_zone",
+              "If AZ prefix NOT IN Allowlist",
+              "CRITICAL"
+            ],
+            [
+              "azurerm_storage_account",
+              "Azure",
+              "location",
+              "If location NOT IN Allowlist",
+              "CRITICAL"
+            ],
+            [
+              "aws_lambda_function",
+              "AWS",
+              "region",
+              "If region NOT IN Allowlist",
+              "HIGH"
+            ]
+          ]
+        },
+        "Subcontracting Logic (Advanced):",
+        "For PaaS resources that abstract the underlying region (e.g., global content delivery networks or multi-region databases), the Validator must check for configuration attributes that define the \"scope\" of replication.",
+        "Example: aws_cloudfront_distribution. If price_class is PriceClass_All, it implies global edge locations, including the US. The Validator must enforce PriceClass_100 (North America & Europe) or PriceClass_200, but realistically, for strict sovereignty, it may require warning on any CDN usage that caches content outside the EEA.3",
+        "Subcontractor Identification: If a resource relies on a third-party provider identified in the tool's database (e.g., a Databricks workspace provisioning infrastructure), the tool validates the managed_resource_group_id location in Azure to ensure the vendor hasn't spun up shadow IT in a different region.22"
+      ]
+    },
+    {
+      "title": "5.2. Rule 2: Sovereign Encryption and Key Management",
+      "content": [
+        "Goal: Enforce EBA Guidelines (EBA/GL/2019/04) and GDPR Article 32 by mandating \"State of the Art\" encryption with Sovereign Key Control.",
+        "Context: Encryption is only as secure as the key management. If a cloud provider holds the keys, they can technically decrypt the data (e.g., under the US CLOUD Act). \"Sovereign Key Management\" means the bank holds the keys (BYOK/HYOK) or uses Customer Managed Keys (CMK) backed by HSMs.17",
+        "Technical Implementation:",
+        "The Validator checks for the presence and configuration of encryption blocks.",
+        "AWS Logic:",
+        "Target: aws_s3_bucket",
+        "Check 1 (Algorithm): Check server_side_encryption_configuration.rule.apply_server_side_encryption_by_default.sse_algorithm.",
+        "If AES256: WARNING (This is AWS-Managed Keys. Compliant with encryption standards, but not sovereignty standards).",
+        "If aws:kms: PASS (Proceed to Check 2).",
+        "Check 2 (Key ID): Check kms_master_key_id.",
+        "If missing/null (implies default aws/s3 key): WARNING.",
+        "If present (implies CMK): PASS.",
+        "Check 3 (Key Rotation): Lookup the aws_kms_key resource referenced by the ID. Check enable_key_rotation.",
+        "If false: FAIL (Violates Key Lifecycle Management requirements 24).",
+        "Azure Logic:",
+        "Target: azurerm_storage_account",
+        "Check: customer_managed_key.",
+        "If key_vault_key_id is null: WARNING (Microsoft Managed Key).",
+        "If populated: PASS.",
+        "GDPR Nuance: For resources tagged Classification: Secret or PII: True, the WARNING for Provider-Managed keys is elevated to CRITICAL. This aligns with the \"Risk-Based Approach\" of GDPR.25"
+      ]
+    },
+    {
+      "title": "5.3. Rule 3: Operational Resilience and Backup Integrity",
+      "content": [
+        "Goal: Enforce DORA Article 12 regarding restoration, segregation, and data integrity.",
+        "Context: Article 12 requires \"physical and logical segregation\" of backups. It also implies protection against ransomware (integrity).11",
+        "Technical Implementation:",
+        "The Validator analyzes aws_backup_plan and azurerm_backup_policy.",
+        "Segregation Logic (The \"Air Gap\" Simulation):",
+        "The tool identifies the primary_resource_arn and the target_backup_vault_arn.",
+        "It parses the ARNs to extract the Region.",
+        "Rule: Backup_Region MUST NOT EQUAL Primary_Region.",
+        "Reasoning: If the primary region (e.g., Frankfurt) goes dark (flood, fire), the backup must be accessible from a different region (e.g., Paris).26",
+        "Violation: \"Backup stored in same failure domain as primary data. Violation of DORA Art 12(3).\"",
+        "Retention Logic (AMLD Compliance):",
+        "Target: aws_backup_plan.rule.lifecycle.",
+        "Check: delete_after.",
+        "Rule: For resources tagged Type: TransactionLog, delete_after must be >= 1825 days (5 years).21",
+        "Logic: If tag == 'TransactionLog' AND delete_after < 1825: FAIL.",
+        "Immutability Logic (Ransomware Protection):",
+        "Target: aws_s3_bucket (used for backups) or aws_backup_vault.",
+        "Check: object_lock_configuration.",
+        "Rule: object_lock_enabled must be Enabled and mode should be COMPLIANCE (or GOVERNANCE with strict IAM).",
+        "Reasoning: DORA requires ensuring \"authenticity and integrity\" of data. WORM (Write Once Read Many) storage is the technical standard for this.27"
+      ]
+    },
+    {
+      "title": "6. Compliance Traceability Matrix",
+      "content": [
+        "The following matrix demonstrates how the functional rules of the Adraca Sovereign Validator provide full coverage of the user's regulatory requirements.",
+        {
+          "type": "table",
+          "data": [
+            [
+              "Regulatory Requirement",
+              "Source Legal Text",
+              "Adraca Validator Rule",
+              "Technical Check Description",
+              "Severity"
+            ],
+            [
+              "ICT Third-Party Risk Management",
+              "DORA Art. 28(1)",
+              "Rule 1.1",
+              "Global Resource Inventory & Provider Identification",
+              "Low"
+            ],
+            [
+              "Assessment of Third Country Risk",
+              "DORA Art. 28(8)",
+              "Rule 1.2",
+              "Region Allowlist Check (EEA Boundary Enforcement)",
+              "Critical"
+            ],
+            [
+              "Subcontracting Transparency",
+              "RTS (EU) 2025/532 Art. 4",
+              "Rule 1.3",
+              "Detection of Cross-Region Replication & Shadow IT",
+              "High"
+            ],
+            [
+              "Data Localization / Transfer",
+              "GDPR Chapter V (Art. 44)",
+              "Rule 1.4",
+              "Sovereignty Boundary Check (Data Residency)",
+              "Critical"
+            ],
+            [
+              "Backup Segregation",
+              "DORA Art. 12(3)",
+              "Rule 3.1",
+              "Cross-Region Backup Verification (Physical Separation)",
+              "High"
+            ],
+            [
+              "Restoration with Min. Downtime",
+              "DORA Art. 12(1)",
+              "Rule 3.2",
+              "RPO/RTO Configuration Check (Backup Frequency)",
+              "Medium"
+            ],
+            [
+              "Data Integrity (Immutability)",
+              "DORA Art. 12(2)",
+              "Rule 3.3",
+              "Object Lock / WORM Configuration Check",
+              "High"
+            ],
+            [
+              "Record Retention (AML)",
+              "AMLD4 / AMLD5 Art. 40",
+              "Rule 3.4",
+              "Lifecycle Policy Check (Minimum 5 Years / 1825 Days)",
+              "Critical"
+            ],
+            [
+              "Security of Data (Encryption)",
+              "EBA/GL/2019/04 Sec. 13.3",
+              "Rule 2.1",
+              "Encryption Algorithm Check (AES-256 / TLS 1.2)",
+              "High"
+            ],
+            [
+              "Sovereign Key Management",
+              "GDPR Art. 32 / EBA GL",
+              "Rule 2.2",
+              "Customer Managed Key (CMK/BYOK) Enforcement",
+              "Critical"
+            ],
+            [
+              "Key Lifecycle Management",
+              "NIST SP 800-57 / EBA GL",
+              "Rule 2.3",
+              "Key Rotation Policy Check",
+              "Medium"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "7. Operational Context: DevSecOps Integration",
+      "content": [
+        "The Adraca Sovereign Validator is not a standalone desktop tool; it is a critical gate in the software supply chain."
+      ]
+    },
+    {
+      "title": "7.1. Pipeline Architecture",
+      "content": [
+        "In a typical European bank's CI/CD pipeline (e.g., using Jenkins or Azure DevOps), the Validator operates at the \"Post-Plan / Pre-Apply\" stage, or the \"Post-Apply\" audit stage.",
+        "Stage 1: Terraform Plan: The developer initiates a plan.",
+        "Stage 2: Plan Analysis (Optional): Tools like checkov analyze the plan.",
+        "Stage 3: Terraform Apply: Infrastructure is provisioned/updated.",
+        "Stage 4: State Capture: The new .tfstate is generated and stored in the backend (S3/Blob).",
+        "Stage 5: Adraca Execution:",
+        "The pipeline pulls the Adraca Docker image.",
+        "Adraca authenticates to the backend using a read-only IAM role.",
+        "Adraca pulls the .tfstate.",
+        "Adraca runs Rules 1-3.",
+        "Stage 6: Decision Gate:",
+        "If CRITICAL violations found: Pipeline Fails. Alert sent to SOC.",
+        "If WARNING violations found: Pipeline Warns. Report generated for Compliance review."
+      ]
+    },
+    {
+      "title": "7.2. Reporting and Remediation",
+      "content": [
+        "The tool outputs a JSON artifact. This artifact is consumed by the bank's GRC dashboard.",
+        "Sample Output Snippet:",
+        "JSON",
+        "{\n  \"resource_id\": \"arn:aws:s3:::customer-data-bucket-01\",\n  \"rule_id\": \"R2.2\",\n  \"violation_type\": \"Sovereign Key Management\",\n  \"severity\": \"CRITICAL\",\n  \"details\": \"Bucket is encrypted using AES256 (AWS-Managed). EBA Guidelines require CMK for 'Confidential' data.\",\n  \"dora_article\": \"Article 12 / EBA GL 13.3\",\n  \"remediation\": \"Enable SSE-KMS and specify a Customer Managed Key ARN.\"\n}"
+      ]
+    },
+    {
+      "title": "8. Conclusion and Strategic Value",
+      "content": [
+        "The Adraca Sovereign Validator represents a necessary evolution in the toolkit of the European Cloud Security Architect. As the deadline for full DORA compliance has passed and the enforcement of the Subcontracting RTS begins, the manual verification of cloud compliance is no longer feasible or legally defensible.",
+        "By implementing this tool, the bank achieves three strategic outcomes:",
+        "Defensible Compliance: The ability to prove to the ECB or national competent authorities (NCAs) that every single resource in the cloud is continuously audited against specific legal articles.",
+        "Sovereign Control: The migration from passive trust in cloud providers to active, cryptographic verification of data residency and access control.",
+        "Operational Velocity: Empowering development teams to move fast with the confidence that the \"Sovereignty Guardrails\" will prevent them from inadvertently violating complex EU regulations.",
+        "This BRD provides the blueprint for building the Adraca Sovereign Validator. The next phase involves the detailed engineering design and the development of the Python logic to parse the complex and evolving schema of Terraform state files. The journey to digital sovereignty is continuous, but with Adraca, it becomes measurable, manageable, and enforceable."
+      ]
+    },
+    {
+      "title": "Works cited",
+      "content": [
+        "ICT and cyber risk \u2013 for DORA entities - CSSF, accessed February 7, 2026, https://www.cssf.lu/en/ict-and-cyber-risk-for-dora-entities/",
+        "Digital Operational Resilience Act (DORA) - EIOPA's - European Union, accessed February 7, 2026, https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en",
+        "DORA - Dentons, accessed February 7, 2026, https://www.dentons.com/ru/insights/articles/2025/august/12/dora",
+        "Published in OJ - Commission Delegated Regulation (EU) 2025/532 supplementing DORA with regard to RTS specifying the elements that a financial entity has to determine and assess when subcontracting ICT services supporting critical or important functions, accessed February 7, 2026, https://www.regulationtomorrow.com/de/published-in-oj-commission-delegated-regulation-eu-2025-532-supplementing-dora-with-regard-to-rts-specifying-the-elements-that-a-financial-entity-has-to-determine-and-assess-when-subcontracting-ic/",
+        "Draft RTS on subcontracting ICT services supporting critical or important functions, accessed February 7, 2026, https://www.twobirds.com/en/insights/2024/global/draft-rts-on-subcontracting-ict-services-supporting-critical-or-important-functions",
+        "Terraform \"ping-pongs\" encryption config for S3 buckets - AWS - HashiCorp Discuss, accessed February 7, 2026, https://discuss.hashicorp.com/t/terraform-ping-pongs-encryption-config-for-s3-buckets/44412",
+        "Digital Operational Resilience Act (DORA), Article 28, accessed February 7, 2026, https://www.digital-operational-resilience-act.com/Article_28.html",
+        "Financial Entities in the EU: Time to Register Your ICT Third-Party Service Providers under DORA | Data Matters Privacy Blog, accessed February 7, 2026, https://datamatters.sidley.com/2025/04/15/financial-entities-in-the-eu-time-to-register-your-ict-third-party-service-providers-under-dora/",
+        "DORA \u2013 Managing of ICT third-party risk - FMA \u00d6sterreich, accessed February 7, 2026, https://www.fma.gv.at/en/cross-sectoral-topics/dora/dora-managing-of-ict-third-party-risk/",
+        "Digital Operational Resilience in the Financial Services Sector: EU and UK Update, accessed February 7, 2026, https://www.klgates.com/Digital-Operational-Resilience-in-the-Financial-Services-Sector-EU-and-UK-Update-7-31-2024",
+        "Digital Operational Resilience Act (DORA), Article 12, accessed February 7, 2026, https://www.digital-operational-resilience-act.com/Article_12.html",
+        "Chapter 5 \u2013 Transfers of personal data to third countries or international organisations - General Data Protection Regulation (GDPR), accessed February 7, 2026, https://gdpr-info.eu/chapter-5/",
+        "Cross-border data transfers in fintech: Navigating post-GDPR regulations | IAPP, accessed February 7, 2026, https://iapp.org/news/a/cross-border-data-transfers-in-fintech-navigating-post-gdpr-regulations",
+        "Guidelines on ICT and security risk management - European Banking Authority, accessed February 7, 2026, https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/internal-governance/guidelines-ict-and-security-risk-management",
+        "Financial Data Encryption: Compliance Best Practices - Phoenix Strategy Group, accessed February 7, 2026, https://www.phoenixstrategy.group/blog/financial-data-encryption-compliance-best-practices",
+        "EBA Guidelines on ICT and security risk management - European Banking Authority, accessed February 7, 2026, https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2020/GLs%20on%20ICT%20and%20security%20risk%20management/872936/Final%20draft%20Guidelines%20on%20ICT%20and%20security%20risk%20management.pdf",
+        "BYOK: A Solution for EBA's ICT and Security Risk Management Guidelines - Cryptomathic, accessed February 7, 2026, https://www.cryptomathic.com/blog/byok-a-solution-ebas-new-ict-and-security-risk-management-guidelines",
+        "terraform-compliance: Overview, accessed February 7, 2026, https://terraform-compliance.com/",
+        "azurerm_storage_account_custo, accessed February 7, 2026, https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account_customer_managed_key.html",
+        "Overview of Scenario Flow - terraform-compliance, accessed February 7, 2026, https://terraform-compliance.com/pages/bdd-references/overview.html",
+        "Record-keeping and Retention - Anti-Money Laundering, accessed February 7, 2026, https://anti-money-laundering.eu/record-keeping-and-retention/",
+        "EC publishes draft delegated regulation on subcontracting RTS under DORA, accessed February 7, 2026, https://www.aoshearman.com/en/insights/ao-shearman-on-data/ec-publishes-draft-delegated-regulation-on-subcontracting-rts-under-dora",
+        "Protecting Financial Data With Encryption Controls - FS-ISAC, accessed February 7, 2026, https://www.fsisac.com/hubfs/Knowledge/ProtectingFinancialDataWithEncryptionControls.pdf",
+        "Key Management for GDPR: How Encryption Aids Compliance - Cryptomathic, accessed February 7, 2026, https://www.cryptomathic.com/blog/key-management-for-gdpr",
+        "Encryption - General Data Protection Regulation (GDPR), accessed February 7, 2026, https://gdpr-info.eu/issues/encryption/",
+        "DORA Article 12: Backup policies and procedures, restoration and recovery procedures and methods - Advisera, accessed February 7, 2026, https://advisera.com/dora-regulation/backup-policies-and-procedures-restoration-and-recovery-procedures-and-methods/",
+        "Centralized S3 backup with AWS Backup in terraform - DEV Community, accessed February 7, 2026, https://dev.to/aws-builders/centralized-s3-backup-with-aws-backup-in-terraform-46bd"
+      ]
+    }
+  ],
+  "Financial Services Security Design Document.docx": [
+    {
+      "title": "Technical Design Document: The Adraca Sovereign Validator",
+      "content": []
+    },
+    {
+      "title": "1. Executive Summary and Architectural Vision",
+      "content": [
+        "The European financial services sector currently operates within a regulatory environment of unprecedented rigor. The convergence of the Digital Operational Resilience Act (DORA), the General Data Protection Regulation (GDPR), and the specific guidelines issued by the European Banking Authority (EBA) regarding outsourcing and ICT risk has created a complex compliance landscape. Financial entities are no longer permitted to rely on passive assertions of compliance from their cloud service providers; they must actively demonstrate, through technical verification, that their digital infrastructure adheres to strict sovereignty, resilience, and security mandates.1 The Adraca Sovereign Validator is technically conceived to bridge the gap between this regulatory intent and the \"realized state\" of cloud infrastructure.",
+        "This Technical Design Document (TDD) outlines the comprehensive engineering specifications for the Adraca Sovereign Validator. It translates the functional requirements defined in the Business Requirement Document (BRD) into concrete software architecture, defining the logic, algorithms, and integration patterns necessary to build a defensible compliance engine.1 The central architectural thesis of the Validator is the shift from analyzing \"Intended State\"\u2014represented by static Infrastructure-as-Code (IaC) files like HCL\u2014to analyzing \"Realized State,\" represented by the Terraform state file (.tfstate). This distinction is critical for the Financial Security Architect because the state file captures the ground truth of the infrastructure as it exists in the cloud provider's data center, including computed attributes, default values injected by the provider, and explicit resource IDs that are often obfuscated in high-level code modules.1",
+        "The architectural design is modular, composed of five distinct but interconnected subsystems: the Input Processing Layer, the Evaluation Engine, the Cryptographic Verification Module, the Reporting Interface, and the CI/CD Integration Fabric. Each subsystem is engineered to address specific pillars of European regulation, from Data Localization (DORA Art. 28) to Operational Resilience (DORA Art. 12) and Cryptographic Sovereignty (EBA Guidelines).1 The system is designed to execute within a secure, ephemeral containerized environment, minimizing the operational risk associated with compliance auditing while maximizing the speed and accuracy of the validation process.1 By leveraging Open Policy Agent (OPA) for logic evaluation and Python 3.11+ for robust data parsing, the Validator provides a high-performance, extensible, and legally defensible mechanism for maintaining digital sovereignty in the public cloud."
+      ]
+    },
+    {
+      "title": "2. Evaluation Engine: The OPA Rego Core",
+      "content": [
+        "The heart of the Adraca Sovereign Validator is the Evaluation Engine, which acts as the decision-making authority within the architecture. To satisfy the requirement for a flexible, audit-friendly, and declarative policy framework, the engine utilizes the Open Policy Agent (OPA) and its query language, Rego.5 This selection is driven by the need to decouple policy logic from the underlying execution code, allowing compliance officers and security architects to update regulatory rules without requiring changes to the binary application itself.7"
+      ]
+    },
+    {
+      "title": "2.1. Architectural Principles of the Policy Engine",
+      "content": [
+        "The Evaluation Engine operates on a \"deny-by-default\" principle, a standard security practice that ensures only infrastructure explicitly conforming to the defined sovereign guardrails is permitted to exist. The engine accepts a JSON-formatted input\u2014derived from the Terraform state file\u2014and evaluates it against a library of Rego policies. These policies are designed to assert specific conditions mandated by DORA and GDPR, such as the geographic location of resources, the configuration of encryption algorithms, and the retention periods of backup artifacts.1",
+        "Rego was selected over other policy languages due to its ability to handle complex, hierarchical data structures. Terraform state files are deeply nested JSON objects, often containing modules within modules (parent-child relationships). Rego\u2019s extensive support for iteration, array comprehension, and deep inspection makes it uniquely valid for traversing these structures to identify non-compliant resources regardless of their depth in the module tree.10 Furthermore, the engine is designed to return detailed violation metadata, including the specific resource address (e.g., module.payment_gateway.aws_db_instance.primary), the violated regulatory article, and the remediation steps, satisfying the user story requirements for the DevSecOps Engineer persona.1"
+      ]
+    },
+    {
+      "title": "2.2. Standard Rego Patterns for AWS Terraform Tagging and Backup Retention",
+      "content": [
+        "One of the most critical functions of the Evaluation Engine is the verification of Operational Resilience as mandated by DORA Article 12. This article requires financial entities to maintain backup systems that ensure restoration with minimum downtime and limited disruption.1 To enforce this, the Validator must verify that backup plans are not only present but configured with retention periods that satisfy both resilience and Anti-Money Laundering (AML) record-keeping requirements (typically 5 years or 1825 days for transaction logs).1",
+        "The challenge in analyzing Terraform state for backup retention lies in the structure of the aws_backup_plan resource. The retention period is defined within a lifecycle block, which is nested inside a rule block. Additionally, the requirement for a specific retention period is often conditional, based on the classification of the data (e.g., \"Critical\" vs. \"Non-Critical\"). The Adraca Validator utilizes resource tagging as the mechanism for this classification. The following Rego pattern demonstrates the logic required to enforce these conditional retention mandates.",
+        "Code snippet",
+        "package adraca.aws.backup_retention\n\nimport future.keywords.if\nimport future.keywords.in\n\n# Metadata for the policy\n__rego_metadata__ := {\n    \"id\": \"ADR-001\",\n    \"title\": \"Enforce DORA/AML Retention for Transaction Logs\",\n    \"description\": \"Verify that backup plans for Transaction Logs retain data for at least 5 years (1825 days).\",\n    \"severity\": \"CRITICAL\",\n    \"regulation\": \"DORA Art. 12 / AMLD5\"\n}\n\n# Entry point for the rule\ndeny[msg] if {\n    # Iterate through all resources in the flattened state input\n    some resource in input.resources\n    \n    # Filter for AWS Backup Plan resources\n    resource.type == \"aws_backup_plan\"\n    \n    # Check for the specific regulatory tag 'Type' set to 'TransactionLog'\n    # This conditional logic ensures we only enforce 5-year retention on relevant data\n    tag_value := object.get(resource.values.tags, \"Type\", \"undefined\")\n    tag_value == \"TransactionLog\"\n    \n    # Iterate through the rules defined in the backup plan\n    some rule in resource.values.rule\n    \n    # Check the lifecycle block for the 'delete_after' attribute\n    # Note: delete_after is an integer representing days\n    delete_after := rule.lifecycle.delete_after\n    \n    # Assert the retention period. DORA/AML requires 5 years (1825 days).\n    delete_after < 1825\n    \n    # Construct the failure message with traceability data\n    msg := {\n        \"resource_id\": resource.values.id,\n        \"resource_address\": resource.address,\n        \"violation\": sprintf(\"Backup retention is %d days; required 1825 days for TransactionLog.\", [delete_after]),\n        \"remediation\": \"Update the backup plan lifecycle rule to set delete_after >= 1825.\"\n    }\n}",
+        "This pattern highlights the engine's ability to contextualize technical attributes. A retention period of 30 days might be acceptable for development logs but is a critical violation for transaction ledgers. By parsing the tags attribute within the state file, the Validator applies the \"Proportionality Principle\" central to European regulation, applying strict controls only where the risk profile demands them.1"
+      ]
+    },
+    {
+      "title": "2.3. Rego Patterns for Encryption Configuration",
+      "content": [
+        "The enforcement of Cryptographic Sovereignty is the second major pillar of the Evaluation Engine. EBA Guidelines on ICT security risk management emphasize the need for \"strong encryption\" and proper key management.1 Technically, this means ensuring that data at rest is not merely encrypted, but encrypted using a key that the financial institution controls (Customer Managed Key - CMK) rather than a key fully managed by the cloud provider (AWS Managed Key).",
+        "The Rego logic must distinguish between these two states by examining the server_side_encryption_configuration block of S3 buckets and the kms_master_key_id attribute. The absence of a specific KMS ID typically indicates usage of the default provider key, which constitutes a sovereignty violation under the \"Schrems II\" interpretation of data control.1",
+        "Code snippet",
+        "package adraca.aws.encryption_sovereignty\n\nimport future.keywords.if\n\n# Metadata regarding the EBA Guidelines\n__rego_metadata__ := {\n    \"id\": \"ADR-002\",\n    \"title\": \"Enforce Customer Managed Keys (CMK) for S3\",\n    \"description\": \"S3 buckets must use SSE-KMS with a Customer Managed Key. Default SSE-S3 is prohibited.\",\n    \"severity\": \"HIGH\",\n    \"regulation\": \"EBA/GL/2019/04 Sec. 13.3\"\n}\n\n# Rule 1: Check if the algorithm is correct (SSE-KMS)\ndeny[msg] if {\n    some resource in input.resources\n    resource.type == \"aws_s3_bucket\"\n    \n    # Extract the encryption configuration rules\n    # State schema v4 places this deep in the JSON structure\n    some encryption_rule in resource.values.server_side_encryption_configuration.rule\n    algo := encryption_rule.apply_server_side_encryption_by_default.sse_algorithm\n    \n    # Valid value is 'aws:kms'. 'AES256' indicates S3-managed keys (Sovereignty Violation).\n    algo!= \"aws:kms\"\n    \n    msg := {\n        \"resource_address\": resource.address,\n        \"violation\": sprintf(\"Bucket uses '%s' encryption. Must use 'aws:kms'.\", [algo]),\n        \"type\": \"Algorithm Violation\"\n    }\n}\n\n# Rule 2: Check if a specific CMK ID is provided\ndeny[msg] if {\n    some resource in input.resources\n    resource.type == \"aws_s3_bucket\"\n    \n    some encryption_rule in resource.values.server_side_encryption_configuration.rule\n    encryption_block := encryption_rule.apply_server_side_encryption_by_default\n    \n    # Even if algo is aws:kms, if the key ID is missing, it uses the default AWS key.\n    # We require an explicit ARN for the Customer Managed Key.\n    not encryption_block.kms_master_key_id\n    \n    msg := {\n        \"resource_address\": resource.address,\n        \"violation\": \"No Customer Managed Key (CMK) ID specified. Uses default AWS key.\",\n        \"type\": \"Key Sovereignty Violation\"\n    }\n}",
+        "This nuanced logic is essential. A bucket encrypted with AES256 (the default setting) is technically encrypted and would pass a basic security scan. However, it fails the sovereignty scan because the bank does not hold the cryptographic material. The Adraca Validator's Rego patterns are specifically tuned to catch this subtle but legally significant distinction.1"
+      ]
+    },
+    {
+      "title": "3. Cryptographic Verification: Technical Definitions for GDPR/DORA",
+      "content": [
+        "To operationalize the \"State of the Art\" requirement found in GDPR Article 32 and the EBA Guidelines, the Adraca Validator incorporates a specific set of technical definitions regarding acceptable encryption algorithms. These definitions are derived from the latest guidance issued by the German Federal Office for Information Security (BSI) in their Technical Guideline TR-02102-1 (2025 edition) and recommendations from ENISA.17 The Validator uses these definitions to whitelist specific algorithms within the Evaluation Engine."
+      ]
+    },
+    {
+      "title": "3.1. AES-256: The Standard for High-Assurance Banking",
+      "content": [
+        "The Advanced Encryption Standard (AES) with a 256-bit key length is the primary cryptographic primitive enforced by the Validator for data at rest. The BSI TR-02102-1 explicitly recommends AES-256 for all new systems handling confidential data, regarding it as robust against both classical cryptanalysis and, to a significant extent, future quantum computing attacks (specifically Grover's Algorithm).19",
+        "While AES-128 is theoretically secure against classical attacks, the BSI and ENISA guidelines for long-term data retention (relevant to banking archives) advise moving to 256-bit keys. This provides a \"quantum safety margin\" where the effective security strength remains at 128 bits even after the quadratic speedup offered by a quantum computer running Grover's algorithm.19",
+        "The Validator's logic does not simply check for \"AES\"; it checks for the mode of operation. For database encryption (e.g., AWS RDS, Azure SQL), the tool verifies the use of AES-256 in Galois/Counter Mode (GCM). GCM is an Authenticated Encryption with Associated Data (AEAD) mode, which provides both confidentiality (encryption) and integrity (authentication).18 This addresses DORA's requirement to ensure the \"authenticity and integrity\" of data, protecting against bit-flipping attacks or ciphertext manipulation that could corrupt financial ledgers.1 For block storage (e.g., EBS volumes), the Validator accepts XTS-AES-256, which is the industry standard for disk encryption due to its ability to handle random access patterns securely.23"
+      ]
+    },
+    {
+      "title": "3.2. ChaCha20-Poly1305: The High-Performance Alternative",
+      "content": [
+        "The Adraca Validator also recognizes ChaCha20-Poly1305 as a compliant \"state of the art\" algorithm, particularly for mobile banking interfaces and software-defined implementations where hardware acceleration for AES (AES-NI) might be unavailable or inefficient.24",
+        "ChaCha20 is a stream cipher that, unlike AES, does not rely on S-boxes or complex algebraic structures over finite fields. Instead, it uses Add-Rotate-XOR (ARX) operations which are extremely fast in software and immune to cache-timing side-channel attacks\u2014a class of vulnerability that has historically plagued AES implementations in virtualized cloud environments.24",
+        "The BSI TR-02102-1 (2025) and ENISA guidelines list ChaCha20-Poly1305 alongside AES-256-GCM as a preferred cipher suite for TLS 1.3 and high-security data transmission.18 In the context of the Adraca Validator, detecting the use of ChaCha20 in application-layer encryption configurations (e.g., within a Kubernetes container or a mobile app backend) triggers a \"Pass\" result. The Validator is programmed to understand that ChaCha20 with a 256-bit key offers security comparable to AES-256, providing a necessary alternative for diverse banking ecosystems.24"
+      ]
+    },
+    {
+      "title": "3.3. Comparative Analysis for Compliance Logic",
+      "content": [
+        {
+          "type": "table",
+          "data": [
+            [
+              "Feature",
+              "AES-256 (GCM/XTS)",
+              "ChaCha20-Poly1305",
+              "Adraca Validator Action"
+            ],
+            [
+              "Type",
+              "Block Cipher",
+              "Stream Cipher",
+              "Both accepted as \"State of the Art\"."
+            ],
+            [
+              "Security",
+              "256-bit key (Quantum Resistant)",
+              "256-bit key (Quantum Resistant)",
+              "Verifies key length attribute is >= 256."
+            ],
+            [
+              "Use Case",
+              "Storage (S3, EBS, Azure Blob)",
+              "Mobile, IoT, Software-only",
+              "Context-aware checks based on resource type."
+            ],
+            [
+              "Vulnerability",
+              "Susceptible to Cache-Timing (if no HW support)",
+              "Immune to Cache-Timing",
+              "Flag AES usage on non-accelerated instances (Warning)."
+            ],
+            [
+              "Regulatory Status",
+              "BSI Recommended 20",
+              "BSI Recommended 18",
+              "Explicitly whitelisted in Policy Engine."
+            ]
+          ]
+        },
+        "By incorporating these specific definitions, the Validator ensures that \"Compliance\" is not a monolithic check but a nuanced technical assessment aligned with the specific operational context of the resource, satisfying the requirement for \"nuanced understanding\" of the subject.1"
+      ]
+    },
+    {
+      "title": "4. Input Processing: Parsing the Realized State",
+      "content": [
+        "The Input Processing layer is the technical gateway of the Validator. Its primary responsibility is to ingest the Terraform state file (.tfstate), parse its JSON structure, and transform it into a standardized format that the OPA Evaluation Engine can process. This module faces the significant challenge of navigating the Terraform State Schema v4, which is a complex, deeply nested hierarchy designed to represent the dependency graph of cloud resources.1"
+      ]
+    },
+    {
+      "title": "4.1. Recursive Parsing Strategy for Module Hierarchies",
+      "content": [
+        "A defining characteristic of enterprise-grade Terraform codebases in financial institutions is the heavy use of modules. A root module might call a \"Network\" module, which calls a \"VPC\" module, which calls a \"Subnet\" module. In the .tfstate file (Schema v4), this results in a recursive JSON structure where resources are not listed in a single flat array but are distributed across nested child_modules objects.27",
+        "A naive parser that only looks at the root_module will miss critical infrastructure components buried deep in the dependency tree. The Adraca Validator solves this through a robust Python-based recursive parsing algorithm. The algorithm creates a unified, flattened list of all resources, preserving their module paths (lineage) to ensure traceability.",
+        "Python",
+        "import json\nfrom typing import List, Dict, Any\n\nclass StateParser:\n    \"\"\"\n    Parses Terraform State Schema v4 into a flat list of resources for OPA.\n    Handles deeply nested child_modules recursively.\n    \"\"\"\n    \n    def __init__(self, state_file_path: str):\n        self.state_file_path = state_file_path\n        self.resources: List] =\n\n    def load_and_parse(self) -> Dict[str, Any]:\n        with open(self.state_file_path, 'r', encoding='utf-8') as f:\n            try:\n                state_data = json.load(f)\n            except json.JSONDecodeError as e:\n                # Handle UTF-8 BOM issues common in PowerShell-generated files\n                raise ValueError(f\"Invalid JSON format. Check for BOM or corruption: {e}\")\n\n        # Validate Schema Version\n        if state_data.get(\"version\")!= 4:\n            raise ValueError(f\"Unsupported State Version: {state_data.get('version')}. Adraca requires v4.\")\n\n        # Begin recursive traversal from the root module\n        root_module = state_data.get(\"values\", {}).get(\"root_module\", {})\n        self._traverse_module(root_module, parent_address=\"\")\n        \n        return {\"resources\": self.resources}\n\n    def _traverse_module(self, module_data: Dict[str, Any], parent_address: str):\n        \"\"\"\n        Recursively extracts resources from a module and its children.\n        \"\"\"\n        # 1. Process Resources in current module scope\n        for resource in module_data.get(\"resources\",):\n            # Enrich resource with full address for traceability\n            # Schema v4 'address' field usually contains the full path, but we verify\n            if \"address\" not in resource:\n                resource[\"address\"] = f\"{parent_address}.{resource['name']}\"\n            \n            # Add to the flat list\n            self.resources.append(resource)\n\n        # 2. Recursively process Child Modules\n        for child_module in module_data.get(\"child_modules\",):\n            # Construct the address for the child module (traceability)\n            child_address = child_module.get(\"address\", \"unknown_module\")\n            self._traverse_module(child_module, parent_address=child_address)\n\n# Example Usage logic\n# parser = StateParser(\"terraform.tfstate\")\n# opa_input = parser.load_and_parse()",
+        "This code snippet illustrates the implementation of the \"Flattening\" logic required to support the Lead Cloud Security Architect's need for visibility into the entire \"Subcontracting Chain\".1 By traversing every branch of the JSON tree, the parser ensures that no resource\u2014no matter how deeply nested\u2014escapes validation. This is particularly vital for detecting \"Shadow IT\" or misconfigured dependencies introduced by third-party modules.1"
+      ]
+    },
+    {
+      "title": "4.2. Handling Data Types and Sensitive Values",
+      "content": [
+        "The parser must also handle the data types specific to Terraform's JSON output. Attributes may be strings, integers, booleans, or complex objects. The values dictionary within the state file contains the realized attributes. Importantly, the parser must respect the sensitive_values attribute. While the Validator runs in a secure container, best practice dictates that sensitive data (like initial passwords or raw keys) should be redacted or hashed before being passed to the OPA engine logs, adhering to the principle of data minimization under GDPR.27",
+        "The Input Processing module creates an \"OPA Input Document\" that wraps the flattened resources. This document creates a standardized interface: input.resources. This standardization allows the Rego policies to be written generically, without needing to know the complex structure of the original .tfstate file.29"
+      ]
+    },
+    {
+      "title": "5. Reporting Module: Audit Traceability and Visualization",
+      "content": [
+        "The Reporting Module translates the boolean logic of \"Pass/Fail\" into the language of risk and compliance. It serves two masters: the machine (SIEM/GRC) and the human (Auditor/DPO). The module processes the output from the OPA Evaluation Engine and enriches it with metadata to create a legally defensible audit trail.1"
+      ]
+    },
+    {
+      "title": "5.1. Machine-Readable Integration (JSON)",
+      "content": [
+        "For integration with Security Information and Event Management (SIEM) systems like Splunk or Sentinel, the Reporting Module generates a structured JSON artifact. This allows the bank to visualize compliance drift over time.",
+        "JSON",
+        "{\n  \"audit_id\": \"uuid-550e8400-e29b-41d4-a716-446655440000\",\n  \"timestamp\": \"2026-02-07T14:30:00Z\",\n  \"compliance_summary\": {\n    \"total_resources\": 450,\n    \"compliant\": 448,\n    \"violations\": 2,\n    \"score\": 99.5\n  },\n  \"violations\":\n    }\n  ]\n}",
+        "This structure supports the \"Compliance Traceability Matrix\" requirement from the BRD, linking technical failures directly to \"DORA Art. 12\".1"
+      ]
+    },
+    {
+      "title": "5.2. Human-Readable Reporting (PDF with WeasyPrint)",
+      "content": [
+        "For the Compliance Officer, the tool generates a professional PDF report. To achieve high-fidelity formatting without heavyweight dependencies like LaTeX, the Validator utilizes the WeasyPrint library. WeasyPrint allows the report to be designed using HTML and CSS, which is then rendered into a PDF. This approach enables the creation of \"Data Residency Maps\" and styled tables that are easy for non-technical stakeholders to digest.30",
+        "The report generation process involves:",
+        "Jinja2 Templating: The Python code injects the OPA results into an HTML template. This template organizes findings by regulatory domain (e.g., \"Data Sovereignty Violations,\" \"Encryption Failures\").",
+        "CSS Styling: A dedicated stylesheet applies the bank's corporate branding and formats severity levels (e.g., rendering \"CRITICAL\" in red).",
+        "PDF Rendering: WeasyPrint converts the rendered HTML/CSS into a static PDF document. This document serves as the immutable evidence required for regulatory audits.32",
+        "The choice of WeasyPrint over standard Markdown conversion tools is driven by the need for precise layout control (e.g., page breaks, table headers repeating on new pages), which is essential for professional audit documentation.33"
+      ]
+    },
+    {
+      "title": "6. CI/CD Integration: The Sovereign Decision Gate",
+      "content": [
+        "The Adraca Sovereign Validator is designed to function as a \"Quality Gate\" within the software delivery lifecycle. It is not a passive monitor; it is an active enforcement mechanism integrated into the CI/CD pipeline (e.g., GitLab CI, GitHub Actions, Jenkins).1"
+      ]
+    },
+    {
+      "title": "6.1. Pipeline Architecture",
+      "content": [
+        "The integration follows a \"Post-Plan, Pre-Apply\" or \"Post-Apply\" verification model. Given the Validator's focus on the realized state (.tfstate), the most accurate audit occurs immediately after the terraform apply stage, or by analyzing the tfplan converted to JSON (though state is preferred for \"ground truth\").1",
+        "Standard Workflow:",
+        "Provision: Terraform applies changes to the cloud environment.",
+        "Ingest: The pipeline executes the Adraca Validator container.",
+        "Fetch: The Python Input Processor retrieves the fresh .tfstate from the S3 backend using a read-only role.",
+        "Evaluate: The OPA engine assesses the state against the Rego policies.",
+        "Decide:",
+        "If CRITICAL violations are found (e.g., unencrypted database, US region usage), the pipeline fails with a non-zero exit code (e.g., exit 1). This blocks any further promotion of the code artifact.35",
+        "If WARNING violations are found, the pipeline succeeds but emits alerts to the GRC dashboard.",
+        "This \"Decision Gate\" logic ensures that non-compliant infrastructure cannot persist in the environment, satisfying the \"Operational Velocity\" requirement by catching errors immediately.1"
+      ]
+    },
+    {
+      "title": "6.2. Exception Management",
+      "content": [
+        "The CI/CD integration includes a mechanism for \"Authorized Exceptions.\" If a resource is tagged with adraca:ignore and a valid adraca:reason (e.g., a ticket ID from the risk register), the Validator suppresses the failure. This prevents the tool from becoming a blocker for legitimate business needs while maintaining an audit trail of the exception, a critical feature for the DevSecOps Engineer persona.1"
+      ]
+    },
+    {
+      "title": "7. Security & Integrity: Hardening the Validator",
+      "content": [
+        "As a security tool, the Adraca Validator acts as a privileged observer of the infrastructure. Its own security posture is paramount to preventing it from becoming a vector for supply chain attacks.1"
+      ]
+    },
+    {
+      "title": "7.1. Supply Chain Security with Cosign",
+      "content": [
+        "To ensure the integrity of the Validator itself, the Docker image used in the CI/CD pipeline is signed using Sigstore Cosign. This guarantees that the code running in the bank's pipeline is exactly what was built and vetted by the security team, free from tampering.36",
+        "Signing: The build pipeline uses a private key (stored in a secure vault) to sign the container image and push the signature to the OCI registry.38",
+        "Verification: The consumption pipeline uses the corresponding public key to verify the image signature before pulling and executing it. cosign verify --key cosign.pub ghcr.io/adraca/validator:latest.38"
+      ]
+    },
+    {
+      "title": "7.2. Ephemeral and Least-Privilege Execution",
+      "content": [
+        "The Validator runs in an ephemeral environment\u2014a container that spins up, performs the audit, and is immediately destroyed. It creates no persistent local storage, preventing \"state leakage\" between runs.1",
+        "Access control is enforced via IAM Roles (AWS) or Managed Identities (Azure). The Validator is granted strictly Read-Only permissions to the Terraform state bucket (e.g., s3:GetObject). It explicitly lacks permissions to modify infrastructure (ec2:*, s3:PutObject) or read sensitive data within the resources (databases), ensuring that even if the tool were compromised, it could not be used to destroy infrastructure or exfiltrate customer data.1"
+      ]
+    },
+    {
+      "title": "8. Conclusion",
+      "content": [
+        "The technical design of the Adraca Sovereign Validator represents a robust, defensible response to the regulatory pressures of the European financial sector. By combining the precision of Python-based recursive parsing with the declarative power of OPA Rego, the tool transforms the complex legal mandates of DORA and GDPR into binary, enforceable logic.1 It moves compliance from a periodic, manual exercise to a continuous, automated guarantee.",
+        "The architecture prioritizes the \"realized state,\" ensuring that the audit reflects the absolute ground truth of the infrastructure.1 With deep integration of BSI-approved cryptographic standards (AES-256-GCM, ChaCha20-Poly1305) and rigorous checks for operational resilience (backup segregation, retention), the Validator empowers financial institutions to operate in the cloud with sovereign control. As enforcement of the Subcontracting RTS begins in July 2025, the Adraca Sovereign Validator stands as a critical asset for any entity seeking to prove not just that they intend to be compliant, but that they are compliant.1"
+      ]
+    },
+    {
+      "title": "Works cited",
+      "content": [
+        "DORA/GDPR Cloud Compliance BRD",
+        "State | Terraform - HashiCorp Developer, accessed February 7, 2026, https://developer.hashicorp.com/terraform/language/state",
+        "A guide to the Terraform state file | env zero, accessed February 7, 2026, https://www.env0.com/blog/a-guide-to-the-terraform-state-file",
+        "Securing Docker Images with Sigstore Cosign | by Grigor Khachatryan | Medium, accessed February 7, 2026, https://grigorkh.medium.com/securing-docker-images-with-sigstore-cosign-208a19801b72",
+        "Open Policy Agent (OPA), accessed February 7, 2026, https://openpolicyagent.org/docs",
+        "The Platform Engineer's Guide to Self-Service Infrastructure with OpenTofu and Terraform, accessed February 7, 2026, https://scalr.com/guides/platform-engineers-guide-to-self-service-infrastructure-with-opentofu-and-terraform",
+        "Enforcing Policy as Code in Terraform: A Comprehensive Guide - Scalr, accessed February 7, 2026, https://scalr.com/learning-center/enforcing-policy-as-code-in-terraform-a-comprehensive-guide/",
+        "How to Use Open Policy Agent (OPA) with Terraform [Examples] - Spacelift, accessed February 7, 2026, https://spacelift.io/blog/open-policy-agent-opa-terraform",
+        "Terraform - Open Policy Agent, accessed February 7, 2026, https://openpolicyagent.org/docs/terraform",
+        "Automatically Enforce Policies on Your Terraform Modules using OPA and Terratest, accessed February 7, 2026, https://www.gruntwork.io/blog/automatically-enforce-policies-on-your-terraform-modules-using-opa-and-terratest",
+        "Policy Language, accessed February 7, 2026, https://openpolicyagent.org/docs/policy-language",
+        "Securing Terraform with OPA - Oso, accessed February 7, 2026, https://www.osohq.com/learn/opa-policy-as-code-for-terraform",
+        "aws_backup_plan | Resources | hashicorp/aws - Terraform Registry, accessed February 7, 2026, https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/backup_plan",
+        "TECHNICAL IMPLEMENTATION GUIDANCE - ENISA, accessed February 7, 2026, https://www.enisa.europa.eu/sites/default/files/2025-06/ENISA_Technical_implementation_guidance_on_cybersecurity_risk_management_measures_version_1.0.pdf",
+        "aws_s3_bucket_server_side_en, accessed February 7, 2026, https://registry.terraform.io/providers/-/aws/latest/docs/resources/s3_bucket_server_side_encryption_configuration",
+        "Securing Sensitive Data in Terraform - Jhooq, accessed February 7, 2026, https://jhooq.com/terraform-secure-sensitive-data/",
+        "BSI TR-02102-1 \"Cryptographic Mechanisms: Recommendations and Key Lengths\" Version, accessed February 7, 2026, https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.html",
+        "Transport Layer Security (TLS), accessed February 7, 2026, https://www.ncsc.nl/api/media/sites/default/files/Publication_TLS-Security%20guidelines-2025-05_ENG.pdf",
+        "Greenbone Is Preparing For The Post Quantum Age, accessed February 7, 2026, https://www.greenbone.net/en/blog/greenbone-is-preparing-for-the-post-quantum-age/",
+        "Bsi TR 02102 1 | PDF | Cryptography | Encryption - Scribd, accessed February 7, 2026, https://www.scribd.com/document/636246920/BSI-TR-02102-1",
+        "How Secure Is Encryption Today? - Protectstar, accessed February 7, 2026, https://www.protectstar.com/en/blog/how-secure-is-encryption-today",
+        "Guidelines on cryptographic algorithms usage and key management - EPC Document, accessed February 7, 2026, https://www.europeanpaymentscouncil.eu/sites/default/files/kb/file/2024-03/EPC342-08%20v13.0%20Guidelines%20on%20Cryptographic%20Algorithms%20Usage%20and%20Key%20Management.pdf",
+        "2020 - TeleTrusT, accessed February 7, 2026, https://www.teletrust.de/fileadmin/docs/fachgruppen/ag-stand-der-technik/2020-10_TeleTrusT_Guideline_State_of_the_art_in_IT_security_EN.pdf",
+        "Encryption: XChaCha20 vs. AES-256 \u2013 What's the difference? - NordPass, accessed February 7, 2026, https://nordpass.com/blog/xchacha20-encryption-vs-aes-256/",
+        "What's the appeal of using ChaCha20 instead of AES? - Cryptography Stack Exchange, accessed February 7, 2026, https://crypto.stackexchange.com/questions/34455/whats-the-appeal-of-using-chacha20-instead-of-aes",
+        "XChaCha20 vs AES-256 Encryption: Which Is the Best for a Password Manager?, accessed February 7, 2026, https://blog.lastpass.com/posts/xchacha20-vs-aes256",
+        "JSON output format | Terraform | HashiCorp Developer, accessed February 7, 2026, https://developer.hashicorp.com/terraform/internals/json-format",
+        "Flattening JSON objects in Python - GeeksforGeeks, accessed February 7, 2026, https://www.geeksforgeeks.org/python/flattening-json-objects-in-python/",
+        "terraform-json/state.go at main - GitHub, accessed February 7, 2026, https://github.com/hashicorp/terraform-json/blob/main/state.go",
+        "WeasyPrint, accessed February 7, 2026, https://weasyprint.org/",
+        "Markdown to PDF with weasyprint | Peter Lyons, accessed February 7, 2026, https://peterlyons.com/problog/2023/02/markdown-to-pdf-with-weasyprint/",
+        "Converting markdown to pdf in Python - DEV Community, accessed February 7, 2026, https://dev.to/vb64/converting-markdown-to-pdf-in-python-5efn",
+        "Create automated strictly-designed multi-page PDF report from HTML [closed], accessed February 7, 2026, https://stackoverflow.com/questions/42091524/create-automated-strictly-designed-multi-page-pdf-report-from-html",
+        "What is Open Policy Agent (OPA) and how to implement it with Terraform - Terrateam, accessed February 7, 2026, https://terrateam.io/blog/open-policy-agent-terraform",
+        "CI/CD YAML syntax reference - GitLab Docs, accessed February 7, 2026, https://docs.gitlab.com/ci/yaml/",
+        "Use Sigstore for keyless signing and verification - GitLab Docs, accessed February 7, 2026, https://docs.gitlab.com/ci/yaml/signing_examples/",
+        "Automating Container Image Signing with Cosign and Github Actions - Civo.com, accessed February 7, 2026, https://www.civo.com/learn/supply-chain-security",
+        "avisi-cloud/cosign-tutorial: Use cosign to secure your container images using Github actions, accessed February 7, 2026, https://github.com/avisi-cloud/cosign-tutorial"
+      ]
+    }
+  ]
+}

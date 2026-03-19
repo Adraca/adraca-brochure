@@ -6,7 +6,6 @@ import Link from "next/link";
 
 const quickLinks = [
     { name: "Whitepapers", href: "/whitepaper", icon: <FileText size={16} /> },
-    { name: "Industries", href: "/industries", icon: <Globe size={16} /> },
     { name: "Blog Stream", href: "/blog", icon: <Zap size={16} /> },
     { name: "Careers", href: "/careers", icon: <Hash size={16} /> }
 ];
@@ -28,8 +27,6 @@ export default function CommandPalette() {
 
     const allItems = [
         ...quickLinks,
-        { name: "Retail Intelligence", href: "/industries/retail", icon: <Globe size={16} /> },
-        { name: "Consumer Goods", href: "/industries/consumer-goods", icon: <Globe size={16} /> },
         { name: "Data Migration", href: "/products/data-migration", icon: <Zap size={16} /> },
         { name: "Licensing", href: "/licensing", icon: <FileText size={16} /> },
         { name: "Contact Sales", href: "/contact", icon: <Hash size={16} /> },
