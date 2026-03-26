@@ -10,11 +10,11 @@ import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const CHROME_FREE_ROUTES = ["/brochure"];
 
-export default function ConditionalChrome() {
+export default function ConditionalChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isChromeFree = CHROME_FREE_ROUTES.some((r) => pathname.startsWith(r));
 
-  if (isChromeFree) return null;
+  if (isChromeFree) return <>{children}</>;
 
   return (
     <>
@@ -24,6 +24,7 @@ export default function ConditionalChrome() {
       <CookieConsent />
       <ScrollToTop />
       <Breadcrumbs />
+      {children}
       <Footer />
     </>
   );

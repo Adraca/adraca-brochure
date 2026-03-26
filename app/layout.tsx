@@ -52,11 +52,11 @@ export default function RootLayout({
           <Galaxy3D />
 
           {/* All nav/chatbot/breadcrumbs/footer — hidden on /brochure */}
-          <ConditionalChrome />
-
-          <ClientLayout>
-            {children}
-          </ClientLayout>
+          <ConditionalChrome>
+            <ClientLayout>
+              {children}
+            </ClientLayout>
+          </ConditionalChrome>
         </Providers>
       </body>
       <Analytics />
