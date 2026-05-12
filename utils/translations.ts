@@ -24,11 +24,11 @@ export const translations = {
         it: 'Prodotti',
     },
     intelligence: {
-        en: 'Technology',
-        de: 'Technologie',
-        et: 'Tehnoloogia',
-        fr: 'Technologie',
-        it: 'Tecnologia',
+        en: 'Pricing',
+        de: 'Preise',
+        et: 'Hinnakiri',
+        fr: 'Tarification',
+        it: 'Prezzi',
     },
     company: {
         en: 'Company',
